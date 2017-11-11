@@ -1,5 +1,7 @@
 wayic/script - Wayscript / documentation in rough
 
+    - begin at § practical constraints § minimal
+
     ____________________________________________________________________________________________________
     cast element`
     < cog:cast, namespace data:,wayscript.cog
@@ -91,67 +93,116 @@ wayic/script - Wayscript / documentation in rough
                 - and containment is the most convenient and transparent form of defining them
 
     ____________________________________________________________________________________________________
-    dependency relations among waybits`
-    - expressed by nesting
-        - one waybit (underbit) nested within - and typically below - its dependant (overbit)
-            ( 'depend' unfortunately evokes the contradictory image of the dependant hanging below
-        - e.g.
-            - means within end
-            - premises within conclusion
-            - steps within subsequent step
-            - support blocks within supported block
+    dependency relations`
+    - wayscript is basically the declaration of dependency relations among waybits
+    - a dependency relation is declared either by nesting one waybit declaration in another
+        - or by an equivalent waylink
+    - examples of nesting
 
-    [ defining alternative and variant means
-        - alternative means
-            - inclusive
-            - accomodated either by wayscripting them as such in the wayscript of the end
-            - or by adaptive branching in the forest of end texts
-                - adaptive in the sense that this branching
-                    - together with vote flow
-                    - will tend to ensure that any deserving means
-                      is eventually accomodated in a rootward, consensus, end text
-        - variant means
-            - exclusive
-            - knowing the precise means waylinked by a given end in a given wayscribe's way
-            - choice of (first to apply)
-                | wayscript file in means directory
-                | wayvote in means directory
-                    < NOTE: this might be premature pending INTER-PERSONAL FLOWS
-                    - one then gets the meansward waypath thence to the final means
-                      from the voted candidate
-                        - such as it is
-                        - in just the way he gets it
-                    - the voted means is therefore an end of the waypath
-                    - possibility of conflict
-                        - if another end of mine happens to share a part of that same waypath
-                            - its own waypath converging on it
-                                - or crossing it
-                            - but also defining it differently
-                                - say with a different version there of a text
-                            - then a conflict may arise
-                        - a conflict would arise
-                            - for example
-                            - if I had defined the waypath of the second end
-                                - like the first
-                                - by a wayvote in its directory
-                            - because both definitions would then have the same priority
-                        - how to resolve such a conflict is an open question
-              / | wayvote in kingmaker/
-              /     - a vote in kingmaker/ sets the default for all votes elsewhere
-              /       *insofar as they affect waylinks*
-              /         - but it has *no effect* on vote counts outside of kingmaker
-              // premature pending INTER-PERSONAL FLOWS, rather:
-                | default choice
-                    - pending INTER-PERSONAL FLOWS
-              / | absolute waylink
-              /     - the only practical recourse for a root candidate in kingmaker/
-              /         - whose waycast would otherwise have to encode the whole way
-              /         - in wayscript and/or wayvotes
-              //        ! untrue
-              /             - a simple vote in the means directory determines the link
-              /               and the linkage cascades from there
-                | none
-                    - the waylink is broken
+        * simple
+            - one relation
+
+            <waybit>
+                <waybit/>
+                </waybit>
+
+        * more typical
+            - many relations and interrelations
+
+            <waybit>
+                <waybit>
+                    <waybit/>
+                    </waybit>
+                <waybit/>
+                <waybit/>
+                <waybit>
+                    <waybit/>
+                    <waybit>
+                        <waybit/>
+                        <waybit/>
+                        </waybit>
+                    <waybit/>
+                    </waybit>
+                </waybit>
+
+        + in terms of meaning
+            * general
+
+                <dependant>
+                    <dependency/>
+                    </dependant>
+
+                - unfortunately the word 'dependant' may suggest a thing that hangs below
+                    - which is contradictory
+                    - because here the dependant is written above
+
+            * specific
+
+                <end>
+                    <means/>
+                    </end>
+
+                <conclusion>
+                    <premise/>
+                    </conclusion>
+
+                <successor>
+                    <predecessor/>
+                    </successor>
+
+                <step_3>
+                    <step_2>
+                        <step_1/>
+                        </step_2>
+                    </step_3>
+
+                <supported>
+                    <supporter/>
+                    </supported>
+
+        + in formal terms
+            * over-under
+                - conventional for wayscript
+
+                <overbit>
+                    <underbit/>
+                    </overbit>
+
+            * genealogical
+                - conventional for XML
+
+                <parent>
+                    <child/>
+                    <child/>
+                    </parent>
+
+                - each child is a *sibling* of the other
+                - unfortunately the words 'parent' and 'child' may suggest a relation of guardian-dependant
+                    - which is contradictory
+                    - because here the 'parent' waybit is dependant on the 'child' waybits
+    - example of waylinkage
+
+        <step_3 cog:lid='s3'>
+            <step_2>
+                <step_1/>
+                </step_2>
+            </step_3>
+
+        <step_5a>
+            <step_4a>
+                <step_3 cog:link='s3'/>
+                </step_4a>
+            </step_5a>
+
+        <step_5b>
+            <step_4b>
+                <step_3 cog:link='s3'/>
+                </step_4b>
+            </step_5b>
+
+        - here step_1
+            ( likewise step_2 or 3
+            - is an indirect underbit of both step_5a and 5b
 
     ____________________________________________________________________________________________________
     design constraints`
@@ -162,9 +213,9 @@ wayic/script - Wayscript / documentation in rough
             ( http://w3c.github.io/html/infrastructure.html#xml
             ( http://w3c.github.io/html/xhtml.html
             - HTML
-                ∵ wayscript is the basic document form of the waycast
+                ∵ wayscript is basic to the waycast
                 ∵ the *waycast* is public
-                    ( http://reluk.ca/project/way/engineer/wayics/way.xht#public_reading
+                    ( http://reluk.ca/project/way/engineer/wayics/way.xht#way_publication
                 ∵ the premiere medium of *publication* today is the web
                 ∵ the basic script of the *web* is HTML
                 ∴ HTML
@@ -228,6 +279,8 @@ wayic/script - Wayscript / documentation in rough
     practical constraints`
     [ ⤓ minimal
         - what the wayscribe must have
+        * a basic knowledge of wayscript
+            - begin at § dependency relations among waybits
         * a waycast
             ( http://reluk.ca/project/wayic/cast/
             - wayscript is proper to the waycast
@@ -268,11 +321,6 @@ wayic/script - Wayscript / documentation in rough
             - names beginning with an underscore ‘_’ are reserved
                 - don’t use such names for normal purposes
         - a name of '_' means no name (anonymous waybit)
-    - waybit-like elements
-        - certain non-waybit elements are defined as waybit-like
-            - meaning they share some of the properties of waybits
-        - example: cog:loop
-        - a waybit itself is not waybit-like
     - relations
         - composition, see §
         - dependency, see §
@@ -282,6 +330,13 @@ wayic/script - Wayscript / documentation in rough
             < namespaced data:,wayscript.bit
         * step
             ( see §
+
+    ____________________________________________________________________________________________________
+    waybit-like`
+    - waybit-like is a class of element
+    - waybit-like elements share some of the properties of waybits
+        - though they are not themselves waybits
+    - example: cog:loop
 
     ____________________________________________________________________________________________________
     waylinkage`
