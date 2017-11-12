@@ -237,13 +237,6 @@ wayic/script - Wayscript / documentation in rough
             ( see cog:cast
 
     ____________________________________________________________________________________________________
-    loop element`
-    < cog:loop, namespace data:,wayscript.cog
-    - content: any that includes at least one step
-    - waybit-like and waylinkable
-        - may generally be used as though it were a waybit
-
-    ____________________________________________________________________________________________________
     namespace`
     - XML namespaces for wayscript
     - hierarchy
@@ -302,7 +295,7 @@ wayic/script - Wayscript / documentation in rough
     ____________________________________________________________________________________________________
     waybit`
     - a distinct|discrete part of a way
-        - formed as an element
+        - formed as an XML element
     - naming
         - naming is free-form
             - except for reserved names
@@ -332,29 +325,15 @@ wayic/script - Wayscript / documentation in rough
             ( see §
 
     ____________________________________________________________________________________________________
-    waybit-like`
-    - waybit-like is a class of element
-    - waybit-like elements share some of the properties of waybits
-        - though they are not themselves waybits
-    - example: cog:loop
-
-    ____________________________________________________________________________________________________
     waylinkage`
-    - a waylink is a relation between two element instances (nodes) in which
-      the content of one (source node) effectively mirroring that of the other (target node)
-    - a waylink might be viewed in different ways, including:
-        | a hyperlink from source to target
-        | duplication of target's content in source
-    - element types
-        | waylinkable
-            < allowed as waylink nodes
-            - a waybit element
-            - another wayscript element that declares itself 'waylinkable'
-                - its waylinkage may be subject to special rules and other qualifications
-        | non-waylinkable
-            < not allowed as waylink nodes
-            - a non-wayscript element
-            - a wayscript element that is neither a waybit nor declared as 'waylinkable'
+    - a waylink is a relation between two waybits (called waylink nodes)
+      whereby the content of one (source node) becomes logically identical to the other (target node)
+    - visually a waylink might be represented in different ways, including:
+        | by a hyperlink from source to target
+        | by placing a replica of the target's content in the source
+    - the mapping between waylink source nodes and waylinks entire is 1:1
+        - each source noded effectively declares a separate waylink
+        ( the same is not true of target nodes, which map to waylinks 1:N
     - declaration is unidirectional
         - from source node to target node
       / - except in the case of a dependency loop, q.v.
@@ -369,52 +348,46 @@ wayic/script - Wayscript / documentation in rough
                 - which simplifies machine (and human) processing of the structure
     * lid attribute
         < cog:lid, namespace data:,wayscript.cog
-        - a waylink target node identifier
-        - placement
-            - a waylinkable element that's intended to serve as a target node
-            - must not have a cog:link attribute
+        - a waylink target node declaration
+        - placement: a waybit
+            - one that is actually targeted by a waylink source node
+                ( an untargeted waybit with a cog:lid attribute is malformed
+            - one that has no cog:link attribute
                 ( q.v. for reason
         - content: XML ID
             ( differing somewhat from HTML *id* attribute, which is less strictly formed
             ( pending any reason to loosen that restriction
-        - the declaring element must be the target node of at least one actual waylink
-            - if it is unidentified by any cog:link attribute
-                - then the way is malformed
-        - if the element also has an HTML *id* attribute
-            - then the two attributes must have equal values
-            - this allows the *lid* attribute to be transformed or represented
-              by the *id* attribute in web pages
-                = add to one of the lim projects
-                    - minimal scripting for a 'hyperlinkable' transform
-                    - referencing it from here
+        - equality of *id* and *lid* attributes
+            - if the waybit also has an HTML *id* attribute
+                - then the two attributes must have equal values
+                - else the waybit is malformed
+            - purpose of this constraint
+                - allow the *lid* attribute to be rendered as an *id* attribute
+                    - thereby allowing waylinks to operate as hyperlinks
     * link attribute
         < cog:link, namespace data:,wayscript.cog
-        - a waylink declaration
-        - placement: a waylinkable element
-        - purpose: to declare a waylink
+        - a waylink source node declaration
+        - placement: a waybit
         - two forms of declaration
             | tagless declaration
-                < one in which the element has content
+                < one in which the waybit has content
                 - this is a convenience
-              / - it is allowed only for waybits
-              /     - why: something about a loop with a tagless decl. implying a nested loop
-              //        - but that needn't be so, as the target could be anything
-                - it effectively translates to a second element called an 'entagment'
+                - it effectively translates to a second waybit called an 'entagment' of the declaration
                 - the entagment:
                     - is a waybit simply
                         - therefore the target node must also be a waybit simply
                             - the same namespace, that is
                             - else the link is malformed
                         - reason is to ease coding
-                            - the basic entagment element need never be replaced
+                            - the basic entagment waybit need never be replaced
                               after resolving the target
                         = extend support to all target nodes
                             - taking the namespace from the target
                             - by making use of readable.js ChangeablePartRendering
                     - has a local name of '_ι'
-                    - has the same cog:link attribute as the first element
+                    - has the same cog:link attribute as the first waybit
                     - is without content
-                    - is placed as a direct child of the first element
+                    - is placed as a direct child of the first waybit
                     - there encodes a normal declaration
                 - disallowed for source nodes that are considered by default
                   to be uniquely personal
@@ -426,24 +399,18 @@ wayic/script - Wayscript / documentation in rough
                           both for wayscribes to keep their special treatment in mind
                             - and for tools to implement it
             | normal declaration
-                < one in which the element is without content
+                < one in which the waybit is without content
                 - source's effective content is that of target
                 - must not have a cog:lid attribute
                     - thereby declaring it also to be a target node
                     - reason: in some applications, it might be infeasible to represent
                         - e.g. where the application gives to source and target nodes
                           distinct representations that would be difficult to combine as one
-                | waybit links
-                    - if one node is a waybit
-                        - then the other must have the same namespace
-                        ( or it's an error
-                        < e.g. a step can waylink only with a step
-                    - a local name of '_ι' means *inherit from target*
-                        - effectively it has the same name as the target node
-                | non-waybit links
-                    - if one node is a non-waybit
-                        - then the other must have the same namespace and name
-                        - e.g. a loop can form a waylink only with another loop
+                - a local name of '_ι' means *inherit from target*
+                    - effectively it has the same name as the target node
+                - must have the same namespace as the target node
+                    ( or it's an error
+                    < e.g. only a step can target a step
         - target resolution
             - the URL is resolved in waycast space
                 ( see cog:cast
@@ -459,7 +426,7 @@ wayic/script - Wayscript / documentation in rough
             - the URL must include a fragment to identify the target node
                 < see attribute cog:lid
       / - dependency loop
-      /     - may occur when the target node is an ancestor element
+      /     - may occur when the target node is an ancestor waybit
       /     - formally allowed though it might not actually make sense
       // till I encounter the need, and can give it as an example
 
