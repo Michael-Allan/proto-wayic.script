@@ -1,13 +1,13 @@
-wayic/script - Wayscript / documentation in rough
+wayic.script - Wayscript / documentation in rough
 
     - begin at § practical constraints § minimal
 
     ____________________________________________________________________________________________________
     cast element`
     < cog:cast, namespace data:,wayscript.cog
-    - properties of the larger waycast wherein the document is stored
+    - properties of the larger waycast wherein the wayscript document is stored
     - placed in document head
-    * base attribute
+    * *base* attribute
         < no namespace
         - the relative URL path to the base directory of the waycast
         - examples
@@ -15,10 +15,13 @@ wayic/script - Wayscript / documentation in rough
             - for document waycast/one/two/way.xht, <cog:cast base='../..'>
     - purpose: to enable resolution of URLs in waycast space
     - waycast space
-        - a URL space that is rooted on the waycast
-        - e.g. the URLs of waylinks and hyperlinks
-    - for all URLs in waycast space that begin with a slash '/'
-        - the leading '/' stands for the base directory of the waycast
+        - a waycast space is a URI resolution context whose base URI identifies a waycast base directory
+            ( https://tools.ietf.org/html/rfc3986#section-5
+        - its main purpose is to resolve the URI references of waylinks and hyperlinks
+        - for each URI reference in waycast space
+            - if it has *path-absolute* form
+                ( https://tools.ietf.org/html/rfc3986#section-3.3
+            - then its leading '/' stands for the base directory of the waycast
 
     ____________________________________________________________________________________________________
     composer elements and composition`
@@ -161,8 +164,28 @@ wayic/script - Wayscript / documentation in rough
                     </supported>
 
         + in formal terms
+            * arboreal
+                - common
+
+                <root>
+                    <branch>
+                        <leaf/>
+                        </branch>
+                    <leaf/>
+                    <leaf/>
+                    <branch>
+                        <leaf/>
+                        <branch>
+                            <leaf/>
+                            <leaf/>
+                            </branch>
+                        <leaf/>
+                        </branch>
+                    </root>
+
             * over-under
-                - conventional for wayscript
+                - specific to wayscript
+                    ? then is it necessary
 
                 <overbit>
                     <underbit/>
@@ -176,7 +199,9 @@ wayic/script - Wayscript / documentation in rough
                     <child/>
                     </parent>
 
-                - each child is a *sibling* of the other
+                - other useful terms of genealogy
+                    - for any two children of the same parent, each is a *sibling* of the other
+                    - *ancestor* and *descendant* are also common
                 - unfortunately the words 'parent' and 'child' may suggest a relation of guardian-dependant
                     - which is contradictory
                     - because here the 'parent' waybit is dependant on the 'child' waybits
@@ -220,7 +245,7 @@ wayic/script - Wayscript / documentation in rough
                 ∵ the basic script of the *web* is HTML
                 ∴ HTML
             - XML format
-                ∵ XML facilitates dealing with the specialized elements and attributes of wayscript
+                ∵ XML facilitates coping with the specialized elements and attributes of wayscript
                     - these aspects of XML in particular:
                         - namespacing
                         - strict syntax and parsing
@@ -233,8 +258,16 @@ wayic/script - Wayscript / documentation in rough
     HTML inclusions`
     - allowed
     - hyperlinks within a wayscript
-        - the *a href* attribute is resolved in waycast space
-            ( see cog:cast
+        - the *href* attribute of the *a* element is resolved in waycast space
+            ( q,v. in § cast element
+
+    ____________________________________________________________________________________________________
+    location`
+    - executable wayscript is restricted to URL paths that end in '/way.xht'
+    - in practice this means:
+        - when storing wayscript in a file, name the file 'way.xht'
+    - the purpose of this constraint is to simplify the automated tracing of way definitions that extend
+      across multiple, linked documents
 
     ____________________________________________________________________________________________________
     namespace`
@@ -273,12 +306,14 @@ wayic/script - Wayscript / documentation in rough
     [ ⤓ minimal
         - what the wayscribe must have
         * a basic knowledge of wayscript
-            - begin at § dependency relations among waybits
+            - begin at:
+                § location
+                § dependency relations among waybits
         * a waycast
             ( http://reluk.ca/project/wayic/cast/
             - wayscript is proper to the waycast
         * a web renderer
-            | wayic/read
+            | wayic.read
                 ( http://reluk.ca/project/wayic/read/
                 - there's no other at present
 
@@ -346,14 +381,12 @@ wayic/script - Wayscript / documentation in rough
             - one node of the relation (e.g. overbit) can fully define its edges
                 - no underbit being able to contradict the definition
                 - which simplifies machine (and human) processing of the structure
-    * lid attribute
+    * *lid* attribute
         < cog:lid, namespace data:,wayscript.cog
         - a waylink target node declaration
         - placement: a waybit
             - one that is actually targeted by a waylink source node
-                ( an untargeted waybit with a cog:lid attribute is malformed
-            - one that has no cog:link attribute
-                ( q.v. for reason
+                ( an untargeted waybit with a *cog:lid* attribute is malformed
         - content: XML ID
             ( differing somewhat from HTML *id* attribute, which is less strictly formed
             ( pending any reason to loosen that restriction
@@ -368,8 +401,27 @@ wayic/script - Wayscript / documentation in rough
         < cog:link, namespace data:,wayscript.cog
         - a waylink source node declaration
         - placement: a waybit
-        - two forms of declaration
-            | tagless declaration
+        - content is a fragment preceded by a URI reference that is either:
+            | a full URI
+                ( https://tools.ietf.org/html/rfc3986#section-1.1.1
+                ( https://tools.ietf.org/html/rfc3986#section-3
+                ( https://tools.ietf.org/html/rfc3986#section-3.1
+                - viz. having a scheme
+            | a *path-absolute*
+                ( https://tools.ietf.org/html/rfc3986#section-3.3
+                - it will be resolved in waycast space
+                    ( see § target resolution
+                - no allowance for relative paths
+                    - e.g. beginning with a '.', '..' or file name
+                    - reason
+                        - to ease the tracing of a way that extends across multiple documents
+                        - relative paths are harder to follow
+                            ( see e.g. normalizeURL in http://reluk.ca/project/wayic/read/readable.js
+            | a *same-document reference*
+                ( https://tools.ietf.org/html/rfc3986#section-4.4
+                - thus targeting a node in the same document
+        - two forms of waylink declaration
+            | tagless waylink declaration
                 < one in which the waybit has content
                 - this is a convenience
                 - it effectively translates to a second waybit called an 'entagment' of the declaration
@@ -384,50 +436,51 @@ wayic/script - Wayscript / documentation in rough
                         = extend support to all target nodes
                             - taking the namespace from the target
                             - by making use of readable.js ChangeablePartRendering
-                    - has a local name of '_ι'
-                    - has the same cog:link attribute as the first waybit
+                    - has a local name of '_iso'
+                    - has the same *cog:link* attribute as the first waybit
                     - is without content
                     - is placed as a direct child of the first waybit
                     - there encodes a normal declaration
-                - disallowed for source nodes that are considered by default
-                  to be uniquely personal
-                    - such as commitment source nodes (those targeting /actor/#commitment)
-                    - instead declare them on separate lines of wayscript
-                    - why
-                        - they are implicitly marked as CUSTOM lines
-                        - explictly declaring them on separate lines makes it easier
-                          both for wayscribes to keep their special treatment in mind
-                            - and for tools to implement it
-            | normal declaration
+              / - disallowed for source nodes that are considered by default
+              /   to be uniquely personal
+              /     - such as commitment source nodes (those targeting /actor/#commitment)
+              /     - instead declare them on separate lines of wayscript
+              /     - why
+              /         - they are implicitly marked as CUSTOM lines
+              /         - explictly declaring them on separate lines makes it easier
+              /           both for wayscribes to keep their special treatment in mind
+              /             - and for tools to implement it
+              // too onerous on wayscribe
+            | normal waylink declaration
                 < one in which the waybit is without content
                 - source's effective content is that of target
-                - must not have a cog:lid attribute
+                - must not have a *cog:lid* attribute
                     - thereby declaring it also to be a target node
                     - reason: in some applications, it might be infeasible to represent
                         - e.g. where the application gives to source and target nodes
                           distinct representations that would be difficult to combine as one
-                - a local name of '_ι' means *inherit from target*
+                - a local name of '_iso' means *same as the target name*
                     - effectively it has the same name as the target node
                 - must have the same namespace as the target node
                     ( or it's an error
                     < e.g. only a step can target a step
         - target resolution
-            - the URL is resolved in waycast space
-                ( see cog:cast
-            - the URL must be relative to the waycast and the target document
-              must be in the same waycast
-                - reason: self containment for sake of:
-                    - portability
-                    - propagation
+            - the URI reference is resolved in waycast space
+                ( q,v. in § cast element
+            - this (together with the restriction against relative paths)
+              ensures that any reference needing resolution (not a full URI)
+              resolves to a target in the same waycast
+                - why this constraint is wanted: self containment for the sake of portability
+                    - especially for the purpose of propagation
                         ( http://reluk.ca/project/way/engineer/wayics/cast/way.xht#ever_F
             - if the terminal path component is a directory
                 - so indicated by a terminating slash '/'
                 - then 'way.xht' is assumed as the file name
             - the URL must include a fragment to identify the target node
-                < see attribute cog:lid
+                < see attribute *cog:lid*
       / - dependency loop
       /     - may occur when the target node is an ancestor waybit
-      /     - formally allowed though it might not actually make sense
+      /     - formally allowed though it's not always guaranteed to make sense
       // till I encounter the need, and can give it as an example
 
 
