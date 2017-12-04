@@ -386,10 +386,10 @@ wayic.script - Wayscript / documentation in rough
         - a waylink target node declaration
         - placement: a waybit
             - one that is actually targeted by a waylink source node
-                ( an untargeted waybit with a *cog:lid* attribute is malformed
+                - an untargeted waybit with a *cog:lid* attribute is malformed
         - content: XML ID
-            ( differing somewhat from HTML *id* attribute, which is less strictly formed
-            ( pending any reason to loosen that restriction
+            - differing somewhat from HTML *id* attribute, which is less strictly formed
+            - pending any reason to loosen that restriction
         - equality of *id* and *lid* attributes
             - if the waybit also has an HTML *id* attribute
                 - then the two attributes must have equal values
