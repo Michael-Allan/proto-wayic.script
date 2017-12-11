@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en-CA' xml:lang='en-CA'>
+    <head>
+        <title>‘wayscript’</title>
+        </head>
+    <body>
+        <!-- <<< deindent -->
+
+<section      id='wayscript'>
+    <h2><a href='#wayscript'>
+                  wayscript</a></h2>
+    <ul>
+        <li>
+            (mass noun) written <a href='http://reluk.ca/project/wayic/lex/way'>way</a> definitions
+            </li>
+        <li>
+            (count noun) the text of a way definition
+            </li>
+        <li>
+            (verb) to write a way definition
+            </li>
+        </ul>
+    </section>
+
+        <!-- >>> reindent -->
+        </body>
+    </html>

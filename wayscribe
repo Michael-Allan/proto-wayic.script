@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en-CA' xml:lang='en-CA'>
+    <head>
+        <title>‘wayscribe’</title>
+        </head>
+    <body>
+        <!-- <<< deindent -->
+
+<section      id='wayscribe'>
+    <h2><a href='#wayscribe'>
+                  wayscribe</a></h2>
+    <ul>
+        <li>
+            one who <a href='wayscript'>wayscripts</a>
+            </li>
+        </ul>
+    </section>
+
+        <!-- >>> reindent -->
+        </body>
+    </html>
