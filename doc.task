@@ -183,14 +183,30 @@ wayic.script/doc.task - Wayscript / documentation in rough
                         </branch>
                     </root>
 
+                - other useful terms
+                    - 'rootward'
+                    - 'rootmost'
+                        - most rootward
+                    - 'leafward'
+                    - 'leafmost'
+                        - most leafward
+
             * over-under
                 - specific to wayscript
-                    ? then is it necessary
+                - applies only to waybits
 
                 <overbit>
                     <underbit/>
                     </overbit>
 
+                - its utility is in specifying the type of elements that are related
+                    - 'overbit' implies a waybit descendant
+                    - 'underbit' implies a waybit ancestor
+                - other useful terms
+                    - 'direct overbit'
+                        - implies a waybit child
+                    - 'direct underbit'
+                        - implies a waybit parent
             * genealogical
                 - conventional for XML
 
@@ -200,8 +216,8 @@ wayic.script/doc.task - Wayscript / documentation in rough
                     </parent>
 
                 - other useful terms of genealogy
-                    - for any two children of the same parent, each is a *sibling* of the other
-                    - *ancestor* and *descendant* are also common
+                    - for any two children of the same parent, each is a 'sibling' of the other
+                    - 'ancestor' and 'descendant' are also common
                 - unfortunately the words 'parent' and 'child' may suggest a relation of guardian-dependant
                     - which is contradictory
                     - because here the 'parent' waybit is dependant on the 'child' waybits
@@ -443,7 +459,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
                     - there encodes a normal declaration
               / - disallowed for source nodes that are considered by default
               /   to be uniquely personal
-              /     - such as commitment source nodes (those targeting /actor/#commitment)
+              /     - such as commitment declaration (source nodes targeting /actor/#commitment)
               /     - instead declare them on separate lines of wayscript
               /     - why
               /         - they are implicitly marked as CUSTOM lines
