@@ -452,7 +452,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
                         = extend support to all target nodes
                             - taking the namespace from the target
                             - by making use of readable.js ChangeablePartRendering
-                    - has a local name of '_iso'
+                    - has a local name of '_same'
                     - has the same *cog:link* attribute as the first waybit
                     - is without content
                     - is placed as a direct child of the first waybit
@@ -475,7 +475,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
                     - reason: in some applications, it might be infeasible to represent
                         - e.g. where the application gives to source and target nodes
                           distinct representations that would be difficult to combine as one
-                - a local name of '_iso' means *same as the target name*
+                - a local name of '_same' means *same as the target name*
                     - effectively it has the same name as the target node
                 - must have the same namespace as the target node
                     ( or it's an error
