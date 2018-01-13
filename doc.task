@@ -466,7 +466,9 @@ wayic.script/doc.task - Wayscript / documentation in rough
                         = extend support to all target nodes
                             - taking the namespace from the target
                             - by making use of readable.js ChangeablePartRendering
-                    - has a local name of '_same'
+                    - has a local name of '_'
+                        - making it anonymous
+                        ( rationale: truer to the form of a tagless declaration, which itself is anonymous
                     - has the same *cog:link* attribute as the first waybit
                     - is without content
                     - is placed as a direct child of the first waybit
