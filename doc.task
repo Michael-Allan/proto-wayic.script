@@ -247,7 +247,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
     [ waylink dependencies
         - place waylink dependencies as siblings of the waylink declaration
         - two reasons for this placement:
-            1. a normal-form waylink declaration (source node) allows no content, no underbits
+            1. a waylink source node declaration allows no content, no underbits
                 - therefore its dependencies cannot be its underbits
             2.
                 - consider the common situation in which a dependency is justification or other warrant
@@ -450,52 +450,19 @@ wayic.script/doc.task - Wayscript / documentation in rough
             | a *same-document reference*
                 ( https://tools.ietf.org/html/rfc3986#section-4.4
                 - thus targeting a node in the same document
-        - two forms of waylink declaration
-            | tagless waylink declaration
-                < one in which the waybit has content
-                - this is a convenience
-                - it effectively translates to a second waybit called an 'entagment' of the declaration
-                - the entagment:
-                    - is a waybit simply
-                        - therefore the target node must also be a waybit simply
-                            - the same namespace, that is
-                            - else the link is malformed
-                        - reason is to ease coding
-                            - the basic entagment waybit need never be replaced
-                              after resolving the target
-                        = extend support to all target nodes
-                            - taking the namespace from the target
-                            - by making use of readable.js ChangeablePartRendering
-                    - has a local name of '_'
-                        - making it anonymous
-                        ( rationale: truer to the form of a tagless declaration, which itself is anonymous
-                    - has the same *cog:link* attribute as the first waybit
-                    - is without content
-                    - is placed as a direct child of the first waybit
-                    - there encodes a normal declaration
-              / - disallowed for source nodes that are considered by default
-              /   to be uniquely personal
-              /     - such as commitment declaration (source nodes targeting /actor/#commitment)
-              /     - instead declare them on separate lines of wayscript
-              /     - why
-              /         - they are implicitly marked as CUSTOM lines
-              /         - explictly declaring them on separate lines makes it easier
-              /           both for wayscribes to keep their special treatment in mind
-              /             - and for tools to implement it
-              // too onerous on wayscribe
-            | normal-form waylink declaration
-                < one in which the waybit is without content
-                - source's effective content is that of target
-                - must not have a *cog:lid* attribute
-                    - thereby declaring it also to be a target node
-                    - reason: in some applications, it might be infeasible to represent
-                        - e.g. where the application gives to source and target nodes
-                          distinct representations that would be difficult to combine as one
-                - a local name of '_same' means *same as the target name*
-                    - effectively it has the same name as the target node
-                - must have the same namespace as the target node
-                    ( or it's an error
-                    < e.g. only a step can target a step
+        - form
+            - no content
+                - the source's effective content will be that of target
+            - must not have a *cog:lid* attribute
+                - thereby declaring it also to be a target node
+                - reason: in some applications, it might be infeasible to represent
+                    - e.g. where the application gives to source and target nodes
+                      distinct representations that would be difficult to combine as one
+            - a local name of '_same' means *same as the target name*
+                - effectively it has the same name as the target node
+            - must have the same namespace as the target node
+                ( or it's an error
+                < e.g. only a step can target a step
         - target resolution
             - the URI reference is resolved in waycast space
                 ( q,v. in § cast element
