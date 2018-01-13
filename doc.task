@@ -100,7 +100,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
     - wayscript is basically the declaration of dependency relations among waybits
     - a dependency relation is declared either by nesting one waybit declaration in another
         - or by an equivalent waylink
-    - examples of nesting
+    [ examples of nesting
 
         * simple
             - one relation
@@ -200,8 +200,8 @@ wayic.script/doc.task - Wayscript / documentation in rough
                     </overbit>
 
                 - its utility is in specifying the type of elements that are related
-                    - 'overbit' implies a waybit descendant
-                    - 'underbit' implies a waybit ancestor
+                    - each of 'overbit' and 'underbit' implies a relation
+                      between descendant and ancestor elements wherein both elements are waybits
                 - other useful terms
                     - 'direct overbit'
                         - implies a waybit child
@@ -221,7 +221,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
                 - unfortunately the words 'parent' and 'child' may suggest a relation of guardian-dependant
                     - which is contradictory
                     - because here the 'parent' waybit is dependant on the 'child' waybits
-    - example of waylinkage
+    [ waylinkage examples
 
         <step_3 cog:lid='s3'>
             <step_2>
@@ -244,6 +244,20 @@ wayic.script/doc.task - Wayscript / documentation in rough
         - here step_1
             ( likewise step_2 or 3
             - is an indirect underbit of both step_5a and 5b
+    [ waylink dependencies
+        - place waylink dependencies as siblings of the waylink declaration
+        - two reasons for this placement:
+            1. a normal-form waylink declaration (source node) allows no content, no underbits
+                - therefore its dependencies cannot be its underbits
+            2.
+                - consider the common situation in which a dependency is justification or other warrant
+                  for the inclusion of the waylink
+                - such a warrant will often refer both to the link and its parent
+                    - because what it warrants is the parent's *inclusion* of the link
+                - placement of the the warranting waybit as a sibling of the link
+                    - and thus also as a direct underbit of the parent
+                    - gives it a direct connection to both of the referenced nodes
+                        - parent and link
 
     ____________________________________________________________________________________________________
     design constraints`
@@ -397,7 +411,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
             - one node of the relation (e.g. overbit) can fully define its edges
                 - no underbit being able to contradict the definition
                 - which simplifies machine (and human) processing of the structure
-    * *lid* attribute
+    * target nodes: the *lid* attribute
         < cog:lid, namespace data:,wayscript.cog
         - a waylink target node declaration
         - placement: a waybit
@@ -413,7 +427,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
             - purpose of this constraint
                 - allow the *lid* attribute to be rendered as an *id* attribute
                     - thereby allowing waylinks to operate as hyperlinks
-    * link attribute
+    * source nodes: the *link* attribute
         < cog:link, namespace data:,wayscript.cog
         - a waylink source node declaration
         - placement: a waybit
@@ -467,7 +481,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
               /           both for wayscribes to keep their special treatment in mind
               /             - and for tools to implement it
               // too onerous on wayscribe
-            | normal waylink declaration
+            | normal-form waylink declaration
                 < one in which the waybit is without content
                 - source's effective content is that of target
                 - must not have a *cog:lid* attribute
