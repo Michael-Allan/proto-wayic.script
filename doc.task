@@ -1,4 +1,4 @@
-wayic.script/doc.task - Wayscript / documentation in rough
+wayic.script/doc.task - Documentation in rough
 
     - begin at § practical constraints § minimal
 
@@ -190,6 +190,9 @@ wayic.script/doc.task - Wayscript / documentation in rough
                     - 'leafward'
                     - 'leafmost'
                         - most leafward
+                    - 'stem'
+                        - immediate rootward waybit
+                        - parent, in genealogical terms
 
             * over-under
                 - specific to wayscript
@@ -221,7 +224,7 @@ wayic.script/doc.task - Wayscript / documentation in rough
                 - unfortunately the words 'parent' and 'child' may suggest a relation of guardian-dependant
                     - which is contradictory
                     - because here the 'parent' waybit is dependant on the 'child' waybits
-    [ waylinkage examples
+    [ waylink examples
 
         <step_3 cog:lid='s3'>
             <step_2>
@@ -390,9 +393,11 @@ wayic.script/doc.task - Wayscript / documentation in rough
             ( see §
 
     ____________________________________________________________________________________________________
-    waylinkage`
+    waylink`
     - a waylink is a relation between two waybits (called waylink nodes)
       whereby the content of one (source node) becomes logically identical to the other (target node)
+    - purpose: waybit inclusion
+        - to include a separately declared waybit as part of a way definition
     - visually a waylink might be represented in different ways, including:
         | by a hyperlink from source to target
         | by placing a replica of the target's content in the source
@@ -484,4 +489,4 @@ wayic.script/doc.task - Wayscript / documentation in rough
 
 
 
-                                          Copyright © 2017-2018 Michael Allan and contributors.  Licence MIT.
+                                     Copyright © 2017-2018 Michael Allan and contributors.  Licence MIT.
