@@ -49,7 +49,7 @@ wayic.script/doc.task - Documentation in rough
         - to declare a compositional relation among waybits
             - one waybit (whole, composite) containing another (part, component)
             - e.g. "in saying *this* waybit I mean also *these* waybits which are its parts"
-        - cf. § waybit § relations § dependency
+        - cf. § waypath relations
     - example
           <P>
               <cog:including>
@@ -96,10 +96,241 @@ wayic.script/doc.task - Documentation in rough
                 - and containment is the most convenient and transparent form of defining them
 
     ____________________________________________________________________________________________________
-    dependency relations`
-    - wayscript is basically the declaration of dependency relations among waybits
-    - a dependency relation is declared either by nesting one waybit declaration in another
+    design constraints`
+    [ ⤓ minimal
+        - wayscript's necessary form
+        * XML-format HTML (XHTML)
+            ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
+            ( http://w3c.github.io/html/infrastructure.html#xml
+            ( http://w3c.github.io/html/xhtml.html
+            - HTML
+                ∵ wayscript is basic to the waycast
+                ∵ the *waycast* is public
+                    ( http://reluk.ca/project/way/engineer/wayics/cast/ay.xht#availability
+                ∵ the premiere medium of *publication* today is the web
+                ∵ the basic script of the *web* is HTML
+                ∴ HTML
+            - XML format
+                ∵ XML facilitates coping with the specialized elements and attributes of wayscript
+                    - these aspects of XML in particular:
+                        - namespacing
+                        - strict syntax and parsing
+                    - they facilitate:
+                        - defining the specialized elements and attributes of wayscript
+                        - writing them in source
+                        - processing them at runtime
+
+    ____________________________________________________________________________________________________
+    HTML inclusions`
+    - allowed
+    - hyperlinks within a wayscript
+        - the *href* attribute of the *a* element is resolved in waycast space
+            ( q,v. in § cast element
+
+    ____________________________________________________________________________________________________
+    location`
+    - executable wayscript is restricted to URL paths that end in '/way.xht'
+    - in practice this means:
+        - when storing wayscript in a file, name the file 'way.xht'
+    - the purpose of this constraint is to simplify the automated tracing of way declarations that extend
+      across multiple, linked documents
+
+    ____________________________________________________________________________________________________
+    namespace`
+    - XML namespaces for wayscript
+    - hierarchy
+        * supernamespace
+            - examples
+                < data:,wayscript.
+                < data:,wayscript.bit.
+        * subnamespace
+            - also '*'
+            - examples
+                < bit
+                < bit.step
+                < step
+    [ bit
+        < data:,wayscript.bit
+        - namespace of waybits simply, excluding subspaced waybits such as steps
+    * bits
+        < data:,wayscript.bit.*
+        - namespaces of bit subtypes
+            - such as step
+            - or others independently defined elsewhere
+    [ cog
+        < data:,wayscript.cog
+        - general-purpose namespace
+    [ step
+        < data:,wayscript.bit.step
+        - namespace of steps
+    * wayscript
+        < data:,wayscript.*
+        - supernamespace of all wayscript
+
+    ____________________________________________________________________________________________________
+    practical constraints`
+    [ ⤓ minimal
+        - what the wayscribe must have
+        * a basic knowledge of wayscript
+            - begin at:
+                § location
+                § waypath relations among waybits
+        * a waycast
+            ( http://reluk.ca/project/wayic/cast/
+            - wayscript is proper to the waycast
+        * a web renderer
+            | wayic.read
+                ( http://reluk.ca/project/wayic/read/
+                - there's no other at present
+
+    ____________________________________________________________________________________________________
+    step`
+    < namespaced data:,wayscript.bit.step
+    - a volitive waybit
+        - a distinct|discrete act
+        - e.g. a step or stage in a plan
+    - enactment order is defined as a waypath relation (§ q.v.)
+        - by nesting prior steps within subsequent steps
+        ( again not as a sibling relation
+
+    ____________________________________________________________________________________________________
+    waybit`
+    - a distinct|discrete part of a way
+        - formed as an XML element
+    - naming
+        - naming is free-form
+            - except for reserved names
+        - purpose of names
+            - to help the reader understand the waybits
+                - their relations
+                - and the larger ways [they compose]
+                - to bring out their meaning
+            - to serve as placeholders for waybits
+                - especially in the more compressed views
+                - the names will stand in for the waybits
+      / - best not be indispensible to the meaning of the waybit
+      /     - because a waylink source (within its context) may effectively change the target name
+      // no room here for wayscripting tips, which would need clarifying by example script
+        - reserved names
+            - names beginning with an underscore ‘_’ are reserved
+                - don’t use such names for normal purposes
+        - a name of '_' means no name (anonymous waybit)
+    - relations
+        - composition, see §
+        - waypath, see §
+        - the sibling relation has no generally defined meaning
+    - types
+        * waybit simply
+            < namespaced data:,wayscript.bit
+        * step
+            ( see §
+
+    ____________________________________________________________________________________________________
+    waylink`
+    - a waylink is a relation between two waybits (called waylink nodes)
+      whereby the content of one (source node) becomes logically identical to the other (target node)
+    - purpose: waybit inclusion
+        - to include a separately declared waybit as part of a way declaration
+    - visually a waylink might be represented in different ways, including:
+        | by a hyperlink from source to target
+        | by placing a replica of the target's content in the source
+    - the mapping between waylink source nodes and waylinks entire is 1:1
+        - each source noded effectively declares a separate waylink
+        ( the same is not true of target nodes, which map to waylinks 1:N
+    - declaration is unidirectional
+        - from source node to target node
+      / - except in the case of a waypath loop, q.v.
+        - for sake of general simplicity and robustness
+            - subordinate building blocks (e.g. underbits) can be implemented
+              blind to the uses (overbits) they will be put in future
+                - discourages unecessary overbit attachements/assumptions
+                  that would tend to increase complexity
+                  and decrease robustness of the overall structure
+            - one node of the relation (e.g. overbit) can fully define its edges
+                - no underbit being able to contradict the definition
+                - which simplifies machine (and human) processing of the structure
+    * target nodes: the *lid* attribute
+        < cog:lid, namespace data:,wayscript.cog
+        - a waylink target node declaration
+        - placement: a waybit
+            - one that is actually targeted by a waylink source node
+                - an untargeted waybit with a *cog:lid* attribute is malformed
+        - content: XML ID
+            - differing somewhat from HTML *id* attribute, which is less strictly formed
+            - pending any reason to loosen that restriction
+        - equality of *id* and *lid* attributes
+            - if the waybit also has an HTML *id* attribute
+                - then the two attributes must have equal values
+                - else the waybit is malformed
+            - purpose of this constraint
+                - allow the *lid* attribute to be rendered as an *id* attribute
+                    - thereby allowing waylinks to operate as hyperlinks
+    * source nodes: the *link* attribute
+        < cog:link, namespace data:,wayscript.cog
+        - a waylink source node declaration
+        - placement: a waybit
+        - content is a fragment preceded by a URI reference that is either:
+            | a full URI
+                ( https://tools.ietf.org/html/rfc3986#section-1.1.1
+                ( https://tools.ietf.org/html/rfc3986#section-3
+                ( https://tools.ietf.org/html/rfc3986#section-3.1
+                - viz. having a scheme
+            | a *path-absolute*
+                ( https://tools.ietf.org/html/rfc3986#section-3.3
+                - it will be resolved in waycast space
+                    ( see § target resolution
+                - no allowance for relative paths
+                    - e.g. beginning with a '.', '..' or file name
+                    - reason
+                        - to ease the tracing of a way that extends across multiple documents
+                        - relative paths are harder to follow
+                            ( see e.g. normalizeURL in http://reluk.ca/project/wayic/read/readable.js
+            | a *same-document reference*
+                ( https://tools.ietf.org/html/rfc3986#section-4.4
+                - thus targeting a node in the same document
+        - form
+            - no content
+                - the source's effective content will be that of target
+            - must not have a *cog:lid* attribute
+                - thereby declaring it also to be a target node
+                - reason: in some applications, it might be infeasible to represent
+                    - e.g. where the application gives to source and target nodes
+                      distinct representations that would be difficult to combine as one
+            - a local name of '_same' means *same as the target name*
+                - effectively it has the same name as the target node
+            - must have the same namespace as the target node
+                ( or it's an error
+                < e.g. only a step can target a step
+        - target resolution
+            - the URI reference is resolved in waycast space
+                ( q,v. in § cast element
+            - this (together with the restriction against relative paths)
+              ensures that any reference needing resolution (not a full URI)
+              resolves to a target in the same waycast
+                - why this constraint is wanted: self containment for the sake of portability
+                    - especially for the purpose of propagation
+                        ( http://reluk.ca/project/way/engineer/wayics/cast/way.xht#ever_F
+            - if the terminal path component is a directory
+                - so indicated by a terminating slash '/'
+                - then 'way.xht' is assumed as the file name
+            - the URL must include a fragment to identify the target node
+                < see attribute *cog:lid*
+      / - waypath loop
+      /     - may occur when the target node is an ancestor waybit
+      /     - formally allowed though it's not always guaranteed to make sense
+      // till I encounter the need, and can give it as an example
+
+    ____________________________________________________________________________________________________
+    waypath relations`
+    - wayscript is basically the declaration of waypath relations among waybits
+    - a waypath relation is declared either by nesting one waybit declaration in another
         - or by an equivalent waylink
+    - waypath relations are dependency relations
+        - but 'depend' is not the preferred term here
+        - unfortunately it suggests a thing that hangs below
+            - which is contradictory in this context
+            - where what depends (the dependant) is written above its dependencies
+            - which nest inside of it
     [ examples of nesting
 
         * simple
@@ -134,10 +365,6 @@ wayic.script/doc.task - Documentation in rough
                 <dependant>
                     <dependency/>
                     </dependant>
-
-                - unfortunately the word 'dependant' may suggest a thing that hangs below
-                    - which is contradictory
-                    - because here the dependant is written above
 
             * specific
 
@@ -221,9 +448,11 @@ wayic.script/doc.task - Documentation in rough
                 - other useful terms of genealogy
                     - for any two children of the same parent, each is a 'sibling' of the other
                     - 'ancestor' and 'descendant' are also common
-                - unfortunately the words 'parent' and 'child' may suggest a relation of guardian-dependant
-                    - which is contradictory
-                    - because here the 'parent' waybit is dependant on the 'child' waybits
+              / - unfortunately the words 'parent' and 'child' may suggest
+              /   a relation between guardian and dependant
+              /     - which is contradictory in this context
+              /     - because here the 'parent' waybit depends on the 'child' waybits
+              // negligible in practice, because it's the convention
     [ waylink examples
 
         <step_3 cog:lid='s3'>
@@ -261,231 +490,6 @@ wayic.script/doc.task - Documentation in rough
                     - and thus also as a direct underbit of the parent
                     - gives it a direct connection to both of the referenced nodes
                         - parent and link
-
-    ____________________________________________________________________________________________________
-    design constraints`
-    [ ⤓ minimal
-        - wayscript's necessary form
-        * XML-format HTML (XHTML)
-            ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
-            ( http://w3c.github.io/html/infrastructure.html#xml
-            ( http://w3c.github.io/html/xhtml.html
-            - HTML
-                ∵ wayscript is basic to the waycast
-                ∵ the *waycast* is public
-                    ( http://reluk.ca/project/way/engineer/wayics/cast/ay.xht#availability
-                ∵ the premiere medium of *publication* today is the web
-                ∵ the basic script of the *web* is HTML
-                ∴ HTML
-            - XML format
-                ∵ XML facilitates coping with the specialized elements and attributes of wayscript
-                    - these aspects of XML in particular:
-                        - namespacing
-                        - strict syntax and parsing
-                    - they facilitate:
-                        - defining the specialized elements and attributes of wayscript
-                        - writing them in source
-                        - processing them at runtime
-
-    ____________________________________________________________________________________________________
-    HTML inclusions`
-    - allowed
-    - hyperlinks within a wayscript
-        - the *href* attribute of the *a* element is resolved in waycast space
-            ( q,v. in § cast element
-
-    ____________________________________________________________________________________________________
-    location`
-    - executable wayscript is restricted to URL paths that end in '/way.xht'
-    - in practice this means:
-        - when storing wayscript in a file, name the file 'way.xht'
-    - the purpose of this constraint is to simplify the automated tracing of way declarations that extend
-      across multiple, linked documents
-
-    ____________________________________________________________________________________________________
-    namespace`
-    - XML namespaces for wayscript
-    - hierarchy
-        * supernamespace
-            - examples
-                < data:,wayscript.
-                < data:,wayscript.bit.
-        * subnamespace
-            - also '*'
-            - examples
-                < bit
-                < bit.step
-                < step
-    [ bit
-        < data:,wayscript.bit
-        - namespace of waybits simply, excluding subspaced waybits such as steps
-    * bits
-        < data:,wayscript.bit.*
-        - namespaces of bit subtypes
-            - such as step
-            - or others independently defined elsewhere
-    [ cog
-        < data:,wayscript.cog
-        - general-purpose namespace
-    [ step
-        < data:,wayscript.bit.step
-        - namespace of steps
-    * wayscript
-        < data:,wayscript.*
-        - supernamespace of all wayscript
-
-    ____________________________________________________________________________________________________
-    practical constraints`
-    [ ⤓ minimal
-        - what the wayscribe must have
-        * a basic knowledge of wayscript
-            - begin at:
-                § location
-                § dependency relations among waybits
-        * a waycast
-            ( http://reluk.ca/project/wayic/cast/
-            - wayscript is proper to the waycast
-        * a web renderer
-            | wayic.read
-                ( http://reluk.ca/project/wayic/read/
-                - there's no other at present
-
-    ____________________________________________________________________________________________________
-    step`
-    < namespaced data:,wayscript.bit.step
-    - a volitive waybit
-        - a distinct|discrete act
-        - e.g. a step or stage in a plan
-    - enactment order is defined as a dependency relation (§ q.v.)
-        - by nesting prior steps within subsequent steps
-        ( again not as a sibling relation
-
-    ____________________________________________________________________________________________________
-    waybit`
-    - a distinct|discrete part of a way
-        - formed as an XML element
-    - naming
-        - naming is free-form
-            - except for reserved names
-        - purpose of names
-            - to help the reader understand the waybits
-                - their relations
-                - and the larger ways [they compose]
-                - to bring out their meaning
-            - to serve as placeholders for waybits
-                - especially in the more compressed views
-                - the names will stand in for the waybits
-      / - best not be indispensible to the meaning of the waybit
-      /     - because a waylink source (within its context) may effectively change the target name
-      // no room here for wayscripting tips, which would need clarifying by example script
-        - reserved names
-            - names beginning with an underscore ‘_’ are reserved
-                - don’t use such names for normal purposes
-        - a name of '_' means no name (anonymous waybit)
-    - relations
-        - composition, see §
-        - dependency, see §
-        - the sibling relation has no generally defined meaning
-    - types
-        * waybit simply
-            < namespaced data:,wayscript.bit
-        * step
-            ( see §
-
-    ____________________________________________________________________________________________________
-    waylink`
-    - a waylink is a relation between two waybits (called waylink nodes)
-      whereby the content of one (source node) becomes logically identical to the other (target node)
-    - purpose: waybit inclusion
-        - to include a separately declared waybit as part of a way declaration
-    - visually a waylink might be represented in different ways, including:
-        | by a hyperlink from source to target
-        | by placing a replica of the target's content in the source
-    - the mapping between waylink source nodes and waylinks entire is 1:1
-        - each source noded effectively declares a separate waylink
-        ( the same is not true of target nodes, which map to waylinks 1:N
-    - declaration is unidirectional
-        - from source node to target node
-      / - except in the case of a dependency loop, q.v.
-        - for sake of general simplicity and robustness
-            - subordinate building blocks (e.g. underbits) can be implemented
-              blind to the uses (overbits) they will be put in future
-                - discourages unecessary overbit attachements/assumptions
-                  that would tend to increase complexity
-                  and decrease robustness of the overall structure
-            - one node of the relation (e.g. overbit) can fully define its edges
-                - no underbit being able to contradict the definition
-                - which simplifies machine (and human) processing of the structure
-    * target nodes: the *lid* attribute
-        < cog:lid, namespace data:,wayscript.cog
-        - a waylink target node declaration
-        - placement: a waybit
-            - one that is actually targeted by a waylink source node
-                - an untargeted waybit with a *cog:lid* attribute is malformed
-        - content: XML ID
-            - differing somewhat from HTML *id* attribute, which is less strictly formed
-            - pending any reason to loosen that restriction
-        - equality of *id* and *lid* attributes
-            - if the waybit also has an HTML *id* attribute
-                - then the two attributes must have equal values
-                - else the waybit is malformed
-            - purpose of this constraint
-                - allow the *lid* attribute to be rendered as an *id* attribute
-                    - thereby allowing waylinks to operate as hyperlinks
-    * source nodes: the *link* attribute
-        < cog:link, namespace data:,wayscript.cog
-        - a waylink source node declaration
-        - placement: a waybit
-        - content is a fragment preceded by a URI reference that is either:
-            | a full URI
-                ( https://tools.ietf.org/html/rfc3986#section-1.1.1
-                ( https://tools.ietf.org/html/rfc3986#section-3
-                ( https://tools.ietf.org/html/rfc3986#section-3.1
-                - viz. having a scheme
-            | a *path-absolute*
-                ( https://tools.ietf.org/html/rfc3986#section-3.3
-                - it will be resolved in waycast space
-                    ( see § target resolution
-                - no allowance for relative paths
-                    - e.g. beginning with a '.', '..' or file name
-                    - reason
-                        - to ease the tracing of a way that extends across multiple documents
-                        - relative paths are harder to follow
-                            ( see e.g. normalizeURL in http://reluk.ca/project/wayic/read/readable.js
-            | a *same-document reference*
-                ( https://tools.ietf.org/html/rfc3986#section-4.4
-                - thus targeting a node in the same document
-        - form
-            - no content
-                - the source's effective content will be that of target
-            - must not have a *cog:lid* attribute
-                - thereby declaring it also to be a target node
-                - reason: in some applications, it might be infeasible to represent
-                    - e.g. where the application gives to source and target nodes
-                      distinct representations that would be difficult to combine as one
-            - a local name of '_same' means *same as the target name*
-                - effectively it has the same name as the target node
-            - must have the same namespace as the target node
-                ( or it's an error
-                < e.g. only a step can target a step
-        - target resolution
-            - the URI reference is resolved in waycast space
-                ( q,v. in § cast element
-            - this (together with the restriction against relative paths)
-              ensures that any reference needing resolution (not a full URI)
-              resolves to a target in the same waycast
-                - why this constraint is wanted: self containment for the sake of portability
-                    - especially for the purpose of propagation
-                        ( http://reluk.ca/project/way/engineer/wayics/cast/way.xht#ever_F
-            - if the terminal path component is a directory
-                - so indicated by a terminating slash '/'
-                - then 'way.xht' is assumed as the file name
-            - the URL must include a fragment to identify the target node
-                < see attribute *cog:lid*
-      / - dependency loop
-      /     - may occur when the target node is an ancestor waybit
-      /     - formally allowed though it's not always guaranteed to make sense
-      // till I encounter the need, and can give it as an example
 
 
 
