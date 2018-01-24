@@ -46,7 +46,7 @@ wayic.script/doc.task - Documentation in rough
             - waybits
             - their order as siblings is irrelevant
     - purpose
-        - to define a composition relation among waybits
+        - to declare a compositional relation among waybits
             - one waybit (whole, composite) containing another (part, component)
             - e.g. "in saying *this* waybit I mean also *these* waybits which are its parts"
         - cf. § waybit § relations § dependency
@@ -299,7 +299,7 @@ wayic.script/doc.task - Documentation in rough
     - executable wayscript is restricted to URL paths that end in '/way.xht'
     - in practice this means:
         - when storing wayscript in a file, name the file 'way.xht'
-    - the purpose of this constraint is to simplify the automated tracing of way definitions that extend
+    - the purpose of this constraint is to simplify the automated tracing of way declarations that extend
       across multiple, linked documents
 
     ____________________________________________________________________________________________________
@@ -397,7 +397,7 @@ wayic.script/doc.task - Documentation in rough
     - a waylink is a relation between two waybits (called waylink nodes)
       whereby the content of one (source node) becomes logically identical to the other (target node)
     - purpose: waybit inclusion
-        - to include a separately declared waybit as part of a way definition
+        - to include a separately declared waybit as part of a way declaration
     - visually a waylink might be represented in different ways, including:
         | by a hyperlink from source to target
         | by placing a replica of the target's content in the source
