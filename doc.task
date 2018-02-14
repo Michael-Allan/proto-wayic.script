@@ -106,7 +106,7 @@ wayic.script/doc.task - Documentation in rough
             - HTML
                 ∵ wayscript is basic to the waycast
                 ∵ the *waycast* is public
-                    ( http://reluk.ca/project/way/engineer/wayics/cast/ay.xht#availability
+                    ( http://reluk.ca/project/waycast/engineer/wayics/cast/way.xht#availability
                 ∵ the premiere medium of *publication* today is the web
                 ∵ the basic script of the *web* is HTML
                 ∴ HTML
@@ -309,7 +309,7 @@ wayic.script/doc.task - Documentation in rough
               resolves to a target in the same waycast
                 - why this constraint is wanted: self containment for the sake of portability
                     - especially for the purpose of propagation
-                        ( http://reluk.ca/project/way/engineer/wayics/cast/way.xht#ever_F
+                        ( http://reluk.ca/project/waycast/engineer/wayics/cast/way.xht#ever_F
             - if the terminal path component is a directory
                 - so indicated by a terminating slash '/'
                 - then 'way.xht' is assumed as the file name
