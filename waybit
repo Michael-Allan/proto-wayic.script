@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en-CA' xml:lang='en-CA'>
+    <head>
+        <title>‘waybit’</title>
+        </head>
+    <body>
+        <!-- <<< deindent -->
+
+<section      id='waybit'>
+    <h2><a href='#waybit'>
+                  waybit</a></h2>
+    <ul>
+        <li>
+            a basic <a href='wayscript'>wayscript</a> unit formed as an XML element
+            and declaring a part of the way
+            </li>
+        </ul>
+    </section>
+
+        <!-- >>> reindent -->
+        </body>
+    </html>
