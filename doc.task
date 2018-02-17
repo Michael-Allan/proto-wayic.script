@@ -11,6 +11,7 @@ wayic.script/doc.task - Documentation in rough
         < no namespace
         - the relative URL path to the base directory of the waycast
         - examples
+            - for document waycast/way.xht,         <cog:cast base='.'>
             - for document waycast/one/way.xht,     <cog:cast base='..'>
             - for document waycast/one/two/way.xht, <cog:cast base='../..'>
     - purpose: to enable resolution of URLs in waycast space
@@ -195,8 +196,7 @@ wayic.script/doc.task - Documentation in rough
 
     ____________________________________________________________________________________________________
     waybit`
-    - a distinct|discrete part of a way
-        - formed as an XML element
+    ( waybit#waybit
     - naming
         - naming is free-form
             - except for reserved names
