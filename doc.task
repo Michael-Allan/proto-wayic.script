@@ -25,6 +25,17 @@ wayic.script/doc.task - Documentation in rough
             - then its leading '/' stands for the base directory of the waycast
 
     ____________________________________________________________________________________________________
+    commitment declaration`
+    - a type of waylink
+    [ intracast
+        ( intracast commitment declaration
+        - currently documented in source text of http://reluk.ca/project/waycast/way.xht#commitment
+            = copy that documentation to here
+    [ intercast
+        ( intercast commitment declaration
+        - see wayic.intercast § commitment declaration § intercast
+
+    ____________________________________________________________________________________________________
     composer elements and composition`
     - one waybit (whole, composite) logical containing another (part, component)
     [ comprising
