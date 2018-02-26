@@ -5,7 +5,7 @@ wayic.script/doc.task - Documentation in rough
     ____________________________________________________________________________________________________
     cast element`
     < cog:cast, namespace data:,wayscript.cog
-    - properties of the larger waycast wherein the wayscript document is stored
+    - properties of the larger waycast wherein the way document is stored
     - placed in document head
     * *base* attribute
         < no namespace
