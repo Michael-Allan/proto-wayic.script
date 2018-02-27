@@ -260,23 +260,16 @@ wayic.script/doc.task - Documentation in rough
             - one node of the relation (e.g. overbit) can fully define its edges
                 - no underbit being able to contradict the definition
                 - which simplifies machine (and human) processing of the structure
-    * target nodes: the *lid* attribute
-        < cog:lid, namespace data:,wayscript.cog
-        - a waylink target node declaration
-        - placement: a waybit
-            - one that is actually targeted by a waylink source node
-                - an untargeted waybit with a *cog:lid* attribute is malformed
-        - content: XML ID
-            - differing somewhat from HTML *id* attribute, which is less strictly formed
-            - pending any reason to loosen that restriction
-        - equality of *id* and *lid* attributes
-            - if the waybit also has an HTML *id* attribute
-                - then the two attributes must have equal values
-                - else the waybit is malformed
-            - purpose of this constraint
-                - allow the *lid* attribute to be rendered as an *id* attribute
-                    - thereby allowing waylinks to operate as hyperlinks
-    * source nodes: the *link* attribute
+    [ target node: the *id* attribute
+        < no namespace
+        - content: XML ID, unique within document
+            - stricter than the formal requirement of HTML
+            - to be sure, pending any urgent cause for a looser form
+        - the conditions of a waylink target node, which define it as such:
+            - it is a waybit
+            - it has an *id* attribute in proper form
+            - it is targeted by a waylink source node
+    [ source node: the *link* attribute
         < cog:link, namespace data:,wayscript.cog
         - a waylink source node declaration
         - placement: a waybit
@@ -302,8 +295,8 @@ wayic.script/doc.task - Documentation in rough
         - form
             - no content
                 - the source's effective content will be that of target
-            - must not have a *cog:lid* attribute
-                - thereby declaring it also to be a target node
+            - must not have an *id* attribute
+                - thereby enabling it also to serve as a target node
                 - reason: in some applications, it might be infeasible to represent
                     - e.g. where the application gives to source and target nodes
                       distinct representations that would be difficult to combine as one
@@ -325,7 +318,6 @@ wayic.script/doc.task - Documentation in rough
                 - so indicated by a terminating slash '/'
                 - then 'way.xht' is assumed as the file name
             - the URL must include a fragment to identify the target node
-                < see attribute *cog:lid*
       / - waypath loop
       /     - may occur when the target node is an ancestor waybit
       /     - formally allowed though it's not always guaranteed to make sense
@@ -466,7 +458,7 @@ wayic.script/doc.task - Documentation in rough
               // negligible in practice, because it's the convention
     [ waylink examples
 
-        <step_3 cog:lid='s3'>
+        <step_3 id='s3'>
             <step_2>
                 <step_1/>
                 </step_2>
