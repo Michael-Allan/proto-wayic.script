@@ -26,7 +26,7 @@ wayic.script/doc.task - Documentation in rough
 
     ____________________________________________________________________________________________________
     commitment declaration`
-    - a type of waylink
+    - a type of bitform waylink
     [ intracast
         ( intracast commitment declaration
         - currently documented in source text of http://reluk.ca/project/waycast/way.xht#commitment
@@ -135,7 +135,7 @@ wayic.script/doc.task - Documentation in rough
     ____________________________________________________________________________________________________
     HTML inclusions`
     - allowed
-    - hyperlinks within a wayscript
+    - hyperlinks within wayscript
         - the *href* attribute of the *a* element is resolved in waycast space
             ( q,v. in § cast element
 
@@ -144,8 +144,8 @@ wayic.script/doc.task - Documentation in rough
     - executable wayscript is restricted to URL paths that end in '/way.xht'
     - in practice this means:
         - when storing wayscript in a file, name the file 'way.xht'
-    - the purpose of this constraint is to simplify the automated tracing of way declarations that extend
-      across multiple, linked documents
+    - the purpose of this constraint is to simplify automated tracing of inter-document way declarations
+        - those that extend across multiple, linked documents
 
     ____________________________________________________________________________________________________
     namespace`
@@ -220,7 +220,7 @@ wayic.script/doc.task - Documentation in rough
                 - especially in the more compressed views
                 - the names will stand in for the waybits
       / - best not be indispensible to the meaning of the waybit
-      /     - because a waylink source (within its context) may effectively change the target name
+      /     - ∵ a bitform waylink source (within its context) may effectively change the target name
       // no room here for wayscripting tips, which would need clarifying by example script
         - reserved names
             - names beginning with an underscore ‘_’ are reserved
@@ -238,17 +238,12 @@ wayic.script/doc.task - Documentation in rough
 
     ____________________________________________________________________________________________________
     waylink`
-    - a waylink is a relation between two waybits (called waylink nodes)
-      whereby the content of one (source node) becomes logically identical to the other (target node)
-    - purpose: waybit inclusion
-        - to include a separately declared waybit as part of a way declaration
-    - visually a waylink might be represented in different ways, including:
-        | by a hyperlink from source to target
-        | by placing a replica of the target's content in the source
-    - the mapping between waylink source nodes and waylinks entire is 1:1
-        - each source noded effectively declares a separate waylink
+    - a waylink is a relation between two elements: a source node and a target node
+    - purpose: to declare a waypath relation with a remotely declared waybit
+    - the mapping between source nodes and waylinks entire is 1:1
+        - each source node effectively declares a separate waylink
         ( the same is not true of target nodes, which map to waylinks 1:N
-    - declaration is unidirectional
+    - linkage is declared unidirectionally
         - from source node to target node
       / - except in the case of a waypath loop, q.v.
         - for sake of general simplicity and robustness
@@ -272,7 +267,6 @@ wayic.script/doc.task - Documentation in rough
     [ source node: the *link* attribute
         < cog:link, namespace data:,wayscript.cog
         - a waylink source node declaration
-        - placement: a waybit
         - content is a fragment preceded by a URI reference that is either:
             | a full URI
                 ( https://tools.ietf.org/html/rfc3986#section-1.1.1
@@ -292,19 +286,6 @@ wayic.script/doc.task - Documentation in rough
             | a *same-document reference*
                 ( https://tools.ietf.org/html/rfc3986#section-4.4
                 - thus targeting a node in the same document
-        - form
-            - no content
-                - the source's effective content will be that of target
-            - must not have an *id* attribute
-                - thereby enabling it also to serve as a target node
-                - reason: in some applications, it might be infeasible to represent
-                    - e.g. where the application gives to source and target nodes
-                      distinct representations that would be difficult to combine as one
-            - a local name of '_same' means *same as the target name*
-                - effectively it has the same name as the target node
-            - must have the same namespace as the target node
-                ( or it's an error
-                < e.g. only a step can target a step
         - target resolution
             - the URI reference is resolved in waycast space
                 ( q,v. in § cast element
@@ -321,13 +302,45 @@ wayic.script/doc.task - Documentation in rough
       / - waypath loop
       /     - may occur when the target node is an ancestor waybit
       /     - formally allowed though it's not always guaranteed to make sense
-      // till I encounter the need, and can give it as an example
+      // till I encounter the need in practice, and can give that as an example
+        - two forms of waylink source node are defined:
+            + bitform
+                - placement: a waybit
+                - form
+                    - no content
+                        - the source's effective content will be that of target
+                    - no *id* attribute
+                        - disallowed
+                        - thereby enabling it also to serve as a target node
+                        - reason: in some applications, it might be infeasible to represent
+                            - e.g. where the application gives to source and target nodes
+                              distinct representations that would be difficult to combine as one
+                    - a local name of '_same' means *same as the target name*
+                        - effectively it has the same name as the target node
+                    - must have the same namespace as the target node
+                        ( or it's an error
+                        < e.g. only a step can target a step
+                - effect
+                    - the content of the source node is declared to be logically identical
+                      to that of the target node
+                    - visually a bitform waylink might be represented in different ways, including:
+                        | by a hyperlink from source to target
+                        | by placing a replica of the target's content in the source
+            + hyperform
+                - placement: an HTML *a* element that descends from a waybit
+                - form
+                    - no *href* attribute
+                        - disallowed
+                        - the reference is given by the *link* attribute instead
+                - effect
+                    - the target node gains a waypath relation as though it were co-located
+                      with the *a* element
 
     ____________________________________________________________________________________________________
     waypath relations`
     - wayscript is basically the declaration of waypath relations among waybits
     - a waypath relation is declared either by nesting one waybit declaration in another
-        - or by an equivalent waylink
+        - or by an equivalent waylink declaration
     - waypath relations are dependency relations
         - but 'depend' is not the preferred term here
         - unfortunately it suggests a thing that hangs below
@@ -476,13 +489,11 @@ wayic.script/doc.task - Documentation in rough
                 </step_4b>
             </step_5b>
 
-        - here step_1
-            ( likewise step_2 or 3
-            - is an indirect underbit of both step_5a and 5b
+        - here step_1 (or step_2, or step_3) is an indirect underbit of both step_5a and 5b
     [ waylink dependencies
-        - place waylink dependencies as siblings of the waylink declaration
+        - place bitform waylink dependencies as siblings of the waylink declaration
         - two reasons for this placement:
-            1. a waylink source node declaration allows no content, no underbits
+            1. a bitform waylink source node declaration allows no content, no underbits
                 - therefore its dependencies cannot be its underbits
             2.
                 - consider the common situation in which a dependency is justification or other warrant
