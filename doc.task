@@ -144,7 +144,7 @@ wayic.script/doc.task - Documentation in rough
     - executable wayscript is restricted to URL paths that end in '/way.xht'
     - in practice this means:
         - when storing wayscript in a file, name the file 'way.xht'
-    - the purpose of this constraint is to simplify automated tracing of inter-document way declarations
+    - the purpose of this constraint is to simplify automated tracing of interdocument way declarations
         - those that extend across multiple, linked documents
 
     ____________________________________________________________________________________________________

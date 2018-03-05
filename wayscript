@@ -4,7 +4,7 @@
         <title>‘wayscript’</title>
         </head>
     <body>
-        <!-- <<< deindent -->
+
 
 <section      id='wayscript'>
     <h2><a href='#wayscript'>
@@ -22,6 +22,6 @@
         </ul>
     </section>
 
-        <!-- >>> reindent -->
+
         </body>
     </html>
