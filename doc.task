@@ -305,7 +305,7 @@ wayic.script/doc.task - Documentation in rough
       // till I encounter the need in practice, and can give that as an example
         - two forms of waylink source node are defined:
             + bitform
-                - placement: a waybit
+                - placement: as a waybit
                 - form
                     - no content
                         - the source's effective content will be that of target
@@ -327,7 +327,7 @@ wayic.script/doc.task - Documentation in rough
                         | by a hyperlink from source to target
                         | by placing a replica of the target's content in the source
             + hyperform
-                - placement: an HTML *a* element that descends from a waybit
+                - placement: as an HTML *a* element that descends from a waybit
                 - form
                     - no *href* attribute
                         - disallowed
