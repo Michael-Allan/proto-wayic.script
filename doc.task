@@ -3,28 +3,6 @@ wayic.script/doc.task - Documentation in rough
     - begin at § practical constraints § minimal
 
     ____________________________________________________________________________________________________
-    cast element`
-    < cog:cast, namespace data:,wayscript.cog
-    - properties of the larger waycast wherein the way document is stored
-    - placed in document head
-    * *base* attribute
-        < no namespace
-        - the relative URL path to the base directory of the waycast
-        - examples
-            - for document waycast/way.xht,         <cog:cast base='.'>
-            - for document waycast/one/way.xht,     <cog:cast base='..'>
-            - for document waycast/one/two/way.xht, <cog:cast base='../..'>
-    - purpose: to enable resolution of URLs in waycast space
-    - waycast space
-        - a waycast space is a URI resolution context whose base URI identifies a waycast base directory
-            ( https://tools.ietf.org/html/rfc3986#section-5
-        - its main purpose is to resolve the URI references of waylinks and hyperlinks
-        - for each URI reference in waycast space
-            - if it has *path-absolute* form
-                ( https://tools.ietf.org/html/rfc3986#section-3.3
-            - then its leading '/' stands for the base directory of the waycast
-
-    ____________________________________________________________________________________________________
     commitment declaration`
     - a type of bitform waylink
     [ intracast
@@ -235,6 +213,16 @@ wayic.script/doc.task - Documentation in rough
             < namespaced data:,wayscript.bit
         * step
             ( see §
+
+    ____________________________________________________________________________________________________
+    waycast space`
+    - a waycast space is a URI resolution context whose base URI identifies a waycast base directory
+        ( https://tools.ietf.org/html/rfc3986#section-5
+    - its main purpose is to resolve the URI references of waylinks and hyperlinks
+    - for each URI reference in waycast space
+        - if it has *path-absolute* form
+            ( https://tools.ietf.org/html/rfc3986#section-3.3
+        - then its leading '/' stands for the base directory of the waycast
 
     ____________________________________________________________________________________________________
     waylink`
