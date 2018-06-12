@@ -88,7 +88,7 @@ wayic.script/doc.task - Documentation in rough
     ____________________________________________________________________________________________________
     design constraints`
     [ ⤓ minimal
-        - wayscript's necessary form
+        - necessary form of wayscript
         * XML-format HTML (XHTML)
             ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
             ( http://w3c.github.io/html/infrastructure.html#xml
@@ -109,6 +109,7 @@ wayic.script/doc.task - Documentation in rough
                         - defining the specialized elements and attributes of wayscript
                         - writing them in source
                         - processing them at runtime
+        * location in a way declaration document
 
     ____________________________________________________________________________________________________
     HTML inclusions`
@@ -119,11 +120,7 @@ wayic.script/doc.task - Documentation in rough
 
     ____________________________________________________________________________________________________
     location`
-    - executable wayscript is restricted to URL paths that end in '/way.xht'
-    - in practice this means:
-        - when storing wayscript in a file, name the file 'way.xht'
-    - the purpose of this constraint is to simplify automated tracing of interdocument way declarations
-        - those that extend across multiple, linked documents
+    - wayscript is located in way declaration documents
 
     ____________________________________________________________________________________________________
     namespace`
@@ -162,16 +159,13 @@ wayic.script/doc.task - Documentation in rough
     [ ⤓ minimal
         - what the wayscribe must have
         * a basic knowledge of wayscript
-            - begin at:
-                § location
-                § waypath relations among waybits
         * a waycast
             ( http://reluk.ca/project/wayic/cast/
             - wayscript is proper to the waycast
         * a web renderer
             | wayic.read
                 ( http://reluk.ca/project/wayic/read/
-                - there's no other at present
+                - there is no other at present
 
     ____________________________________________________________________________________________________
     step`
