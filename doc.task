@@ -293,14 +293,14 @@ wayic.script/doc.task - Documentation in rough
                         - the source's effective content will be that of target
                     - no *id* attribute
                         - disallowed
-                        - thereby enabling it also to serve as a target node
-                        - reason: in some applications, it might be infeasible to represent
+                        - whereby it would also serve as a target node
+                        - reason: it might be infeasible to represent in some applications
                             - e.g. where the application gives to source and target nodes
                               distinct representations that would be difficult to combine as one
                     - a local name of '_same' means *same as the target name*
                         - effectively it has the same name as the target node
                     - must have the same namespace as the target node
-                        ( or it's an error
+                        ( or it is an error
                         < e.g. only a step can target a step
                 - effect
                     - the content of the source node is declared to be logically identical
