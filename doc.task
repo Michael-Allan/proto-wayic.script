@@ -162,7 +162,7 @@ wayic.script/doc.task - Documentation in rough
         * a waycast
             ( http://reluk.ca/project/wayic/cast/
             - wayscript is proper to the waycast
-        * a web renderer
+        * a presentation transformer for the web
             | wayic.read
                 ( http://reluk.ca/project/wayic/read/
                 - there is no other at present
