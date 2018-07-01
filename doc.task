@@ -4,7 +4,24 @@ wayic.script/doc.task - Documentation in rough
 
     ____________________________________________________________________________________________________
     commitment declaration`
-    - a type of bitform waylink
+    - a bitform waylink source node that targets /#commitment
+        - whereby the waycaster declares a commitment to act
+    - the waycaster
+        - should
+            * place one in precisely each waybit of the larger way declaration
+              where he intends to act directly
+                - as an underbit of that waybit
+            * set the node name to reflect the commited action
+        - may
+            * set a cog:ordinal attribute to assign an intended order to the act
+                ( tasked as wayic.read § cog:ordinal
+                - so prioritizing it relative to other declared commitments
+    - implicitly the whole line of wayscript that declares the commitment is uniquely personal
+        ( wayic.copy § uniquely personal lines of text § implicit
+        - a convienience
+        - whence the bitform constraint on commitment declarations
+            - a hyperform node might (and most often would) occupy but a part of the line
+                - making this convienience harder to implement
     [ intracast
         ( intracast commitment declaration
         - currently documented in source text of http://reluk.ca/project/waycast/way.xht#commitment
@@ -241,7 +258,7 @@ wayic.script/doc.task - Documentation in rough
         < no namespace
         - content: XML ID, unique within document
             - stricter than the formal requirement of HTML
-            - to be sure, pending any urgent cause for a looser form
+            - to be on the safe side, pending any urgent cause for a looser form
         - the conditions of a waylink target node, which define it as such:
             - it is a waybit
             - it has an *id* attribute in proper form
