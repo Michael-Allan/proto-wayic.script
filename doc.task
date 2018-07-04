@@ -1,7 +1,5 @@
 wayic.script/doc.task - Documentation in rough
 
-    - begin at § practical constraints § minimal
-
     ____________________________________________________________________________________________________
     commitment declaration`
     - a bitform waylink source node that targets /#commitment
@@ -170,19 +168,6 @@ wayic.script/doc.task - Documentation in rough
     * wayscript
         < data:,wayscript.*
         - supernamespace of all wayscript
-
-    ____________________________________________________________________________________________________
-    practical constraints`
-    [ ⤓ minimal
-        - what the wayscribe must have
-        * a basic knowledge of wayscript
-        * a waycast
-            ( http://reluk.ca/project/wayic/cast/
-            - wayscript is proper to the waycast
-        * a presentation transformer for the web
-            | wayic.read
-                ( http://reluk.ca/project/wayic/read/
-                - there is no other at present
 
     ____________________________________________________________________________________________________
     step`
