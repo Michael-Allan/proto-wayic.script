@@ -419,7 +419,7 @@ wayic.script/doc.task - Documentation in rough
                         - most leafward
                     - 'stem'
                         - immediate rootward waybit
-                        - parent, in genealogical terms
+                        - the parent in genealogical terms
 
             * over-under
                 - specific to wayscript
@@ -434,7 +434,7 @@ wayic.script/doc.task - Documentation in rough
                       between descendant and ancestor elements wherein both elements are waybits
                 - other useful terms
                     - 'direct overbit'
-                        - implies a waybit child
+                        - implies a waybit child in genealogical terms
                     - 'direct underbit'
                         - implies a waybit parent
             * genealogical
@@ -452,7 +452,7 @@ wayic.script/doc.task - Documentation in rough
               /   a relation between guardian and dependant
               /     - which is contradictory in this context
               /     - because here the 'parent' waybit depends on the 'child' waybits
-              // negligible in practice, because it's the convention
+              // negligible in practice, because it is the convention
     [ waylink examples
 
         <step_3 id='s3'>
