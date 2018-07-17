@@ -485,7 +485,7 @@ wayic.script/doc.task - Documentation in rough
                 - such a warrant will often refer both to the link and its parent
                     - because what it warrants is the parent's *inclusion* of the link
                 - placement of the the warranting waybit as a sibling of the link
-                    - and thus also as a direct underbit of the parent
+                    - thus also as a direct underbit of the parent
                     - gives it a direct connection to both of the referenced nodes
                         - parent and link
 
