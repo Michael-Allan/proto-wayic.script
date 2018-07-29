@@ -11,8 +11,9 @@
                   waybit</a></h2>
     <ul>
         <li>
-            a basic <a href='wayscript'>wayscript</a> unit formed as an XML element
-            and declaring a part of the way
+            a <a href='wayscript'>wayscript</a> element in the ‘bit’ namespace,
+            or one of its subnamespaces,
+            formalizing a <a href='http://reluk.ca/project/wayic/lex/way'>way</a> part
             </li>
         </ul>
     </section>
