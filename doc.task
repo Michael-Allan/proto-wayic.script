@@ -1,7 +1,7 @@
 wayic.script/doc.task - Documentation in rough
 
-    ____________________________________________________________________________________________________
-    commitment declaration`
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Commitment declaration`
     - a bitform waylink source node that targets /#commitment
         - whereby the waycaster declares a commitment to act
     - the waycaster
@@ -28,9 +28,23 @@ wayic.script/doc.task - Documentation in rough
         ( intercast commitment declaration
         - see wayic.intercast § commitment declaration § intercast
 
-    ____________________________________________________________________________________________________
-    composer elements and composition`
-    - one waybit (whole, composite) logical containing another (part, component)
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Composer elements`
+    - form: a composer element nested in a waybit element
+        < a form of inner way relation, § q.v.
+    - formalizing inherence or subsistence of one way part in another
+    - examples [ETO]
+
+          <B>
+              <cog:comprising>
+                  <A>
+
+          <B>
+              <cog:including>
+                  <A>
+
+      / - meaning: part B logically contains part A
+        - meaning (of both examples): part A inheres|subsists in part B
     [ comprising
         < cog:comprising, namespace data:,wayscript.cog
         - exclusive composer
@@ -50,25 +64,10 @@ wayic.script/doc.task - Documentation in rough
         * components
             - waybits
             - their order as siblings is irrelevant
-    - purpose
-        - to declare a compositional relation among waybits
-            - one waybit (whole, composite) containing another (part, component)
-            - e.g. "in saying *this* waybit I mean also *these* waybits which are its parts"
-        - cf. § waypath relations
-    - example
-          <P>
-              <cog:including>
-                  <C/>
-                  <D/>
-                  <E/>
-                  <F/>
-                  </cog:including>
-              <X/>
-              <Y/>
-              <Z/>
-              </P>
-        - P has parts C, D, E, F
-        - P has underbits X, Y and Z
+  / - purpose
+  /     - to declare a compositional relation among waybits
+  /         - one waybit (whole, composite) containing another (part, component)
+  /         - e.g. "in saying *this* waybit I mean also *these* waybits which are its parts"
     - composer cohort
         - a composer cohort is all sibling composers of parent waybit taken together
         - purpose: to divide the parts into anonymous groups
@@ -92,16 +91,9 @@ wayic.script/doc.task - Documentation in rough
             - the ordering here is abnormal
                 - normally the composer (*including*) elements would be written
                   before their waybit siblings X, Y and Z
-    - design note
-        - not defining a waybit's parts by elemental containment
-            - because containment instead defines its underbits
-            - in most scripted ways
-                - the underbits will be more important than the parts
-                - if not more numerous
-                - and containment is the most convenient and transparent form of defining them
 
-    ____________________________________________________________________________________________________
-    design constraints`
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Design constraints`
     [ ⤓ minimal
         - necessary form of wayscript
         * XML-format HTML (XHTML)
@@ -126,21 +118,107 @@ wayic.script/doc.task - Documentation in rough
                         - processing them at runtime
         * location in a way declaration document
 
-    ____________________________________________________________________________________________________
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     HTML inclusions`
     - allowed
     - hyperlinks within wayscript
         - the *href* attribute of the *a* element is resolved in waycast space
             ( q,v. in § cast element
 
-    ____________________________________________________________________________________________________
-    location`
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Inner way relations`
+    < relations among the parts of a way
+    [ types of relation
+        - here categorized in Kantian terms
+            ( Kant, Table of Categories, A80/B106
+            ( cf. A336/B393 where he applies these categories (below) to conditional relations
+        + inherence and subsistence
+            ( I take it subsistence here means *existence in*
+            ' *substantia et accidens*
+                ( meaning essence and accidents
+                ( cf. Fred Brooks, 1987, No silver bullet: essence and accidents of software engineering
+            - form
+                | a composer element nested in a waybit element
+                    ( § Composer elements
+                    - example [ETO]
+
+                          <B>
+                              <cog:comprising>
+                                  <A>
+
+                        - meaning: part A inheres|subsists in part B
+        + causality and dependence
+            - relations of "cause and effect"
+            - form
+                | one waybit element nested in another
+                    ( § Nesting of waybit elements
+                    - example [ETO]
+
+                          <B>
+                              <A>
+
+                        - meaning: part A causes part B | part B depends on part A
+        + co-occurence
+            - rather than Kant's 'community', summarized as "reciprocity between agent and patient"
+            - form
+                | one waybit element in level conjunction with another
+                    ( § Level conjunction of waybit elements
+                    - example [ETO]
+
+                          <A>
+                          <B>
+
+                        - meaning: parts A and B co-occur
+    [ formalization
+        - forms
+            | a composer element nested in a waybit element
+                ( § Composer elements
+            | one waybit element nested in another
+                ( § Nesting of waybit elements
+            | one waybit element in level conjunction with another
+                ( § Level conjunction of waybit elements
+        - example [ETO]
+
+              <C>
+                  <cog:comprising>
+                      <P>
+                      <Q>
+                  <B>
+                      <A>
+
+            - meaning
+                - parts P and Q co-occur
+                - parts P and Q inhere in part C, or subsist in part C
+                - part C depends on part B, or is caused by part B
+                - part B depends on part A, or is caused by part A
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Level conjunction of waybit elements`
+    - one waybit element in level conjunction with another
+        < a form of inner way relation, § q.v.
+    - formalizing co-occurence between way parts
+    - examples [ETO]
+        + general
+
+              <A>
+              <B>
+
+            - meaning: parts A and B co-occur
+            + formal
+                ( as per § Nesting of waybit elements, q.v.
+                + genealogical terms
+
+                      <A> Sibling
+                      <B> Sibling
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Location`
     - wayscript is located in way declaration documents
 
-    ____________________________________________________________________________________________________
-    namespace`
-    - XML namespaces for wayscript
-    - hierarchy
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Namespacing`
+    - XML namespacing for wayscript
+    - terms of hierarchy
         * supernamespace
             - examples
                 < data:,wayscript.
@@ -151,38 +229,146 @@ wayic.script/doc.task - Documentation in rough
                 < bit
                 < bit.step
                 < step
-    [ bit
-        < data:,wayscript.bit
-        - namespace of waybits simply, excluding subspaced waybits such as steps
-    * bits
-        < data:,wayscript.bit.*
-        - namespaces of bit subtypes
-            - such as step
-            - or others independently defined elsewhere
-    [ cog
-        < data:,wayscript.cog
-        - general-purpose namespace
-    [ step
-        < data:,wayscript.bit.step
-        - namespace of steps
-    * wayscript
-        < data:,wayscript.*
-        - supernamespace of all wayscript
+    - namespaces
+        < data:,wayscript.
+            - wayscript supernamespace
+            + data:,wayscript.bit
+                - namespace of waybits simply, excluding subspaced waybits such as steps
+                < data:,wayscript.bit.
+                    - supernamespace of waybit subtypes
+                        - such as step
+                        - or others independently defined elsewhere
+                    + data:,wayscript.bit.step
+                        - namespace of steps
+            + data:,wayscript.cog
+                - general purpose namespace
 
-    ____________________________________________________________________________________________________
-    step`
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Nesting of waybit elements`
+    - one waybit element nested in another
+        < a form of inner way relation, § q.v.
+    - formalizing causality or dependence between way parts
+        - of these, dependence is expected to predominate in a typical waycast
+    - examples [ETO]
+        + general
+            - causality or dependence
+
+              <B>
+                  <A>
+
+            - meaning: part A causes part B | part B depends on part A
+            + formal
+                - referring to the empty form, implying no meaning
+                + genealogical terms
+                    - the convention for both HTML and XML, thus also for wayscript
+
+                      <B> Parent
+                          <A> Child
+
+                      <B> Ancestor
+                            ⋱
+                            <A> Descendant
+
+                + arboreal terms
+
+                      <C> Root
+                            ⋱
+                            <B> Branch
+                                  ⋱
+                                  <A> Leaf
+
+                      <B> Stem
+                          <A>
+
+                + spatial terms
+
+                      <B> Overbit
+                            ⋱
+                            <A> Underbit
+        + causality
+
+              <B> Effect
+                  <A> Cause
+
+            - meaning
+                - cause A conditions effect B
+                - cause A is the reason for effect B
+        + dependence
+
+              <B> Dependant
+                  <A>
+
+            - meaning: dependant B depends on part A
+                ( one might attach the name 'Dependency' to A, but that would be non-standard English
+            - here the concept of dependence in its original sense of *down hanging*
+              is visually reversed
+                - visually B depends (hangs down) from A
+            + logical dependence
+                - viz. in the logical parts of a way
+
+                  <B> Conclusion
+                      <A> Premise
+
+                - meaning: from premise A one infers conclusion B
+            + practical dependence
+                - viz. in the practical parts of a way
+                + means-end relation
+
+                      <B> End
+                          <A> Means
+
+                    - meaning
+                        - by means A one attains end B
+                        - to be sure, also implied is a reverse dependence:
+                            - end B warrants means A
+                            - in other words
+                                - end B conditions means A
+                                - end B is the reason for means A
+                                - the rationality of employing means A
+                                  depends on the will to attain end B
+                + order condition
+                    ( from § Step
+
+                      <step:s3> Step 3
+                          <step:s2> Step 2
+                              <step:s1> Step 1
+
+                    - meaning
+                        - step 3 must succeed step 2
+                        - step 2 must succeed step 1
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Step`
     < namespaced data:,wayscript.bit.step
-    - a volitive waybit
+    - formalizing a volitive part of a way
         - a distinct|discrete act
         - e.g. a step or stage in a plan
-    - enactment order is defined as a waypath relation (§ q.v.)
-        - by nesting prior steps within subsequent steps
-        ( again not as a sibling relation
+    - nesting of step elements formalizes an order condition among the steps
+        ( see also § Nesting of waybit elements
+        - example [ETO]
 
-    ____________________________________________________________________________________________________
-    waybit`
+              <step:s3> Step 3
+                  <step:s2> Step 2
+                      <step:s1> Step 1
+
+            - meaning
+                - step 3 must succeed step 2
+                - step 2 must succeed step 1
+                - relative to each other, the steps must execute in the declared order
+        - counter example
+
+              <step:s1> Step 1
+              <step:s2> Step 2
+              <step:s3> Step 3
+
+            - meaning: steps 1, 2 and 3 are independent of each other
+                - relative to each other, they may execute in any order
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Waybit`
     ( waybit#waybit
-    - naming
+    + names
+        < the naming of waybits
         - naming is free-form
             - except for reserved names
         - purpose of names
@@ -200,18 +386,15 @@ wayic.script/doc.task - Documentation in rough
             - names beginning with an underscore ‘_’ are reserved
                 - don’t use such names for normal purposes
         - a name of '_' means no name (anonymous waybit)
-    - relations
-        - composition, see §
-        - waypath, see §
-        - the sibling relation has no generally defined meaning
-    - types
+    + types
+        < types of waybit
         * waybit simply
             < namespaced data:,wayscript.bit
         * step
             ( see §
 
-    ____________________________________________________________________________________________________
-    waycast space`
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Waycast space`
     - a waycast space is a URI resolution context whose base URI identifies a waycast base directory
         ( https://tools.ietf.org/html/rfc3986#section-5
     - its main purpose is to resolve the URI references of waylinks and hyperlinks
@@ -220,23 +403,23 @@ wayic.script/doc.task - Documentation in rough
             ( https://tools.ietf.org/html/rfc3986#section-3.3
         - then its leading '/' stands for the base directory of the waycast
 
-    ____________________________________________________________________________________________________
-    waylink`
-    - a waylink is a relation between two elements: a source node and a target node
-    - purpose: to declare a waypath relation with a remotely declared waybit
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Waylink`
+    - a waylink is a formed of two elements: a source node and a target node
+    - purpose: to form[alize]|declare a way relation involving a remotely declared waybit
     - the mapping between source nodes and waylinks entire is 1:1
         - each source node effectively declares a separate waylink
         ( the same is not true of target nodes, which map to waylinks 1:N
     - linkage is declared unidirectionally
         - from source node to target node
-      / - except in the case of a waypath loop, q.v.
+      / - except in the case of looped waylinkage, q.v.
         - for sake of general simplicity and robustness
             - subordinate building blocks (e.g. underbits) can be implemented
               blind to the uses (overbits) they will be put in future
                 - discourages unecessary overbit attachements/assumptions
                   that would tend to increase complexity
                   and decrease robustness of the overall structure
-            - one node of the relation (e.g. overbit) can fully define its edges
+            - one node (e.g. overbit) can fully define its edges
                 - no underbit being able to contradict the definition
                 - which simplifies machine (and human) processing of the structure
     [ target node: the *id* attribute
@@ -283,9 +466,9 @@ wayic.script/doc.task - Documentation in rough
                 - so indicated by a terminating slash '/'
                 - then 'way.xht' is assumed as the file name
             - the URL must include a fragment to identify the target node
-      / - waypath loop
+      / - looped waylinkage
       /     - may occur when the target node is an ancestor waybit
-      /     - formally allowed though it's not always guaranteed to make sense
+      /     - formally allowed though it is not always guaranteed to make sense
       // till I encounter the need in practice, and can give that as an example
         - two forms of waylink source node are defined:
             + bitform
@@ -304,191 +487,42 @@ wayic.script/doc.task - Documentation in rough
                     - must have the same namespace as the target node
                         ( or it is an error
                         < e.g. only a step can target a step
-                - effect
-                    - the content of the source node is declared to be logically identical
-                      to that of the target node
-                    - visually a bitform waylink might be represented in different ways, including:
-                        | by a hyperlink from source to target
-                        | by placing a replica of the target's content in the source
             + hyperform
                 - placement: as an HTML *a* element that descends from a waybit
                 - form
                     - no *href* attribute
                         - disallowed
                         - the reference is given by the *link* attribute instead
-                - effect
-                    - the target node gains a waypath relation as though it were co-located
-                      with the *a* element
+    [ meaning
+        - the meaning of a waylink is determined by would-be wayscript changes (determinating changes)
+          as that [meaning] introduced by the changes
+        - determinating changes of a waylink:
+            * any waylink
+                - the target node (as a waybit) is located *also* as a child
+                  of the source node's nearest waybit ancestor
+                    - adding this location to its original location, or locations
+                    - though only as a waybit at this new location, not also as a target node
+            * bitform waylink
+                - the target node takes *also* the name of the source node
+                    - adding this name to its original name, or names
+                    - if indeed it is new
+                - the source node is removed
+    [ causality and dependence relations
+        - a formal limitation owing to the manner in which the meaning of a waylink is determined
+            ( § Waylink § meaning
+        - no waylink can bring its target node into a relation of causality in the role of effect
+            - nor of dependence in the role of dependant
+        - adding a nested waybit to a hyperform source node (the only form that allows such addition)
+            - thus bringing it into a relation of causality or dependence
+            - would not bring the target node into the same relation
+        - the target gains a determinating location *aside* from the source
+            ( § Waylink § meaning § determinating changes of a waylink
+            - whereby it gains no content from the source
 
-    ____________________________________________________________________________________________________
-    waypath relations`
-    - wayscript is basically the declaration of waypath relations among waybits
-    - a waypath relation is declared either by nesting one waybit declaration in another
-        - or by an equivalent waylink declaration
-    - waypath relations are dependency relations
-        - but 'depend' is not the preferred term here
-        - unfortunately it suggests a thing that hangs below
-            - which is contradictory in this context
-            - where what depends (the dependant) is written above its dependencies
-            - which nest inside of it
-    [ examples of nesting
+    ════════════════════════════════════════════════════════════════════════════════════════════════════
+    Note`
 
-        * simple
-            - one relation
-
-            <waybit>
-                <waybit/>
-                </waybit>
-
-        * more typical
-            - many relations and interrelations
-
-            <waybit>
-                <waybit>
-                    <waybit/>
-                    </waybit>
-                <waybit/>
-                <waybit/>
-                <waybit>
-                    <waybit/>
-                    <waybit>
-                        <waybit/>
-                        <waybit/>
-                        </waybit>
-                    <waybit/>
-                    </waybit>
-                </waybit>
-
-        + in terms of meaning
-            * general
-
-                <dependant>
-                    <dependency/>
-                    </dependant>
-
-            * specific
-
-                <end>
-                    <means/>
-                    </end>
-
-                <conclusion>
-                    <premise/>
-                    </conclusion>
-
-                <successor>
-                    <predecessor/>
-                    </successor>
-
-                <step_3>
-                    <step_2>
-                        <step_1/>
-                        </step_2>
-                    </step_3>
-
-                <supported>
-                    <supporter/>
-                    </supported>
-
-        + in formal terms
-            * arboreal
-                - common
-
-                <root>
-                    <branch>
-                        <leaf/>
-                        </branch>
-                    <leaf/>
-                    <leaf/>
-                    <branch>
-                        <leaf/>
-                        <branch>
-                            <leaf/>
-                            <leaf/>
-                            </branch>
-                        <leaf/>
-                        </branch>
-                    </root>
-
-                - other useful terms
-                    - 'rootward'
-                    - 'rootmost'
-                        - most rootward
-                    - 'leafward'
-                    - 'leafmost'
-                        - most leafward
-                    - 'stem'
-                        - immediate rootward waybit
-                        - the parent in genealogical terms
-
-            * over-under
-                - specific to wayscript
-                - applies only to waybits
-
-                <overbit>
-                    <underbit/>
-                    </overbit>
-
-                - its utility is in specifying the type of elements that are related
-                    - each of 'overbit' and 'underbit' implies a relation
-                      between descendant and ancestor elements wherein both elements are waybits
-                - other useful terms
-                    - 'direct overbit'
-                        - implies a waybit child in genealogical terms
-                    - 'direct underbit'
-                        - implies a waybit parent
-            * genealogical
-                - conventional for XML
-
-                <parent>
-                    <child/>
-                    <child/>
-                    </parent>
-
-                - other useful terms of genealogy
-                    - for any two children of the same parent, each is a 'sibling' of the other
-                    - 'ancestor' and 'descendant' are also common
-              / - unfortunately the words 'parent' and 'child' may suggest
-              /   a relation between guardian and dependant
-              /     - which is contradictory in this context
-              /     - because here the 'parent' waybit depends on the 'child' waybits
-              // negligible in practice, because it is the convention
-    [ waylink examples
-
-        <step_3 id='s3'>
-            <step_2>
-                <step_1/>
-                </step_2>
-            </step_3>
-
-        <step_5a>
-            <step_4a>
-                <step_3 cog:link='s3'/>
-                </step_4a>
-            </step_5a>
-
-        <step_5b>
-            <step_4b>
-                <step_3 cog:link='s3'/>
-                </step_4b>
-            </step_5b>
-
-        - here step_1 (or step_2, or step_3) is an indirect underbit of both step_5a and 5b
-    [ waylink dependencies
-        - place bitform waylink dependencies as siblings of the waylink declaration
-        - two reasons for this placement:
-            1. a bitform waylink source node declaration allows no content, no underbits
-                - therefore its dependencies cannot be its underbits
-            2.
-                - consider the common situation in which a dependency is justification or other warrant
-                  for the inclusion of the waylink
-                - such a warrant will often refer both to the link and its parent
-                    - because what it warrants is the parent's *inclusion* of the link
-                - placement of the the warranting waybit as a sibling of the link
-                    - thus also as a direct underbit of the parent
-                    - gives it a direct connection to both of the referenced nodes
-                        - parent and link
-
+    [ETO]  End tags omitted.  Here the XML end tags are omitted for sake of clarity.
 
 
                                      Copyright © 2017-2018 Michael Allan and contributors.  Licence MIT.
