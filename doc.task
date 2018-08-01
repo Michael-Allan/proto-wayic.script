@@ -368,7 +368,7 @@ wayic.script/doc.task - Documentation in rough
       // no room here for wayscripting tips, which would need clarifying by example script
         - reserved names
             - names beginning with an underscore ‘_’ are reserved
-                - don’t use such names for normal purposes
+                - do not use such names for normal purposes
         - a name of '_' means no name (anonymous waybit)
     + types
         < types of waybit
