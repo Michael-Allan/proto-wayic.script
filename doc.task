@@ -1,6 +1,60 @@
 wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Attributive grouping`
+    - a waybit element nested in an attributive group element nested in a waybit element
+    - formalizing inherence or subsistence of one way part in another
+        < a form of inner way relation, § q.v.
+    - example [ETO]
+
+          <A>
+              <cog:group rel='in'>
+                  <P>
+
+        - meaning: part P inheres in part A, or subsists in part A
+    [ *group* element
+        < cog:group, namespace data:,wayscript.cog
+        - placement: child of waybit element
+        - content
+            + qualifying text
+                < optional
+                - to qualify or explain the composition in some way
+                - placement: leading child
+                - typically a short phrase terminated by a colon
+                - example
+
+                      <A>
+                          <cog:group rel='in'> including:
+                              <P>
+                              <Q>
+                      <B>
+                          <cog:group rel='in'> comprising:
+                              <P>
+                              <Q>
+
+                    - meaning
+                        - part A has parts P and Q
+                        - part B has parts P and Q only
+                        - and, by the way:
+                            - parts A and B co-occur, and in each
+                              parts P and Q co-occur
+                                ( § Level conjunction of waybit elements
+            + one or more waybits
+                - to represent the parts that inhere or subsist
+        + *rel* attribute
+            < mandatory, no namespace
+            - to define the way relation between the waybit parent of the *group* element
+              and each waybit child of the *group* element
+            ( modeled after the HTML *rel* attribute
+                ( https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel
+            - value: 'in'
+                - the 'in' value specifies a relation of inherence or subsistence
+                    - it declares that the way parts represented by the children of the group element
+                      inhere or subsist in the part represented by its parent
+                ( later the value format may be expanded to a set of space-separated tokens
+                    ( https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#set-of-space-separated-tokens
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
     - a bitform waylink source node that targets /#commitment
         - whereby the waycaster declares a commitment to act
@@ -27,70 +81,6 @@ wayic.script/doc.task - Documentation in rough
     [ intercast
         ( intercast commitment declaration
         - see wayic.intercast § commitment declaration § intercast
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Composer elements`
-    - form: a composer element nested in a waybit element
-        < a form of inner way relation, § q.v.
-    - formalizing inherence or subsistence of one way part in another
-    - examples [ETO]
-
-          <B>
-              <cog:comprising>
-                  <A>
-
-          <B>
-              <cog:including>
-                  <A>
-
-      / - meaning: part B logically contains part A
-        - meaning (of both examples): part A inheres|subsists in part B
-    [ comprising
-        < cog:comprising, namespace data:,wayscript.cog
-        - exclusive composer
-        - this composer (or composer cohort) defines all parts of its waybit parent
-            - the parent has no other parts
-    [ including
-        < cog:including, namespace data:,wayscript.cog
-        - inclusive composer
-        - this composer (or composer cohort) defines some parts of its waybit parent
-            - but not necessarily all
-    - placement: child of waybit element
-    - content
-        * leader (optional)
-            - non-wayscript
-                - normally a short text phrase
-            - qualifies or explains the composition in some way
-        * components
-            - waybits
-            - their order as siblings is irrelevant
-  / - purpose
-  /     - to declare a compositional relation among waybits
-  /         - one waybit (whole, composite) containing another (part, component)
-  /         - e.g. "in saying *this* waybit I mean also *these* waybits which are its parts"
-    - composer cohort
-        - a composer cohort is all sibling composers of parent waybit taken together
-        - purpose: to divide the parts into anonymous groups
-            - one per sibling
-        - example
-              <P>
-                  <X/>
-                  <cog:including>
-                      <C/>
-                      <D/>
-                      </cog:including>
-                  <Y/>
-                  <cog:including>
-                      <E/>
-                      <F/>
-                      </cog:including>
-                  <Z/>
-                  </P>
-            - P has parts C, D and parts E, F
-            - P has underbits X, Y and Z
-            - the ordering here is abnormal
-                - normally the composer (*including*) elements would be written
-                  before their waybit siblings X, Y and Z
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Design constraints`
@@ -128,6 +118,22 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Inner way relations`
     < relations among the parts of a way
+    [ form
+        - see § types of relation §§ form, below
+        - combined example [ETO]
+
+              <C>
+                  <cog:group rel='in'>
+                      <P>
+                      <Q>
+                  <B>
+                      <A>
+
+            - meaning
+                - parts P and Q inhere in part C, or subsist in part C
+                - parts P and Q co-occur in part C
+                - part C depends on part B, or is caused by part B
+                - part B depends on part A, or is caused by part A
     [ types of relation
         - here categorized in Kantian terms
             ( Kant, Table of Categories, A80/B106
@@ -138,15 +144,15 @@ wayic.script/doc.task - Documentation in rough
                 ( meaning essence and accidents
                 ( cf. Fred Brooks, 1987, No silver bullet: essence and accidents of software engineering
             - form
-                | a composer element nested in a waybit element
-                    ( § Composer elements
+                | a waybit element nested in an attributive group element nested in a waybit element
+                    ( § Attributive grouping
                     - example [ETO]
 
                           <B>
-                              <cog:comprising>
+                              <cog:group rel='in'>
                                   <A>
 
-                        - meaning: part A inheres|subsists in part B
+                        - meaning: part A inheres in part B, or subsists in part B
         + causality and dependence
             - relations of "cause and effect"
             - form
@@ -157,7 +163,7 @@ wayic.script/doc.task - Documentation in rough
                           <B>
                               <A>
 
-                        - meaning: part A causes part B | part B depends on part A
+                        - meaning: part A causes part B, or part B depends on part A
         + co-occurence
             - rather than Kant's 'community', summarized as "reciprocity between agent and patient"
             - form
@@ -169,34 +175,12 @@ wayic.script/doc.task - Documentation in rough
                           <B>
 
                         - meaning: parts A and B co-occur
-    [ formalization
-        - forms
-            | a composer element nested in a waybit element
-                ( § Composer elements
-            | one waybit element nested in another
-                ( § Nesting of waybit elements
-            | one waybit element in level conjunction with another
-                ( § Level conjunction of waybit elements
-        - example [ETO]
-
-              <C>
-                  <cog:comprising>
-                      <P>
-                      <Q>
-                  <B>
-                      <A>
-
-            - meaning
-                - parts P and Q co-occur
-                - parts P and Q inhere in part C, or subsist in part C
-                - part C depends on part B, or is caused by part B
-                - part B depends on part A, or is caused by part A
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Level conjunction of waybit elements`
+    - formalizing a relation of co-occurence between way parts
     - one waybit element in level conjunction with another
         < a form of inner way relation, § q.v.
-    - formalizing co-occurence between way parts
     - examples [ETO]
         + general
 
@@ -246,9 +230,8 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Nesting of waybit elements`
     - one waybit element nested in another
+    - formalizing a relation of causality or dependence between way parts
         < a form of inner way relation, § q.v.
-    - formalizing causality or dependence between way parts
-        - of these, dependence is expected to predominate in a typical waycast
     - examples [ETO]
         + general
             - causality or dependence
@@ -256,7 +239,7 @@ wayic.script/doc.task - Documentation in rough
               <B>
                   <A>
 
-            - meaning: part A causes part B | part B depends on part A
+            - meaning: part A causes part B, or part B depends on part A
             + formal
                 - referring to the empty form, implying no meaning
                 + genealogical terms
@@ -294,14 +277,15 @@ wayic.script/doc.task - Documentation in rough
                 - cause A conditions effect B
                 - cause A is the reason for effect B
         + dependence
+            - dependence is expected to predominate over causality in a typical waycast
 
               <B> Dependant
                   <A>
 
             - meaning: dependant B depends on part A
                 ( one might attach the name 'Dependency' to A, but that would be non-standard English
-            - here the concept of dependence in its original sense of *down hanging*
-              is visually reversed
+            - taking 'dependence' in its original sense of down hanging
+                - note that the nested form turns it upside down
                 - visually B depends (hangs down) from A
             + logical dependence
                 - viz. in the logical parts of a way
