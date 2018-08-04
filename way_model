@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xml:lang='en-CA' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>‘way model’</title>
+        </head>
+    <body>
+
+
+<section      id='way_model'>
+    <h2><a href='#way_model'>
+                  way model</a></h2>
+    <ul>
+        <li>
+            a representation of a <a href='http://reluk.ca/project/wayic/lex/way'>way</a>
+            </li>
+        </ul>
+    <section      id='the_way_model'>
+        <h3><a href='#the_way_model'>
+                      the way model</a></h3>
+        <ul>
+            <li>
+                the way model of the <a href='http://reluk.ca/project/wayic/cast/waycast'>waycast</a>,
+                assembled using <a href='waybit'>waybits</a>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+
+        </body>
+    </html>
