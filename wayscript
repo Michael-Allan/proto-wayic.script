@@ -17,9 +17,27 @@
             (count noun) the text of a way declaration
             </li>
         <li>
-            (verb) to write a way declaration
+            (verb) write a way declaration
             </li>
         </ul>
+    <section      id='wayscript_element'>
+        <h3><a href='#wayscript_element'>
+                      wayscript element</a></h3>
+        <ul>
+            <li>
+                an XML-format HTML (XHTML) element in a way declaration
+                </li>
+            </ul>
+        <section      id='proper_wayscript_element'>
+            <h4><a href='#proper_wayscript_element'>
+                          proper wayscript element</a></h4>
+            <ul>
+                <li>
+                    an element in the ‘data:,wayscript’ namespace, or one of its subnamespaces
+                    </li>
+                </ul>
+            </section>
+        </section>
     </section>
 
 
