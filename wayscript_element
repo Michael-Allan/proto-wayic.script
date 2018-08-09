@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xml:lang='en-CA' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>‘wayscript’</title>
+        </head>
+    <body>
+
+
+<section      id='wayscript_element'>
+    <h2><a href='#wayscript_element'>
+                  wayscript element</a></h2>
+    <ul>
+        <li>
+            an element of <a href='wayscript'>wayscript</a>
+            <ul>
+                <li>
+                    an XML-format HTML (XHTML) element
+                    in a <a href='http://reluk.ca/project/wayic/lex/way'>way</a> declaration
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    <section      id='proper_wayscript_element'>
+        <h3><a href='#proper_wayscript_element'>
+                      proper wayscript element</a></h3>
+        <ul>
+            <li>
+                a wayscript element exclusive to wayscript
+                <ul>
+                    <li>
+                        an element in the ‘data:,wayscript’ namespace, or one of its subnamespaces
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+
+        </body>
+    </html>

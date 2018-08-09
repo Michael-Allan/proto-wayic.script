@@ -11,9 +11,13 @@
                   waybit</a></h2>
     <ul>
         <li>
-            a <a href='wayscript#wayscript_element'>wayscript element</a>
-            in the ‘data:,wayscript.bit’ namespace, or one of its subnamespaces,
-            formalizing a <a href='http://reluk.ca/project/wayic/lex/way'>way</a> part
+            a <a href='wayscript_element'>wayscript element</a>
+            that models a <a href='http://reluk.ca/project/wayic/lex/way'>way</a> part
+            <ul>
+                <li>
+                    an element in the ‘data:,wayscript.bit’ namespace, or one of its subnamespaces
+                    </li>
+                </ul>
             </li>
         </ul>
     </section>
