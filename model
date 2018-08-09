@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xml:lang='en-CA' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>‘model’</title>
+        </head>
+    <body>
+
+
+<section id='model'>
+    <h2>     model</h2>
+    <ul>
+        <li>
+            as per
+            <cite><a href='https://en.wiktionary.org/wiki/model'>
+                           https://en.wiktionary.org/wiki/model</a></cite>
+            </li>
+        </ul>
+    </section>
+<section id='xrefs' style='border-top:thin solid'>
+    <section id='way_model'>
+        <a rel='content-repository' href='way_model#way_model'>content</a>
+        </section>
+    </section>
+
+
+        <script src='http://reluk.ca/project/wayic/lex/_/reader.js'/>
+        </body>
+    </html>
