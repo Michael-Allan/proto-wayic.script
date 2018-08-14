@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xml:lang='en-CA' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>‘joint’</title>
+        </head>
+    <body>
+
+
+<section      id='joint'>
+    <h2><a href='#joint'>
+                  joint</a></h2>
+    <ul>
+        <li>
+            (noun) an effective junction of two or more <a href='wayscript_element'>
+            wayscript elements</a> by means other than writing in place
+            <!-- Elements that adjoin do not thereby form a joint.  The elaborate terminology
+              of referential jointing rests on this distinction, which itself rests on 'joint'
+              in English connoting artifice: the joint is an artificial means of junction
+              as opposed to the natural means of writing in place. -->
+            </li>
+        </ul>
+    </section>
+<section id='xrefs' style='border-top:thin solid'>
+    <section id='referential_joint'>
+        <a rel='content-repository' href='referential_joint#referential_joint'>content</a>
+        </section>
+    </section>
+
+
+        <script src='http://reluk.ca/project/wayic/lex/_/reader.js'/>
+        </body>
+    </html>

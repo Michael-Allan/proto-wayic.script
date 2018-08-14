@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xml:lang='en-CA' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>‘referential jointer’</title>
+        </head>
+    <body>
+
+
+<section      id='referential_jointer'>
+    <h2><a href='#referential_jointer'>
+                  referential jointer</a></h2>
+    <ul>
+        <li>
+            a <a href='wayscript_element'>wayscript element</a> that declares
+            a <a href='referential_joint'>referential joint</a>
+            between its parent element (<a href='surjoin'>surjoining</a>)
+            and a waybit to which it refers (<a href='subjoin'>subjoining</a>)
+            </li>
+        </ul>
+    </section>
+
+
+        </body>
+    </html>
