@@ -18,7 +18,8 @@
     </section>
 <section id='xrefs' style='border-top:thin solid'>
     <section id='way_model'>
-        <a rel='content-repository' href='way_model#way_model'>content</a>
+        <a href='way_model#way_model'
+          rel='content-repository'>content</a>
         </section>
     </section>
 

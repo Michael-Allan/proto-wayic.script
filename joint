@@ -22,7 +22,8 @@
     </section>
 <section id='xrefs' style='border-top:thin solid'>
     <section id='referential_joint'>
-        <a rel='content-repository' href='referential_joint#referential_joint'>content</a>
+        <a href='referential_joint#referential_joint'
+          rel='content-repository'>content</a>
         </section>
     </section>
 

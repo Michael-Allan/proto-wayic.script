@@ -18,7 +18,8 @@
     </section>
 <section id='xrefs' style='border-top:thin solid'>
     <section id='referential_jointer'>
-        <a rel='content-repository' href='referential_jointer#referential_jointer'>content</a>
+        <a href='referential_jointer#referential_jointer'
+          rel='content-repository'>content</a>
         </section>
     </section>
 
