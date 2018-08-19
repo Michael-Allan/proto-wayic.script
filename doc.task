@@ -52,8 +52,8 @@ wayic.script/doc.task - Documentation in rough
               and each waybit child of the *group* element
             ( fashioned after the HTML *rel* attribute
                 ( https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel
-            - value: 'in'
-                - the 'in' value specifies a relation of inherence or subsistence
+            - value: ‘in’
+                - the ‘in’ value specifies a relation of inherence or subsistence
                     - it declares that the way parts modelled by the children of the group element
                       inhere or subsist *in* the whole modelled by its parent
                 ( later the value format may be expanded to a set of space-separated tokens
@@ -66,7 +66,7 @@ wayic.script/doc.task - Documentation in rough
         < additional to § Referential jointer § form
         - the jointer is a waybit in the same namespace as the subjoining waybit
             - e.g. only a step jointer can declare a step to be subjoining
-        - a local name of '_same' on the jointer means *the same name*
+        - a local name of ‘_same’ on the jointer means *the same name*
           as the referent subjoining waybit
         - the jointer must not have
             - content
@@ -135,8 +135,8 @@ wayic.script/doc.task - Documentation in rough
     HTML inclusions`
     - allowed
     - hyperlinks within wayscript
-        - the *href* attribute of the *a* element is resolved in waycast space
-            ( q,v. in § cast element
+        - the *href* attribute of the *a* element is resolved in waycast context
+            ( http://reluk.ca/project/waycast/waycast_context
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Hyperform referential jointer`
@@ -261,8 +261,8 @@ wayic.script/doc.task - Documentation in rough
                     < bit
                     < bit.step
                     < step
-    - multiple namespaces may be symbolized by a '*' placeholder appended to a supernamespace
-        - example, all subnamespaces of the 'bit' [sub]namespace:
+    - multiple namespaces may be symbolized by a ‘*’ placeholder appended to a supernamespace
+        - example, all subnamespaces of the ‘bit’ [sub]namespace:
             < data:,wayscript.bit.*
     - namespaces
         < data:,wayscript.
@@ -354,8 +354,8 @@ wayic.script/doc.task - Documentation in rough
                   <A>
 
             - meaning: dependant B depends on part A
-                ( one might attach the name 'Dependency' to A, but that would be non-standard English
-            - taking 'dependence' in its original sense of down hanging
+                ( one might attach the name ‘Dependency’ to A, but that would be non-standard English
+            - taking ‘dependence’ in its original sense of down hanging
                 - note that the nested form turns it upside down
                 - visually B depends (hangs down) from A
             + logical dependence
@@ -407,10 +407,10 @@ wayic.script/doc.task - Documentation in rough
                     - viz. having a scheme
                 | a *path-absolute*
                     ( https://tools.ietf.org/html/rfc3986#section-3.3
-                    - it will be resolved in waycast space
-                        ( see § referent resolution
+                    - it will be resolved in waycast context
+                        ( http://reluk.ca/project/waycast/waycast_context
                     - no allowance for relative paths
-                        - e.g. beginning with a '.', '..' or file name
+                        - e.g. beginning with a ‘.’, ‘..’ or file name
                         - reason
                             - to ease the tracing of a way that extends across multiple documents
                             - relative paths are harder to follow
@@ -421,8 +421,8 @@ wayic.script/doc.task - Documentation in rough
             § Bitform referential jointer
             § Hyperform referential jointer
     - referent resolution
-        - the URI reference is resolved in waycast space
-            ( q,v. in § cast element
+        - the URI reference is resolved in waycast context
+            ( http://reluk.ca/project/waycast/waycast_context
         - this (together with the restriction against relative paths)
           ensures that any reference needing resolution (not a full URI)
           resolves to a referent in the same waycast
@@ -430,8 +430,8 @@ wayic.script/doc.task - Documentation in rough
                 - especially for the purpose of propagation
                     ( http://reluk.ca/project/waycast/constraints.xht#ever_F
         - if the terminal path component is a directory
-            - so indicated by a terminating slash '/'
-            - then 'way.xht' is assumed as the file name
+            - so indicated by a terminating slash ‘/’
+            - then ‘way.xht’ is assumed as the file name
         - the URL must include a fragment to identify the subjoining waybit
   / - looped referential jointing
   /     - may occur when the subjoining waybit is an ancestor waybit
@@ -455,7 +455,7 @@ wayic.script/doc.task - Documentation in rough
                   derive from this common origin (cause, premise, means or what not)
                     < see § Nesting of waybit elements
                 = stop implying it must be one or the other of the above
-                    - as just 'or' implies
+                    - as just ‘or’ implies
     [ form
         - two elements
             - a referrer (jointer)
@@ -570,23 +570,13 @@ wayic.script/doc.task - Documentation in rough
         - reserved names
             - names beginning with an underscore ‘_’ are reserved
                 - do not use such names for normal purposes
-        - a name of '_' means no name (anonymous waybit)
+        - a name of ‘_’ means no name (anonymous waybit)
     + types
         < types of waybit
         * waybit simply
             < namespaced data:,wayscript.bit
         * step
             ( see §
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Waycast space`
-    - a waycast space is a URI resolution context whose base URI identifies a waycast base directory
-        ( https://tools.ietf.org/html/rfc3986#section-5
-    - its main purpose is to resolve the URI references of hyperlinks and referential joints
-    - for each URI reference in waycast space
-        - if it has *path-absolute* form
-            ( https://tools.ietf.org/html/rfc3986#section-3.3
-        - then its leading '/' stands for the base directory of the waycast
 
     ════════════════════════════════════════════════════════════════════════════════════════════════════
     Note`
