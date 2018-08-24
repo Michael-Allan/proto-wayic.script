@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xml:lang='en-CA' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>‘way root element’</title>
+        </head>
+    <body>
+
+
+<section      id='way_root_element'>
+    <h2><a href='#way_root_element'>
+                  way root element</a></h2>
+    <ul>
+        <li>
+            the <a href='wayscript_element'>wayscript element</a> at waycast location
+            <code><a href='http://reluk.ca/project/wayic/cast/way_root_document'>
+            /way.xht</a>#root</code>, which is inherently <a href='on_way'>on way</a>
+            </li>
+        </ul>
+    </section>
+
+
+        </body>
+    </html>
