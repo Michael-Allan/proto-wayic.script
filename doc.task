@@ -79,37 +79,41 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
-    - a bitform referential jointer that refers to /#commitment
-        - whereby the waycaster declares a commitment to act
-    - the waycaster
-        - should
-            * place one in precisely each waybit of the larger way declaration
-              where he intends to act directly
-                - as a child of that waybit
-            * set the node name to reflect the commited action
-        - may
-            * set a cog:ordinal attribute to assign an intended order to the act
-                ( tasked as wayic.read § cog:ordinal
-                - so prioritizing it relative to other declared commitments
-    - implicitly the whole line of wayscript that declares the commitment is uniquely personal
-        ( wayic.copy § uniquely personal lines of text § implicit
-        - a convienience
-        - whence the bitform constraint on commitment declarations
-            - a hyperform node might (and most often would) occupy but a part of the line
-                - making this convienience harder to implement
-    [ intracast
-        ( intracast commitment declaration
-        - currently documented in source text of http://reluk.ca/project/waycast/way.xht#commitment
-            = copy that documentation to here
-    [ intercast
-        ( intercast commitment declaration
-        - see wayic.intercast § commitment declaration § intercast
+    - a commitment declaration comprises a commitment jointer
+      and the subjoining commitment waybit to which it refers
+    [ commitment jointer
+        - a bitform referential jointer that refers to /#commitment
+            - whereby the waycaster declares a commitment to act
+        - the waycaster
+            - should
+                * place one in precisely each waybit of the larger way declaration
+                  where he intends to act directly
+                    - as a child of that waybit
+                * set the node name to reflect the commited action
+            - may
+                * set a cog:ordinal attribute to assign an intended order to the act
+                    ( tasked as wayic.read § cog:ordinal
+                    - so prioritizing it relative to other declared commitments
+        - implicitly the whole line of wayscript that declares the commitment is uniquely personal
+            ( wayic.copy § uniquely personal lines of text § implicit
+            - a convienience
+            - whence the bitform constraint on commitment jointers
+                - a hyperform node might (and most often would) occupy but a part of the line
+                    - making this convienience harder to implement
+        + intracast commitment declaration
+            - currently documented in source text of http://reluk.ca/project/waycast/way.xht#commitment
+                = copy that documentation to here
+        + intercast commitment declaration
+            ( wayic.intercast § Intercast commitment declaration
+    [ commitment waybit
+        - the waybit at waycast location /#commitment
+            - which is the waybit of the root way document that has an *id* attribute of ‘commitment’
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Design constraints`
     [ ⤓ minimal
         - necessary form of wayscript
-        * XML-format hypertext (XHTML)
+        + XML-format hypertext (XHTML)
             ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
             ( http://w3c.github.io/html/infrastructure.html#xml
             ( http://w3c.github.io/html/xhtml.html
@@ -129,7 +133,7 @@ wayic.script/doc.task - Documentation in rough
                         - defining the specialized elements and attributes of wayscript
                         - writing them in source
                         - processing them at runtime
-        * location in a way declaration document
+        + location in a way declaration document
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     HTML inclusions`
