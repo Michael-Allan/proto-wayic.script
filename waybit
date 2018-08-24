@@ -12,7 +12,7 @@
     <ul>
         <li>
             a <a href='wayscript_element'>wayscript element</a>
-            that models a <a href='http://reluk.ca/project/wayic/lex/way'>way</a> part
+            that models a <a href='http://reluk.ca/project/wayic/way'>way</a> part
             <ul>
                 <li>
                     an element in the ‘data:,wayscript.bit’ namespace, or one of its subnamespaces

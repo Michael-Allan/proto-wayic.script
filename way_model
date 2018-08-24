@@ -11,20 +11,13 @@
                   way model</a></h2>
     <ul>
         <li>
-            a model of a <a href='http://reluk.ca/project/wayic/lex/way#way'>way</a>
+            a model of a <a href='http://reluk.ca/project/wayic/way'>way</a>
+            </li>
+        <li>
+            the <a href='http://reluk.ca/project/wayic/cast/waycast'>
+            waycast</a> model of a way, assembled using <a href='waybit'>waybits</a>
             </li>
         </ul>
-    <section      id='the_way_model'>
-        <h3><a href='#the_way_model'>
-                      the way model</a></h3>
-        <ul>
-            <li>
-                the way model used
-                in <a href='http://reluk.ca/project/wayic/cast/waycast#the_waycast'>the waycast</a>,
-                assembled using <a href='waybit'>waybits</a>
-                </li>
-            </ul>
-        </section>
     </section>
 
 
