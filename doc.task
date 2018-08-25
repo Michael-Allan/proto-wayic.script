@@ -82,7 +82,7 @@ wayic.script/doc.task - Documentation in rough
     - a commitment declaration comprises a commitment jointer
       and the subjoining resolve waybit to which it refers
     [ commitment jointer
-        - a bitform referential jointer that refers to /#commitment
+        - a bitform referential jointer that refers to /#resolve
             - whereby the waycaster declares an active commitment
         - the waycaster
             - should
@@ -101,12 +101,12 @@ wayic.script/doc.task - Documentation in rough
                 - a hyperform node might (and most often would) occupy but a part of the line
                     - making this convienience harder to implement
         + intracast commitment declaration
-            - currently documented in source text of http://reluk.ca/project/waycast/way.xht#commitment
+            - currently documented in source text of http://reluk.ca/project/waycast/way.xht#resolve
                 = copy that documentation to here
         + intercast commitment declaration
             ( wayic.intercast § Intercast commitment declaration
     [ resolve waybit
-        - the waybit at waycast location /#commitment
+        - the waybit at waycast location /#resolve
             - which is the waybit of the root way document that has an *id* attribute of ‘commitment’
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
