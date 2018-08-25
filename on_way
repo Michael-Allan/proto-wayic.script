@@ -14,8 +14,8 @@
             (of a <a href='wayscript_element'>
             wayscript element</a>) being the <a href='way_root_element'>
             way root element</a> or descending from the way root element
-            when all <a href='referential_joint'>
-            referential joints</a> are resolved
+            whether directly or by <a href='referential_joint'>
+            referential jointing</a>
             </li>
         </ul>
     </section>
