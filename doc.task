@@ -80,10 +80,10 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
     - a commitment declaration comprises a commitment jointer
-      and the subjoining commitment waybit to which it refers
+      and the subjoining resolve waybit to which it refers
     [ commitment jointer
         - a bitform referential jointer that refers to /#commitment
-            - whereby the waycaster declares a commitment to act
+            - whereby the waycaster declares an active commitment
         - the waycaster
             - should
                 * place one in precisely each waybit of the larger way declaration
@@ -94,7 +94,7 @@ wayic.script/doc.task - Documentation in rough
                 * set a cog:ordinal attribute to assign an intended order to the act
                     ( tasked as wayic.read § cog:ordinal
                     - so prioritizing it relative to other declared commitments
-        - implicitly the whole line of wayscript that declares the commitment is uniquely personal
+        - implicitly the whole line of wayscript containing the jointer is uniquely personal
             ( wayic.copy § uniquely personal lines of text § implicit
             - a convienience
             - whence the bitform constraint on commitment jointers
@@ -105,7 +105,7 @@ wayic.script/doc.task - Documentation in rough
                 = copy that documentation to here
         + intercast commitment declaration
             ( wayic.intercast § Intercast commitment declaration
-    [ commitment waybit
+    [ resolve waybit
         - the waybit at waycast location /#commitment
             - which is the waybit of the root way document that has an *id* attribute of ‘commitment’
 
