@@ -125,14 +125,14 @@ wayic.script/doc.task - Documentation in rough
                 ∵ the basic script of the *web* is hypertext
                 ∴ hypertext
             - XML format
-                ∵ XML facilitates coping with the specialized elements and attributes of wayscript
+                ∵ XML facilitates coping with proper wayscript markup
                     - these aspects of XML in particular:
                         - namespacing
                         - strict syntax and parsing
                     - they facilitate:
-                        - defining the specialized elements and attributes of wayscript
-                        - writing them in source
-                        - processing them at runtime
+                        - defining the markup's elements and attributes
+                        - writing the markup
+                        - processing it at runtime
         + location in a way declaration document
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
