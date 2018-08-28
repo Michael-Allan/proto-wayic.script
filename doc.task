@@ -107,7 +107,7 @@ wayic.script/doc.task - Documentation in rough
             ( wayic.intercast § Intercast commitment declaration
     [ resolve waybit
         - the waybit at waycast location /#resolve
-            - which is the waybit of the root way document that has an *id* attribute of ‘commitment’
+            - which is the waybit of the root way document that has an *id* attribute of ‘resolve’
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Design constraints`
