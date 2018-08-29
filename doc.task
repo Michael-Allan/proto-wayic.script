@@ -397,52 +397,6 @@ wayic.script/doc.task - Documentation in rough
                         - step 2 must succeed step 1
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Referential jointer`
-    ( ./referential_jointer#referential_jointer
-    [ form
-        * *link* attribute
-            < cog:link, namespace data:,wayscript.cog
-            - a referential jointer declaration
-            - content is a fragment preceded by a URI reference that is either:
-                | a full URI
-                    ( https://tools.ietf.org/html/rfc3986#section-1.1.1
-                    ( https://tools.ietf.org/html/rfc3986#section-3
-                    ( https://tools.ietf.org/html/rfc3986#section-3.1
-                    - viz. having a scheme
-                | a *path-absolute*
-                    ( https://tools.ietf.org/html/rfc3986#section-3.3
-                    - it will be resolved in waycast context
-                        ( http://reluk.ca/project/waycast/waycast_context
-                    - no allowance for relative paths
-                        - e.g. beginning with a ‘.’, ‘..’ or file name
-                        - reason
-                            - to ease the tracing of a way that extends across multiple documents
-                            - relative paths are harder to follow
-                                ( see e.g. normalizeURL in http://reluk.ca/project/wayic/read/readable.js
-                | a *same-document reference*
-                    ( https://tools.ietf.org/html/rfc3986#section-4.4
-        - referential jointers are written in two forms:
-            § Bitform referential jointer
-            § Hyperform referential jointer
-    - referent resolution
-        - the URI reference is resolved in waycast context
-            ( http://reluk.ca/project/waycast/waycast_context
-        - this (together with the restriction against relative paths)
-          ensures that any reference needing resolution (not a full URI)
-          resolves to a referent in the same waycast
-            - why this constraint is wanted: self containment for the sake of portability
-                - especially for the purpose of propagation
-                    ( http://reluk.ca/project/waycast/constraints.xht#ever_F
-        - if the terminal path component is a directory
-            - so indicated by a terminating slash ‘/’
-            - then ‘way.xht’ is assumed as the file name
-        - the URL must include a fragment to identify the subjoining waybit
-  / - looped referential jointing
-  /     - may occur when the subjoining waybit is an ancestor waybit
-  /     - formally allowed though it is not always guaranteed to make sense
-  // till I encounter the need in practice, and can give that as an example
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential joint`
     ( ./referential_joint#referential_joint
     [ purpose
@@ -511,6 +465,52 @@ wayic.script/doc.task - Documentation in rough
         - the subjoining waybit (in gaining the same parent) becomes a *sibling* to the jointer
             ( § Referential joint § effect § effective changes of a referential joint
             - separate of the jointer and its content
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Referential jointer`
+    ( ./referential_jointer#referential_jointer
+    [ form
+        * *link* attribute
+            < cog:link, namespace data:,wayscript.cog
+            - a referential jointer declaration
+            - content is a fragment preceded by a URI reference that is either:
+                | a full URI
+                    ( https://tools.ietf.org/html/rfc3986#section-1.1.1
+                    ( https://tools.ietf.org/html/rfc3986#section-3
+                    ( https://tools.ietf.org/html/rfc3986#section-3.1
+                    - viz. having a scheme
+                | a *path-absolute*
+                    ( https://tools.ietf.org/html/rfc3986#section-3.3
+                    - it will be resolved in waycast context
+                        ( http://reluk.ca/project/waycast/waycast_context
+                    - no allowance for relative paths
+                        - e.g. beginning with a ‘.’, ‘..’ or file name
+                        - reason
+                            - to ease the tracing of a way that extends across multiple documents
+                            - relative paths are harder to follow
+                                ( see e.g. normalizeURL in http://reluk.ca/project/wayic/read/readable.js
+                | a *same-document reference*
+                    ( https://tools.ietf.org/html/rfc3986#section-4.4
+        - referential jointers are written in two forms:
+            § Bitform referential jointer
+            § Hyperform referential jointer
+    - referent resolution
+        - the URI reference is resolved in waycast context
+            ( http://reluk.ca/project/waycast/waycast_context
+        - this (together with the restriction against relative paths)
+          ensures that any reference needing resolution (not a full URI)
+          resolves to a referent in the same waycast
+            - why this constraint is wanted: self containment for the sake of portability
+                - especially for the purpose of propagation
+                    ( http://reluk.ca/project/waycast/constraints.xht#ever_F
+        - if the terminal path component is a directory
+            - so indicated by a terminating slash ‘/’
+            - then ‘way.xht’ is assumed as the file name
+        - the URL must include a fragment to identify the subjoining waybit
+  / - looped referential jointing
+  /     - may occur when the subjoining waybit is an ancestor waybit
+  /     - formally allowed though it is not always guaranteed to make sense
+  // till I encounter the need in practice, and can give that as an example
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Step`
