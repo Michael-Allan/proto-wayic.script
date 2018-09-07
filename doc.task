@@ -1,9 +1,24 @@
 wayic.script/doc.task - Documentation in rough
 
-    - wayscript
-        ( ./wayscript#wayscript
-        - occurs in way declaration documents
+    < ./wayscript#wayscript
+
+    + formal summary
+        - XML-format hypertext
+            ( § Design constraints § XML-format hypertext (XHTML)
+            § Namespaces
+            § HTML attribution
+
+        § Waybit
+            § Step
+
+        § Attributive grouping
+        § Nesting of waybit elements
+        § Referential jointing
+
+    + operative context
+        - a way declaration document
             ( http://reluk.ca/project/wayic/cast/way_declaration_document
+            ( § Design constraints § operation in the context of a way declaration document
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Attributive grouping`
@@ -61,21 +76,22 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Bitform referential jointer`
-    < a form of (§) Referential jointer
-    - form
-        < additional to § Referential jointer § form
-        - the jointer is a waybit in the same namespace as the subjoining waybit
-            - e.g. only a step jointer can declare a step to be subjoining
-        - a local name of ‘_same’ on the jointer means *the same name*
-          as the referent subjoining waybit
-        - the jointer must not have content
+    < a form of (§) referential jointer
+    - a waybit with a (§) subjoining waybit reference
+    - constraints
+        - has the same namespace as its referent subjoining waybit
+            ( e.g. only a step jointer can refer to a subjoining step
+        - has no content
+    - a jointer element with a local name of ‘_same’ is instead presented to document viewers
+      with the same local name as the referent subjoining waybit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
-    - a commitment declaration comprises a commitment jointer
-      and the subjoining resolve waybit to which it refers
+    - a bitform referential joint to a resolve waybit
+        - comprising the jointer (commitment jointer) and its referent
+        - the subjoining resolve waybit
     [ commitment jointer
-        - a bitform referential jointer that refers to /#resolve
+        - a bitform referential jointer that refers to /way.xht#resolve
             - whereby the waycaster declares an active commitment
         - the waycaster
             - should
@@ -99,25 +115,23 @@ wayic.script/doc.task - Documentation in rough
         + intercast commitment declaration
             ( wayic.intercast § Intercast commitment declaration
     [ resolve waybit
-        - the waybit at waycast location /#resolve
+        - the waybit at waycast location /way.xht#resolve
             - which is the waybit of the root way document that has an *id* attribute of ‘resolve’
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Design constraints`
     [ ⤓ minimal
-        - necessary form of wayscript
-        + XML-format hypertext (XHTML)
-            ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
-            ( http://w3c.github.io/html/infrastructure.html#xml
-            ( http://w3c.github.io/html/xhtml.html
-            - hypertext
-                ∵ wayscript is basic to the waycast
+        + XML-format hypertext
+            - the basic form of wayscript is XML-format hypertext (XHTML)
+                ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
+                ( http://w3c.github.io/html/infrastructure.html#xml
+                ( http://w3c.github.io/html/xhtml.html
+            ∴ hypertext
                 ∵ the *waycast* is public
                     ( http://reluk.ca/project/waycast/constraints.xht#availability
                 ∵ the premiere medium of *publication* today is the Web
                 ∵ the basic script of the *web* is hypertext
-                ∴ hypertext
-            - XML format
+            ∴ XML format
                 ∵ XML facilitates coping with proper wayscript markup
                     - these aspects of XML in particular:
                         - namespacing
@@ -126,24 +140,59 @@ wayic.script/doc.task - Documentation in rough
                         - defining the markup's elements and attributes
                         - writing the markup
                         - processing it at runtime
-        + location in a way declaration document
+        + operation in the context of a way declaration document
+            ( http://reluk.ca/project/wayic/cast/way_declaration_document
+            - wayscript is properly interpreted only in the context of a way declaration document
+        + relative referencing bound by the waycast
+            - all relative references in wayscript proper are bound by the waycast
+              of the way declaration document
+                ( see § operative in the context of a way declaration document
+            - ensuring that each resolves to a referent in the same waycast
+            ∴ so bound
+                ∵ unbounded relative references would be liable to breakage
+                    ∵ the waycast is portable
+                        ∵ need basic utility
+                        ∵ need user freedom
+                            ∵ wayic.architec § Fi Maximization of user freedom
+                                ( http://reluk.ca/project/wayic/architec/doc.task
+                    ∵ the waycast is copyable
+                        ∵ wayic.architec § Fo Maximization of system availability to non-users
+            ∴ this boundary applies to proper wayscript only
+                ∵ enforcing the boundary in proper XML and HTML parts would be infeasible
+                    ∵ non-wayic tools will process proper XML and HTML parts regardless of the boundary
+                        ∵ no wayic pre-processor can feasibly preempt all non-wayic processing
+                            ∵ some non-wayic processors (of web browsers for instance)
+                              run prior to any normal, wayic processor
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
-    HTML inclusions`
-    - allowed
-    - hyperlinks within wayscript
+    HTML attribution`
+    - the HTML attribution inherent in wayscript is standard except as noted here
+    + *id* attribute
+        < no namespace
+        - its contraints are those of XML
+            - tighter than plain HTML
+            - why? to be on the safe side, pending cause for loosening
+        - namely:
+            - type: XML ID, unique within document
+                ( https://www.w3.org/TR/xml/#sec-attribute-types
+            - form: XML Name
+                ( https://www.w3.org/TR/xml/#NT-Name
+    + *href* attribute
+        < no namespace
         - the *href* attribute of the *a* element is resolved in waycast context
             ( http://reluk.ca/project/waycast/waycast_context
+        - thereby enabling it to take the form (wholly or partly) of a waycast clamped reference
+            ( § Waycast clamped reference
+            - consistent (more or less) with the  referential attributes of wayscript proper
+                ( § Design constraints § relative referencing bound by the waycast
+            - which are numerous
+            - making this a convenience for the wayscribe
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Hyperform referential jointer`
-    < a form of (§) Referential jointer
-  / - placement: descends from a waybit
-    - form
-        < additional to § Referential jointer § form
-        - it is an HTML *a* element
-        - it has no *href* attribute
-            - rather a *link* attribute
+    < a form of (§) referential jointer
+    - an HTML *a* element with a (§) subjoining waybit reference
+    - constraint: it has no *href* attribute
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Level conjunction of elements`
@@ -239,29 +288,16 @@ wayic.script/doc.task - Documentation in rough
                         - meaning: parts A and B are peers
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Namespacing`
-    - XML namespacing for wayscript
-    - terms of hierarchy
-        * supernamespace
-            - examples
-                < data:,wayscript.
-                < data:,wayscript.bit.
-            - a supernamespace is not a [proper] namespace
-        * subnamespace
-            - a subnamespace is a [proper] namespace
-            - examples
-                < data:,wayscript.bit
-                < data:,wayscript.bit.step
-                < data:,wayscript.step
-            - a subnamespace may be represented by a foreshortened name
-                - examples of foreshortened names
-                    < bit
-                    < bit.step
-                    < step
-    - multiple namespaces may be symbolized by a ‘*’ placeholder appended to a supernamespace
+    Namespaces`
+    ( https://www.w3.org/TR/xml-names/
+    - notation
+        - multiple namespaces may be symbolized by a ‘*’ placeholder appended to a supernamespace
         - example, all subnamespaces of the ‘bit’ [sub]namespace:
-            < data:,wayscript.bit.*
-    - namespaces
+
+              data:,wayscript.bit.*
+
+    - hierarchy
+        - here are the namespaces used in wayscript
         < data:,wayscript.
             - wayscript supernamespace
             + data:,wayscript.bit
@@ -274,6 +310,23 @@ wayic.script/doc.task - Documentation in rough
                         - namespace of steps
             + data:,wayscript.cog
                 - general purpose namespace
+    - terms
+        * supernamespace
+            - examples
+                < data:,wayscript.
+                < data:,wayscript.bit.
+            - a supernamespace is not functional as is, not usable in wayscript
+        * subnamespace
+            - a subnamespace is functional as is, usable in wayscript
+            - examples
+                < data:,wayscript.bit
+                < data:,wayscript.bit.step
+                < data:,wayscript.step
+            - a subnamespace may be alluded to by a foreshortened name
+                - examples of foreshortened names
+                    < bit
+                    < bit.step
+                    < step
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Nesting of elements`
@@ -390,8 +443,10 @@ wayic.script/doc.task - Documentation in rough
                         - step 2 must succeed step 1
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Referential joint`
+    Referential jointing`
     ( ./referential_joint#referential_joint
+    - referential jointing is an alternative to direct junction by nested abutment
+        ( cf. §§ Nesting of elements & Nesting of waybit elements
     [ purpose
         - two fold
         1 modeling a single way with separately declared waybits
@@ -401,24 +456,26 @@ wayic.script/doc.task - Documentation in rough
             - or
                 ( closer to the meaning of element nests
                 - such that multiple wholes share the part which is represented by this waybit in common
-                    < see nesting in § Attributive grouping
+                    < what nesting means in § Attributive grouping
                 - or that multiple derivatives (effects or dependants)
                   derive from this common origin (cause, premise, means or what not)
-                    < see § Nesting of waybit elements
-                = stop implying it must be one or the other of the above
-                    - as just ‘or’ implies
+                    < what nesting means in § Nesting of waybit elements
+                - or some combination of these
+                    - in one place the waybit being a part
+                        ( § Modelled way relations § inherence and subsistence
+                    - in another a cause or means
+                        ( § Modelled way relations § causality and dependence
     [ form
-        - two elements
-            - a referrer (jointer)
-                ( § Referential jointer
-            - its referent (subjoining waybit)
-                ( § Subjoining waybit
-        - the mapping between jointers and referential joints entire is 1:1
+        - a joint is formed of two elements
+            - a referrer
+                - typically a (§) referential jointer
+            - its referent
+                - a (§) subjoining waybit
+        - the mapping between jointers and joints entire is 1:1
             - each jointer effectively declares a separate joint
-            ( the same is not true of subjoining waybits, which map to referential joints 1:N
-        - joint is declared unidirectionally
+            ( the same is not true of subjoining waybits, which map to joints 1:N
+        - the joint is declared unidirectionally
             - from jointer to subjoining waybit
-          / - except in the case of looped referential jointing, q.v.
             - for sake of general simplicity and robustness
                 - subordinate building blocks (e.g. underbits) can be implemented
                   blind to the uses (overbits) they will be put in future
@@ -458,57 +515,20 @@ wayic.script/doc.task - Documentation in rough
         - the subjoining waybit (in gaining the same parent) becomes a *sibling* to the jointer
             ( § Referential joint § effect § effective changes of a referential joint
             - separate of the jointer and its content
+  / [ looped referential jointing
+  /     - an edge case in which the subjoining waybit is an ancestor of the referrer
+  /     - formally allowed though not guaranteed to make sense
+  // till I have a need to document this, and hopefully a practical example, or counter example
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointer`
     ( ./referential_jointer#referential_jointer
-    [ form
-        - referential jointers are written in two forms:
-            § Bitform referential jointer
-            § Hyperform referential jointer
-        * *link* attribute
-            < cog:link, namespace data:,wayscript.cog
-            - content is a fragment preceded by a URI reference that is either:
-                | a URI
-                    ( https://tools.ietf.org/html/rfc3986#section-1.1.1
-                    ( https://tools.ietf.org/html/rfc3986#section-3
-                    ( https://tools.ietf.org/html/rfc3986#section-3.1
-                    - viz. having a scheme
-                | a relative reference with a *path-absolute*
-                    ( https://tools.ietf.org/html/rfc3986#section-3.3
-                    - not with a relative path
-                        - e.g. beginning with a ‘.’, ‘..’ or file name
-                        - reason
-                            - to ease the tracing of a way that extends across multiple documents
-                            - relative paths are harder to follow
-                                ( see e.g. normalizeURL in http://reluk.ca/project/wayic/read/readable.js
-                    - it will be resolved in waycast context
-                        ( http://reluk.ca/project/waycast/waycast_context
-                | a *same-document reference*
-                    ( https://tools.ietf.org/html/rfc3986#section-4.4
-    [ reference resolution
-        - resolving the reference of the *link* attribute
-        - if the terminal path component is a directory
-            - so indicated by a terminating slash ‘/’
-            - then ‘way.xht’ is assumed as the file name
-        + relative reference resolution
-            - resolving the reference of the *link* attribute in the case of a relative reference
-            - the relative reference is resolved in waycast context
-                ( http://reluk.ca/project/waycast/waycast_context
-                - this (together with the restriction to an absolute path)
-                  ensures that the reference resolves to a referent in the same waycast
-                    - why this ensurance is wanted
-                        - self containment for the sake of portability
-                        - especially for the purpose of propagation
-                            ( http://reluk.ca/project/waycast/constraints.xht#ever_F
-        + constraints
-            - the reference must include a fragment to indicated a particular waybit as the referent
-            - the reference is invalid if its referent disobeys a constraint of a subjoining waybit
-                ( § Subjoining waybit § constraints
-  / - looped referential jointing
-  /     - may occur when the subjoining waybit is an ancestor waybit
-  /     - formally allowed though it is not always guaranteed to make sense
-  // till I encounter the need in practice, and can give that as an example
+    - form, one of
+        § Bitform referential jointer
+        § Hyperform referential jointer
+    - function
+        - referential jointing (§ q.v.)
+        - it declares a referential joint
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Step`
@@ -539,29 +559,94 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Subjoining waybit`
-    [ form
-        * *id* attribute
-            < no namespace
-            - content: XML ID, unique within document
-                - stricter than the formal requirement of HTML
-                - to be on the safe side, pending any urgent cause for a looser form
-        + constraints
-            ( the conditions of a subjoining waybit, which determine it as such
-            - it is a waybit
-            - it is referenced by a referential jointer
-            - it has no cog:link attribute
-                - whereby it would serve also as a bitform referential jointer
-                  with a subjoining waybit of its own
-                - whereby each of its jointers together with it and its subjoining waybit
-                  would form a double joint
-                    - a joint to a joint
-                - disallowed
-                - reasons
-                    - double jointing has no clear use case to justify its attendant complications
-                    - double jointing might over-constrain the presentation of the way model in practice
-                        - e.g. where an application would give to jointer and subjoining waybit
-                          distinct yet overlapping presentations that are difficult to combine
-                          in a single element
+    ( ./subjoin#subjoin
+    - constraints
+        ( the conditions of a subjoining waybit, which determine it as such
+        - it is a waybit
+        - it is referenced by a referential jointer
+        - it has no *join* attribute
+            - whereby it would serve also as a bitform referential jointer
+              with a subjoining waybit of its own
+            - whereby each of its jointers together with it and its subjoining waybit
+              would form a double joint
+                - a joint to a joint
+            - disallowed
+            - reasons
+                - double jointing has no clear use case to justify its attendant complications
+                - double jointing might over-constrain the presentation of the way model in practice
+                    - e.g. where an application would give to jointer and subjoining waybit
+                      distinct yet overlapping presentations that are difficult to combine
+                      in a single element
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Subjoining waybit reference`
+    - a subjoining waybit reference comprises up to three elemental attributes
+      of which two are optional (*import*, *offset*) and one mandatory (*join*)
+        + but note
+            - the *import* and *offset* attributes are not yet supported by wayic.read
+    - formal summary
+
+          [import='WAYCAST-URI']  offset='ELEMENTAL-REL-REF'  join='WAYBIT-REL-PATH'
+
+          [import='WAYCAST-URI']  join='WAYBIT-REL-REF'
+
+    + *import* attribution
+        < cog:import, namespace data:,wayscript.cog
+        - attribute optional, may be omitted
+            - not yet supported by wayic.read
+        - form: URI that does not refer to the waycast of the present way declaration document
+            ( URI, https://tools.ietf.org/html/rfc3986#section-3
+        - function
+            - overall it sets the waycast context of the reference
+                ( http://reluk.ca/project/wayic/cast/waycast_context
+            * function when omitted
+                - sets the waycast context to that of the present way declaration document
+            * function when present
+                - if the referent waycast is that of the present way declaration document
+                    - the reference is malformed and invalid
+                - else
+                    < edge case
+                        - if the referent waycast is a known alias (alternative location, or whatnot)
+                          of the waycast of the present way declaration document
+                            - the reference is improper but is accepted as valid
+                                ( accepted because it may be useful for test purposes
+                            - the wayscribe is warned if feasible
+                    - effectively imports an image of the referent waycast
+                        - adding to the present waycast a (more or less) live copy
+                        - one that stays (roughly) up to date with the original
+                    - sets the waycast context (of the other attributes of the reference)
+                      to that of the (effective) image
+                        - note this removes them from the context of the present document
+                          and so defeats any same-document reference
+                            ( Same-document reference, https://tools.ietf.org/html/rfc3986#section-4.4
+    + *offset* attribution
+        < cog:offest, namespace data:,wayscript.cog
+        - attribute optional, may be omitted
+            - not yet supported by wayic.read
+        - form: a (§) waycast self-bounded reference
+        - function
+            * function when omitted
+                - switches the *join* attribute into direct form
+            * function when present
+                - sets a context node for the reference
+                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
+                - switches the *join* attribute into offset form
+    + *join* attribute
+        < cog:join, namespace data:,wayscript.cog
+        - attribute mandatory, always present
+        - form
+            - one of two forms as determined by the switching function
+              of the *offset* attribution
+            * offset form
+                < for reference to a waybit that has no *id* attribute
+                - an XPath relative path expression
+                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
+                    - relative to the context node as set by the *offset* attribution
+            * direct form
+                ( no *offset* attribute is present
+                < for reference to a waybit that has an *id* attribute
+                - a (§) waycast self-bounded reference
+        - function: refines the reference down to the precise location of the referent waybit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
@@ -591,6 +676,30 @@ wayic.script/doc.task - Documentation in rough
             < namespaced data:,wayscript.bit
         * step
             ( see §
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Waycast clamped reference`
+    - a relative reference with an absolute path and no dot segment
+        ( Relative reference,         https://tools.ietf.org/html/rfc3986#section-4.2
+        ( path-absolute, dot-segment, https://tools.ietf.org/html/rfc3986#section-3.3
+        - relative to a given waycast context
+            ( http://reluk.ca/project/wayic/cast/waycast_context
+    - the absolute path makes the relation to the waycast root directory explicit
+    - together with the prohibition on dot segments
+        - especially the implication of no double-dot segment
+        - it is self constrained to the boundary of the waycast context
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Waycast self-bounded reference`
+    - one of
+        | a fragment-only, same-document reference
+            ( Fragment,                https://tools.ietf.org/html/rfc3986#section-3.5
+            ( Same-document reference, https://tools.ietf.org/html/rfc3986#section-4.4
+        | a URI based, waycast clamped reference with a fragment
+            ( § Waycast clamped reference
+    - whereby it is self constrained to the boundary of a waycast context
+
+
 
     ════════════════════════════════════════════════════════════════════════════════════════════════════
     Note`
