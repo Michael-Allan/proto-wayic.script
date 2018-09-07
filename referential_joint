@@ -12,7 +12,8 @@
     <ul>
         <li>
             a <a href='joint'>joint</a> that effectively infrabuts
-            a <a href='subjoin'>subjoining</a> waybit to a <a href='surjoin'>surjoining</a> element
+            a referent waybit (<a href='subjoin'>subjoining</a> waybit)
+            to a <a href='surjoin'>surjoining</a> element
             </li>
         </ul>
     </section>
