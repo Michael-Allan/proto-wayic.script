@@ -486,8 +486,9 @@ wayic.script/doc.task - Documentation in rough
                     - no underbit being able to contradict the definition
                     - which simplifies machine (and human) processing of the structure
     [ effect
-        - the effect of a referential joint is determined by would-be wayscript changes
-          (effective changes) as the effect the changes would introduce
+        - the effect of a referential joint is determined
+          by definite, but hypothetical wayscript changes (effective changes)
+        - its effect is what the effective changes would introduce
         - effective changes of a referential joint:
             * any referential joint
                 - the subjoining waybit gains a parent (effective parent)
@@ -563,7 +564,7 @@ wayic.script/doc.task - Documentation in rough
     - constraints
         ( the conditions of a subjoining waybit, which determine it as such
         - it is a waybit
-        - it is referenced by a referential jointer
+        - it is the referent of a referential jointer
         - it has no *join* attribute
             - whereby it would serve also as a bitform referential jointer
               with a subjoining waybit of its own
