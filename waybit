@@ -11,15 +11,30 @@
                   waybit</a></h2>
     <ul>
         <li>
-            a <a href='wayscript_element'>wayscript element</a>
+            a <a href='wayscript'>wayscript</a> element
             that models a <a href='http://reluk.ca/project/wayic/way'>way</a> part
             <ul>
                 <li>
-                    an element in the ‘data:,wayscript.bit’ namespace, or one of its subnamespaces
+                    an element whose XML namespace is either ‘data:,wayscript.bit’
+                    or a subnamespace of ‘data:,wayscript.bit.’
                     </li>
                 </ul>
             </li>
         </ul>
+    <section      id='proper_waybit'>
+        <h3><a href='#proper_waybit'>
+                      proper waybit</a></h3>
+        <ul>
+            <li>
+                (also <b>waybit proper</b>) a waybit that is not of a namespaced subtype
+                <ul>
+                    <li>
+                        an element whose XML namespace is “data:,wayscript.bit”
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
     </section>
 
 
