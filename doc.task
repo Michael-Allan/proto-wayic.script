@@ -3,9 +3,9 @@ wayic.script/doc.task - Documentation in rough
     < ./wayscript#wayscript
 
     + formal summary
-        - XML-format hypertext
-            ( § Design constraints § XML-format hypertext (XHTML)
-            § Namespaces
+        - XML syntactic hypertext
+            ( § Design constraints § XML syntactic hypertext (XHTML)
+            § Namespacing
             § HTML attribution
 
         § Waybit
@@ -28,12 +28,12 @@ wayic.script/doc.task - Documentation in rough
     - example [ETO]
 
           <A>
-              <cog:group rel='in'>
+              <way:group rel='in'>
                   <P>
 
         - meaning: part P inheres in whole A, or subsists in whole A
     [ *group* element
-        < cog:group, namespace data:,wayscript.cog
+        < way:group, namespace data:,wayscript
         - placement: child of waybit element
         - content
             + qualifying text
@@ -44,11 +44,11 @@ wayic.script/doc.task - Documentation in rough
                 - example
 
                       <A>
-                          <cog:group rel='in'> including:
+                          <way:group rel='in'> including:
                               <P>
                               <Q>
                       <B>
-                          <cog:group rel='in'> comprising:
+                          <way:group rel='in'> comprising:
                               <P>
                               <Q>
 
@@ -100,8 +100,8 @@ wayic.script/doc.task - Documentation in rough
                     - as a child of that waybit
                 * set the node name to reflect the commited action
             - may
-                * set a cog:ordinal attribute to assign an intended order to the act
-                    ( tasked as wayic.read § cog:ordinal
+                * set a way:ordinal attribute to assign an intended order to the act
+                    ( tasked as wayic.read § way:ordinal
                     - so prioritizing it relative to other declared commitments
         - implicitly the whole line of wayscript containing the jointer is uniquely personal
             ( wayic.copy § uniquely personal lines of text § implicit
@@ -115,14 +115,14 @@ wayic.script/doc.task - Documentation in rough
         + intercast commitment declaration
             ( wayic.intercast § Intercast commitment declaration
     [ resolve waybit
-        - the waybit at waycast location /way.xht#resolve
+        - the waybit at waycast context location /way.xht#resolve
             - which is the waybit of the root way document that has an *id* attribute of ‘resolve’
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Design constraints`
     [ ⤓ minimal
-        + XML-format hypertext
-            - the basic form of wayscript is XML-format hypertext (XHTML)
+        + XML syntactic hypertext
+            - the basic form of wayscript is XML syntactic hypertext (XHTML)
                 ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
                 ( http://w3c.github.io/html/infrastructure.html#xml
                 ( http://w3c.github.io/html/xhtml.html
@@ -131,7 +131,7 @@ wayic.script/doc.task - Documentation in rough
                     ( http://reluk.ca/project/waycast/constraints.xht#availability
                 ∵ the premiere medium of *publication* today is the Web
                 ∵ the basic script of the *web* is hypertext
-            ∴ XML format
+            ∴ XML syntax
                 ∵ XML facilitates coping with proper wayscript markup
                     - these aspects of XML in particular:
                         - namespacing
@@ -230,7 +230,7 @@ wayic.script/doc.task - Documentation in rough
         - combined example [ETO]
 
               <C>
-                  <cog:group rel='in'>
+                  <way:group rel='in'>
                       <P>
                       <Q>
                   <B>
@@ -257,7 +257,7 @@ wayic.script/doc.task - Documentation in rough
                     - example [ETO]
 
                           <B>
-                              <cog:group rel='in'>
+                              <way:group rel='in'>
                                   <A>
 
                         - meaning: part A inheres in whole B, or subsists in whole B
@@ -288,45 +288,77 @@ wayic.script/doc.task - Documentation in rough
                         - meaning: parts A and B are peers
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Namespaces`
+    Namespacing`
     ( https://www.w3.org/TR/xml-names/
-    - notation
-        - multiple namespaces may be symbolized by a ‘*’ placeholder appended to a supernamespace
-        - example, all subnamespaces of the ‘bit’ [sub]namespace:
-
-              data:,wayscript.bit.*
-
-    - hierarchy
-        - here are the namespaces used in wayscript
-        < data:,wayscript.
-            - wayscript supernamespace
-            + data:,wayscript.bit
-                - namespace of waybits simply, excluding subspaced waybits such as steps
-                < data:,wayscript.bit.
-                    - supernamespace of waybit subtypes
-                        - such as step
-                        - or others independently defined elsewhere
-                    + data:,wayscript.bit.step
-                        - namespace of steps
-            + data:,wayscript.cog
-                - general purpose namespace
-    - terms
-        * supernamespace
+    [ terms
+        * para-namespace
+            - a false namespace whose identifier preposes that of a true namespace (subnamespace)
+                - as for instance 'foo.' preposes 'foo.bar'
+                ( 'prepose' not 'prefix' which already has a different meaning in XML namespaces
+            - an abstract category of namespaces
+                - itself not a namespace, not usable in wayscript
             - examples
-                < data:,wayscript.
-                < data:,wayscript.bit.
-            - a supernamespace is not functional as is, not usable in wayscript
+
+                  data:,wayscript.
+
+                  data:,wayscript.bit.
+
         * subnamespace
-            - a subnamespace is functional as is, usable in wayscript
+            - a true namespace that belongs to a para-namespace
+                - whose identifier begins, in other words, with the identifier of the para-namespace
             - examples
-                < data:,wayscript.bit
-                < data:,wayscript.bit.step
-                < data:,wayscript.step
-            - a subnamespace may be alluded to by a foreshortened name
-                - examples of foreshortened names
-                    < bit
-                    < bit.step
-                    < step
+
+                  data:,wayscript.bit
+
+                  data:,wayscript.bit.step
+
+    [ hierarchy
+        - here is the namespace hierarchy of wayscript proper
+        - each namespace is identified together with its traditional, simple prefix (in brackets)
+
+            +(way) data:,wayscript
+                < top namespace
+
+                * data:,wayscript.
+                    < top para-namespace, to which all proper wayscript subnamespaces belong
+
+                    +(bit) data:,wayscript.bit
+                        < namespace of waybits proper, excluding namespaced subtypes such as steps
+
+                        * data:,wayscript.bit.
+                            < para-namespace of waybit subtypes, such as step
+
+                            +(step) data:,wayscript.bit.step
+                                < namespace of steps
+    [ notation
+        - descriptive conventions
+        * sub-identifier
+            - a partial identifier of a subnamespace
+                - unique only within the context of a para-namespace
+            - within that context
+                - any subnamespace may be uniquely identified by a sub-identifier
+                - which is formed by removing the preposing para-namespace identifier
+            - examples of sub-identifiers
+
+                  bit
+
+                  bit.step
+
+                  step
+
+            * top sub-identifier
+                - a sub-identifier in the context of the top para-namespace (data:,wayscript.)
+                - examples of top sub-identifiers
+
+                      bit
+
+                      bit.step
+
+        * wild cards
+            - multiple subnamespaces may be symbolized by a ‘*’ wild card appended to a para-namespace
+            - example, all subnamespaces of ‘data:,wayscript.bit.’:
+
+                  data:,wayscript.bit.*
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Nesting of elements`
@@ -592,7 +624,7 @@ wayic.script/doc.task - Documentation in rough
           [import='WAYCAST-URI']  join='WAYBIT-REL-REF'
 
     + *import* attribution
-        < cog:import, namespace data:,wayscript.cog
+        < way:import, namespace data:,wayscript
         - attribute optional, may be omitted
             - not yet supported by wayic.read
         - form: URI that does not refer to the waycast of the present way declaration document
@@ -621,7 +653,7 @@ wayic.script/doc.task - Documentation in rough
                           and so defeats any same-document reference
                             ( Same-document reference, https://tools.ietf.org/html/rfc3986#section-4.4
     + *offset* attribution
-        < cog:offest, namespace data:,wayscript.cog
+        < way:offest, namespace data:,wayscript
         - attribute optional, may be omitted
             - not yet supported by wayic.read
         - form: a (§) waycast self-bounded reference
@@ -633,7 +665,7 @@ wayic.script/doc.task - Documentation in rough
                     ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
                 - switches the *join* attribute into offset form
     + *join* attribute
-        < cog:join, namespace data:,wayscript.cog
+        < way:join, namespace data:,wayscript
         - attribute mandatory, always present
         - form
             - one of two forms as determined by the switching function
@@ -673,10 +705,10 @@ wayic.script/doc.task - Documentation in rough
         - a name of ‘_’ means no name (anonymous waybit)
     + types
         < types of waybit
-        * waybit simply
+        * proper waybit
             < namespaced data:,wayscript.bit
         * step
-            ( see §
+            ( see § Step
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waycast clamped reference`
