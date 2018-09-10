@@ -11,8 +11,8 @@
                   on way</a></h2>
     <ul>
         <li>
-            (of a <a href='wayscript_element'>
-            wayscript element</a>) being the <a href='way_root_element'>
+            (of a <a href='wayscript'>
+            wayscript</a> element) being the <a href='way_root_element'>
             way root element</a> or descending from the way root element
             whether directly or by <a href='referential_joint'>
             referential jointing</a>
