@@ -178,15 +178,23 @@ wayic.script/doc.task - Documentation in rough
             - form: XML Name
                 ( https://www.w3.org/TR/xml/#NT-Name
     + *href* attribute
-        < no namespace
-        - the *href* attribute of the *a* element is resolved in waycast context
-            ( http://reluk.ca/project/waycast/waycast_context
-        - thereby enabling it to take the form (wholly or partly) of a waycast clamped reference
-            ( § Waycast clamped reference
-            - consistent (more or less) with the  referential attributes of wayscript proper
-                ( § Design constraints § relative referencing bound by the waycast
-            - which are numerous
-            - making this a convenience for the wayscribe
+        < no namespace, on *a* element only
+        * as per § Offset capable referencing § refinement attribution
+            <           formal attribute = href, no namespace
+            < URI referential constraint = resolved in waycast context
+        - in other words, the *href* attribute of the *a* element gains two affordances for wayscripting
+            *1) resolution in waycast context
+                ( http://reluk.ca/project/waycast/waycast_context
+                - thereby enabling it to take the form (wholly or partly) of a waycast clamped reference
+                    ( § Waycast clamped reference
+                    - consistent (more or less) with the referential attributes of wayscript proper
+                        ( § Design constraints § relative referencing bound by the waycast
+                    - which are numerous
+                    - making this a convenience for the wayscribe
+            *2) offset capability
+                - by pairing the *href* with an *offset* attribute,
+                  the wayscribe may refer to an intracast element that has no *id* attribute
+                    ( § Offset capable referencing § refinement attribution § offset mode
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Hyperform referential jointer`
@@ -475,6 +483,52 @@ wayic.script/doc.task - Documentation in rough
                         - step 2 must succeed step 1
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Offset capable referencing`
+    - the use of an *offset* attribute (optional) and a refinement attribute (mandatory)
+      to refer to an element regardless of whether it has an *id* attribute
+    + *offset* attribution
+        < way:offest, namespace data:,wayscript
+        - attribute optional, the attribute itself may be omitted
+            * not yet supported by wayic.read
+                =wayic.read § *offset* attribution
+                    ( http://reluk.ca/project/wayic/read/project.task
+        - form: a (§) waycast self-bounded reference
+        - function
+            * function when omitted
+                - switches the refinement attribute into direct mode
+            * function when present
+                - sets a context node for the reference
+                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
+                - switches the refinement attribute into offset mode
+    + refinement attribution
+        - attribute mandatory, the attribute itself is always present
+        - refinement attribution comprises:
+            * formal attribute
+                - the formal attribute given (named) to carry the refinement function
+                < mandatory
+            * URI referential constraint
+                - a formal constraint given to define a *constrained URI reference*, q.v. below
+                < optional
+                    - it may be omitted, in which case the definition defaults to just a URI reference
+                        ( URI reference, https://tools.ietf.org/html/rfc3986#section-4.1
+        - form
+            < to the given (§) formal attribute
+            - according to one of two formal modes as determined by the switching function
+              of the *offset* attribution
+            * offset mode
+                ( when yes, an *offset* attribute is present
+                < XPath standard, for reference to an element that has no *id* attribute
+                - an XPath relative path expression
+                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
+                    - relative to the context node as set by the *offset* attribution
+            * direct mode
+                ( when no, no *offset* attribute is present
+                < URI standard, for reference to an element that has an *id* attribute
+                - a constrained URI reference
+                    < from the given § URI referential constraint
+        - function: refines the reference down to the precise location of the referent waybit
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointing`
     ( ./referential_joint#referential_joint
     - referential jointing is an alternative to direct junction by nested abutment
@@ -625,7 +679,7 @@ wayic.script/doc.task - Documentation in rough
 
     + *import* attribution
         < way:import, namespace data:,wayscript
-        - attribute optional, may be omitted
+        - attribute optional, the attribute itself may be omitted
             - not yet supported by wayic.read
         - form: URI that does not refer to the waycast of the present way declaration document
             ( URI, https://tools.ietf.org/html/rfc3986#section-3
@@ -653,33 +707,13 @@ wayic.script/doc.task - Documentation in rough
                           and so defeats any same-document reference
                             ( Same-document reference, https://tools.ietf.org/html/rfc3986#section-4.4
     + *offset* attribution
-        < way:offest, namespace data:,wayscript
-        - attribute optional, may be omitted
-            - not yet supported by wayic.read
-        - form: a (§) waycast self-bounded reference
-        - function
-            * function when omitted
-                - switches the *join* attribute into direct form
-            * function when present
-                - sets a context node for the reference
-                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
-                - switches the *join* attribute into offset form
+        * as per § Offset capable referencing § *offset* attribution
+        - attribute optional, the attribute itself may be omitted
     + *join* attribute
-        < way:join, namespace data:,wayscript
+        * as per § Offset capable referencing § refinement attribution
+            <           formal attribute = way:join, namespace data:,wayscript
+            < URI referential constraint = (§) waycast self-bounded reference
         - attribute mandatory, always present
-        - form
-            - one of two forms as determined by the switching function
-              of the *offset* attribution
-            * offset form
-                < for reference to a waybit that has no *id* attribute
-                - an XPath relative path expression
-                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
-                    - relative to the context node as set by the *offset* attribution
-            * direct form
-                ( no *offset* attribute is present
-                < for reference to a waybit that has an *id* attribute
-                - a (§) waycast self-bounded reference
-        - function: refines the reference down to the precise location of the referent waybit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
@@ -728,7 +762,7 @@ wayic.script/doc.task - Documentation in rough
         | a fragment-only, same-document reference
             ( Fragment,                https://tools.ietf.org/html/rfc3986#section-3.5
             ( Same-document reference, https://tools.ietf.org/html/rfc3986#section-4.4
-        | a URI based, waycast clamped reference with a fragment
+        | waycast clamped reference with a fragment
             ( § Waycast clamped reference
     - whereby it is self constrained to the boundary of a waycast context
 
