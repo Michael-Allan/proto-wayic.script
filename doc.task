@@ -495,7 +495,7 @@ wayic.script/doc.task - Documentation in rough
         - form: a (§) waycast self-bounded reference
         - function
             * function when omitted
-                - switches the refinement attribute into direct mode
+                - switches the refinement attribute into identity mode
             * function when present
                 - sets a context node for the reference
                     ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
@@ -516,16 +516,16 @@ wayic.script/doc.task - Documentation in rough
             - according to one of two formal modes as determined by the switching function
               of the *offset* attribution
             * offset mode
-                ( when yes, an *offset* attribute is present
-                < XPath standard, for reference to an element that has no *id* attribute
+                - *offset* present: this mode occurs when the *offset* sibling attribute is present
                 - an XPath relative path expression
                     ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
                     - relative to the context node as set by the *offset* attribution
-            * direct mode
-                ( when no, no *offset* attribute is present
-                < URI standard, for reference to an element that has an *id* attribute
+                    - enabling reference to an element absent an *id* attribute
+            * identity mode
+                - *offset* absent: this mode occurs when the *offset* sibling attribute is absent
                 - a constrained URI reference
-                    < from the given § URI referential constraint
+                    - from the given § URI referential constraint
+                    - enabling reference to an element that presents an *id* attribute
         - function: refines the reference down to the precise location of the referent waybit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
