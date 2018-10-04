@@ -143,41 +143,6 @@ wayic.script/doc.task - Documentation in rough
         + operation in the context of a way declaration document
             ( http://reluk.ca/project/wayic/cast/way_declaration_document
             - wayscript is properly interpreted only in the context of a way declaration document
-        + relative referencing bound by the waycast
-            - all relative referencing in wayscript proper is bound by the waycast
-              of the way declaration document
-                ( see § operative in the context of a way declaration document
-            - ensuring that no reference resolves to an extracast referent
-            ∴ so bound
-                ∵ unbounded relative references would be liable to breakage
-                    ∵ the waycast is portable
-                        ∵ need basic utility
-                        ∵ need user freedom
-                            ∵ wayic.architec § Fi Maximization of user freedom
-                                ( http://reluk.ca/project/wayic/architec/doc.task
-                    ∵ the waycast is copyable
-                        ∵ wayic.architec § Fo Maximization of system availability to non-users
-            ∴ this boundary applies to proper wayscript only
-                ∵ enforcing the boundary in proper XML and HTML parts would be infeasible
-                    ∵ non-wayic tools will process proper XML and HTML parts regardless of the boundary
-                        ∵ no wayic pre-processor can feasibly preempt all non-wayic processing
-                            ∵ some non-wayic processors (of web browsers for instance)
-                              run prior to any normal, wayic pre-processor
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Formally infracast reference`
-    - in form, a relative reference without a dot segment
-        ( relative reference, https://tools.ietf.org/html/rfc3986#section-4.2
-        ( dot-segment,        https://tools.ietf.org/html/rfc3986#section-3.3
-    - it is intended for resolution in waycast context
-        ( http://reluk.ca/project/wayic/cast/waycast_context
-    - specifying it in a formal definition implies such resolution
-        ( each actual reference will be so resolved
-    - given this, a processor need perform no further bounds checking on actual references of this type
-        - their form is self constrained to the waycast boundary
-        - itself proof against an extracast referent
-        ( e.g. as per § Design constraints § relative referencing bound by the waycast
-    - hence references of this type are *formally* intracast
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     HTML attribution`
@@ -196,9 +161,12 @@ wayic.script/doc.task - Documentation in rough
         < no namespace, on *a* element only
         * as per § Offset capable referencing § refinement attribution
             <           formal attribute = href, no namespace
-            < URI referential constraint = either a URI, or a formally infracast reference
-                - formally infracast in compliance with design constraints
-                    ( § Design constraints § relative referencing bound by the waycast
+            < URI referential constraint = either a URI, or a formally intracast reference
+                ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+                - formally intracast in compliance with design constraints
+                    ( http://reluk.ca/project/wayic/cast/doc.task
+                        ( § Design constraints § relative referencing bound by the waycast
+            - pairable with an *offset* attribute
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Hyperform referential jointer`
@@ -499,9 +467,11 @@ wayic.script/doc.task - Documentation in rough
                 =wayic.read § *offset* attribution
                     ( http://reluk.ca/project/wayic/read/project.task
         - form
-            - a fragmented, (§) formally infracast reference
-            - infracast in compliance with design constraints
-                ( § Design constraints § relative referencing bound by the waycast
+            - a fragmented, formally intracast reference
+                ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+            - intracast in compliance with design constraints
+                ( http://reluk.ca/project/wayic/cast/doc.task
+                    ( § Design constraints § relative referencing bound by the waycast
         - function
             * function when omitted
                 - switches the refinement attribute into identity mode
@@ -676,55 +646,16 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Subjoining waybit reference`
-    - a subjoining waybit reference comprises up to three elemental attributes
-      of which two are optional (*import*, *offset*) and one mandatory (*join*)
-        + but note
-            - the *import* and *offset* attributes are not yet supported by wayic.read
-    - formal summary
-
-          [import='WAYCAST-URI']  offset='ELEMENTAL-REL-REF'  join='WAYBIT-REL-PATH'
-
-          [import='WAYCAST-URI']  join='WAYBIT-REL-REF'
-
-    + *import* attribution
-        < way:import, namespace data:,wayscript
-        - attribute optional, the attribute itself may be omitted
-            - not yet supported by wayic.read
-        - form: URI that does not refer to the waycast of the present way declaration document
-            ( URI, https://tools.ietf.org/html/rfc3986#section-3
-        - function
-            - overall it sets the waycast context of the reference
-                ( http://reluk.ca/project/wayic/cast/waycast_context
-            * function when omitted
-                - sets the waycast context to that of the present way declaration document
-            * function when present
-                - if the referent waycast is that of the present way declaration document
-                    - the reference is malformed and invalid
-                - else
-                    < edge case
-                        - if the referent waycast is a known alias (alternative location, or whatnot)
-                          of the waycast of the present way declaration document
-                            - the reference is improper but is accepted as valid
-                                ( accepted because it may be useful for test purposes
-                            - the wayscribe is warned if feasible
-                    - effectively imports an image of the referent waycast
-                        - adding to the present waycast a (more or less) live copy
-                        - one that stays (roughly) up to date with the original
-                    - sets the waycast context (of the other attributes of the reference)
-                      to that of the (effective) image
-                        - note this removes them from the context of the present document
-                          and so defeats any same-document reference
-                            ( Same-document reference, https://tools.ietf.org/html/rfc3986#section-4.4
-    + *offset* attribution
-        * as per § Offset capable referencing § *offset* attribution
-        - attribute optional, the attribute itself may be omitted
     + *join* attribute
+        < way:join, namespace data:,wayscript
         * as per § Offset capable referencing § refinement attribution
             <           formal attribute = way:join, namespace data:,wayscript
-            < URI referential constraint = fragmented, (§) formally infracast reference
-                - formally infracast in compliance with design constraints
-                    ( § Design constraints § relative referencing bound by the waycast
-        - attribute mandatory, always present
+            < URI referential constraint = fragmented, formally intracast reference
+                ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+                - formally intracast in compliance with design constraints
+                    ( http://reluk.ca/project/wayic/cast/doc.task
+                        ( § Design constraints § relative referencing bound by the waycast
+            - pairable with an *offset* attribute
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
@@ -754,7 +685,6 @@ wayic.script/doc.task - Documentation in rough
             < namespaced data:,wayscript.bit
         * step
             ( see § Step
-
 
 
     ════════════════════════════════════════════════════════════════════════════════════════════════════
