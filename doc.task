@@ -145,6 +145,34 @@ wayic.script/doc.task - Documentation in rough
             - wayscript is properly interpreted only in the context of a way declaration document
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Extended element referencing`
+    - referring to a wayscript element regardless of whether it has an *id* attribute
+    + form
+
+          extended element reference = element identifier, [ ',', element-relative offset ] ;
+
+              element identifier = ? XML Name, as per https://www.w3.org/TR/xml/#NT-Name ?;
+
+              element-relative offset =  ? XPath relative path expression,
+                as per https://www.w3.org/TR/xpath-3/#id-relative-path-expressions ?;
+
+        * embedded in a URI reference
+            - the characters '[' and ']' of an XPath predicate need not be percent encoded
+              when the reference is embedded in the path, query or fragment component of a URI reference
+                ( Predicates within steps, https://www.w3.org/TR/xpath-3/#id-predicate
+                ( Percent-encoding, https://tools.ietf.org/html/rfc3986#section-2.1
+            - this is a break with the IETF standard
+                - but not with the WHATWG standard where these characters need be encoded
+                  only as part of the *userinfo percent-encode set*
+                    ( https://url.spec.whatwg.org/#percent-encoded-bytes
+                - only in the authority component, that is
+    = task to implement in wayic.emacs
+        - fontifying the *element-relative offset* to distinguish it from the element identifier
+            - for sake of clarity
+    = task to implement in wayic.read
+        < cf. http://reluk.ca/project/wayic/read/project.task § Extended element referencing
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     HTML attribution`
     - the HTML attribution inherent in wayscript is standard except as noted here
     + *id* attribute
@@ -159,14 +187,13 @@ wayic.script/doc.task - Documentation in rough
                 ( https://www.w3.org/TR/xml/#NT-Name
     + *href* attribute
         < no namespace, on *a* element only
-        * as per § Offset capable referencing § refinement attribution
-            <           formal attribute = href, no namespace
-            < URI referential constraint = either a URI, or a formally intracast reference
-                ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
-                - formally intracast in compliance with design constraints
-                    ( http://reluk.ca/project/wayic/cast/doc.task
-                        ( § Design constraints § relative referencing bound by the waycast
-            - pairable with an *offset* attribute
+        - either a URI, or a formally intracast reference
+            ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+            - formally intracast in compliance with design constraints
+                ( http://reluk.ca/project/wayic/cast/doc.task
+                    ( § Design constraints § relative referencing bound by the waycast
+        - fragment form: in case of a wayscript referent: extended element reference
+            ( § Extended element referencing
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Hyperform referential jointer`
@@ -455,59 +482,6 @@ wayic.script/doc.task - Documentation in rough
                         - step 2 must succeed step 1
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Offset capable referencing`
-    - the use of an *offset* attribute (optional) and a refinement attribute (mandatory)
-      to refer to an element regardless of whether it has an *id* attribute
-    - offset mode (actual use of the *offset* attribute) is limited to wayscript referents
-        ( § offset mode
-    + *offset* attribution
-        < way:offest, namespace data:,wayscript
-        - attribute optional, the attribute itself may be omitted
-            * not yet supported by wayic.read
-                =wayic.read § *offset* attribution
-                    ( http://reluk.ca/project/wayic/read/project.task
-        - form
-            - a fragmented, formally intracast reference
-                ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
-            - intracast in compliance with design constraints
-                ( http://reluk.ca/project/wayic/cast/doc.task
-                    ( § Design constraints § relative referencing bound by the waycast
-        - function
-            * function when omitted
-                - switches the refinement attribute into identity mode
-            * function when present
-                - sets a context node for the reference
-                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
-                - switches the refinement attribute into offset mode
-    + refinement attribution
-        - attribute mandatory, the attribute itself is always present
-        - refinement attribution comprises:
-            * formal attribute
-                - the formal attribute given (named) to carry the refinement function
-                < mandatory
-            * URI referential constraint
-                - a formal constraint given to define a *constrained URI reference*, q.v. below
-                < optional
-                    - it may be omitted, in which case the definition defaults to just a URI reference
-                        ( URI reference, https://tools.ietf.org/html/rfc3986#section-4.1
-        - form
-            < to the given (§) formal attribute
-            - according to one of two formal modes as determined by the switching function
-              of the *offset* attribution
-            * offset mode
-                - *offset* present: this mode occurs when the *offset* sibling attribute is present
-                - an XPath relative path expression
-                    ( https://www.w3.org/TR/xpath-3/#id-relative-path-expressions
-                    - relative to the context node as set by the *offset* attribution
-                    - enabling reference to an element absent an *id* attribute
-            * identity mode
-                - *offset* absent: this mode occurs when the *offset* sibling attribute is absent
-                - a constrained URI reference
-                    - from the given § URI referential constraint
-                    - enabling reference to an element that presents an *id* attribute
-        - function: refines the reference down to the precise location of the referent waybit
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointing`
     ( ./referential_joint#referential_joint
     - referential jointing is an alternative to direct junction by nested abutment
@@ -648,14 +622,13 @@ wayic.script/doc.task - Documentation in rough
     Subjoining waybit reference`
     + *join* attribute
         < way:join, namespace data:,wayscript
-        * as per § Offset capable referencing § refinement attribution
-            <           formal attribute = way:join, namespace data:,wayscript
-            < URI referential constraint = fragmented, formally intracast reference
-                ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
-                - formally intracast in compliance with design constraints
-                    ( http://reluk.ca/project/wayic/cast/doc.task
-                        ( § Design constraints § relative referencing bound by the waycast
-            - pairable with an *offset* attribute
+        - a fragmented, formally intracast reference
+            ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+            - formally intracast in compliance with design constraints
+                ( http://reluk.ca/project/wayic/cast/doc.task
+                    ( § Design constraints § relative referencing bound by the waycast
+        - fragment form: extended element reference
+            ( § Extended element referencing
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
