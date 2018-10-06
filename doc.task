@@ -77,13 +77,15 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Bitform referential jointer`
     < a form of (§) referential jointer
-    - a waybit with a (§) subjoining waybit reference
+    - a bitform referential jointer is a waybit with a *join* attribute
+        ( § Referential jointer § *join* attribute
     - constraints
-        - has the same namespace as its referent subjoining waybit
+        - the jointer has the same namespace as its referent subjoining waybit
             ( e.g. only a step jointer can refer to a subjoining step
-        - has no content
-    - a jointer element with a local name of ‘_same’ is instead presented to document viewers
-      with the same local name as the referent subjoining waybit
+        - the jointer has no content
+    - a jointer name of ‘_same’ means “same as the subjoining waybit”
+        - a jointer local name declared as ‘_same’ is to be presented to document viewers
+          (e.g. in the web interface) instead as the local name of the referent subjoining waybit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
@@ -198,8 +200,9 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Hyperform referential jointer`
     < a form of (§) referential jointer
-    - an HTML *a* element with a (§) subjoining waybit reference
-    - constraint: it has no *href* attribute
+    - a hyperform referential jointer is an HTML *a* element with a *join* attribute
+        ( § Referential jointer § *join* attribute
+    - constraint: the jointer has no *href* attribute
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Level conjunction of elements`
@@ -564,11 +567,14 @@ wayic.script/doc.task - Documentation in rough
     Referential jointer`
     ( ./referential_jointer#referential_jointer
     - form, one of
-        § Bitform referential jointer
-        § Hyperform referential jointer
+        *§ Bitform referential jointer
+        *§ Hyperform referential jointer
     - function
-        - referential jointing (§ q.v.)
+        - (§) referential jointing
         - it declares a referential joint
+    + *join* attribute
+        < way:join, namespace data:,wayscript
+        - a (§) subjoining waybit reference
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Step`
@@ -620,15 +626,13 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Subjoining waybit reference`
-    + *join* attribute
-        < way:join, namespace data:,wayscript
-        - a fragmented, formally intracast reference
-            ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
-            - formally intracast in compliance with design constraints
-                ( http://reluk.ca/project/wayic/cast/doc.task
-                    ( § Design constraints § relative referencing bound by the waycast
-        - fragment form: extended element reference
-            ( § Extended element referencing
+    - a fragmented, formally intracast reference
+        ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+        - formally intracast in compliance with design constraints
+            ( http://reluk.ca/project/wayic/cast/doc.task
+                ( § Design constraints § relative referencing bound by the waycast
+    - fragment form: extended element reference
+        ( § Extended element referencing
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
