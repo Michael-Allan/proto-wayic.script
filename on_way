@@ -11,6 +11,10 @@
                   on way</a></h2>
     <ul>
         <li>
+            included in a <a href='http://reluk.ca/project/wayic/way'>
+            way</a> or <a href='way_model'>way model</a>
+            </li>
+        <li>
             (of a <a href='wayscript'>
             wayscript</a> element) being the <a href='way_root_element'>
             way root element</a> or descending from the way root element
