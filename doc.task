@@ -512,7 +512,8 @@ wayic.script/doc.task - Documentation in rough
             - a referrer
                 - typically a (§) referential jointer
             - its referent
-                - a (§) subjoining waybit
+                - a waybit that would be valid as a subjoining waybit
+                    ( § Subjoining waybit § contraints
         - the mapping between jointers and joints entire is 1:1
             - each jointer effectively declares a separate joint
             ( the same is not true of subjoining waybits, which map to joints 1:N
