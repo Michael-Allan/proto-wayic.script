@@ -28,7 +28,7 @@
         <ul>
             <li>
                 (mass noun) (also <b>wayscript proper</b>)
-                the parts of wayscript that are specific to wayscript, being unused in general XHTML
+                the parts of wayscript that are specific to wayscript, being unknown to XHTML in general
                 <ul>
                     <li>
                         wayscript elements and attributes whose XML namespace is “data:,wayscript”
