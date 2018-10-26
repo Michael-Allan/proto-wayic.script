@@ -251,8 +251,8 @@ wayic.script/doc.task - Documentation in rough
                 - parts P and Q are peers in part C
                 - part C depends on part B, or is caused by part B
                 - part B depends on part A, or is caused by part A
-    [ types of relation
-        - here categorized in Kantian terms
+    [ typology
+        - types of relation, here categorized in Kantian terms
             ( Kant, Table of Categories, A80/B106
             ( cf. A336/B393 where he applies these categories (below) to conditional relations
         + inherence and subsistence
@@ -366,9 +366,14 @@ wayic.script/doc.task - Documentation in rough
 
         * wild cards
             - multiple subnamespaces may be symbolized by a ‘*’ wild card appended to a para-namespace
-            - example, all subnamespaces of ‘data:,wayscript.bit.’:
+            - examples
+                - waybit namespaces
 
-                  data:,wayscript.bit.*
+                      data:,wayscript.bit*
+
+                - waybit subnamespaces
+
+                      data:,wayscript.bit.*
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Nesting of elements`
@@ -579,10 +584,16 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Step`
-    < namespaced data:,wayscript.bit.step
-    - modelling a volitive part of a way
-        - a distinct|discrete act
-        - e.g. a step or stage in a plan
+    < surtype: waybit
+    - typology
+        ( see also § Waybit § typology
+        * step
+            < data:,wayscript.bit.step* >
+            * proper step
+                < data:,wayscript.bit.step >
+    - a model of a volitive way part
+        - of a deliberate act as it contributes to the way
+        - as with a procedural step or stage of a plan
     - nesting of step elements formalizes an order condition among the steps
         ( see also § Nesting of waybit elements
         - example [ETO]
@@ -638,31 +649,30 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
     ( ./waybit#waybit
-    + names
-        < the naming of waybits
-        - naming is free-form
-            - except for reserved names
-        - purpose of names
-            - to help the reader understand the waybits
-                - their relations
-                - and the larger ways [they compose]
-                - to bring out their meaning
-            - to serve as placeholders for waybits
-                - especially in the more compressed views
-                - the names will stand in for the waybits
-      / - best not be indispensible to the meaning of the waybit
-      /     - ∵ a bitform jointer (within its context) may effectively change the subjoining waybit name
-      // no room here for wayscripting tips, which would need clarifying by example script
-        - reserved names
-            - names beginning with an underscore ‘_’ are reserved
-                - do not use such names for normal purposes
+    - typology
+        ( with namespacing < ⋯ >
+            ( cf. § Namespacing § hierarchy
+        * waybit
+            < data:,wayscript.bit* >
+            * proper waybit
+                < data:,wayscript.bit >
+            * step
+                < data:,wayscript.bit.step* >
+                * proper step
+                    < data:,wayscript.bit.step >
+    - naming
+        - the naming of waybits is free form except for certain reserved names
+            ( § reserved names
         - a name of ‘_’ means no name (anonymous waybit)
-    + types
-        < types of waybit
-        * proper waybit
-            < namespaced data:,wayscript.bit
-        * step
-            ( see § Step
+        * purpose
+            - the name helps the reader to understand the waybit
+                - bringing out its meaning
+            - the name serves as a placeholder for the waybit
+                - standing in for the waybit
+                - e.g. in collapsed or otherwise compressed views of the way model
+        * reserved names
+            - names beginning with an underscore ‘_’ are reserved
+                - assign no such name unless instructed by a formal rule
 
 
     ════════════════════════════════════════════════════════════════════════════════════════════════════
