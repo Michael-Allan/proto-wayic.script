@@ -689,15 +689,16 @@ wayic.script/doc.task - Documentation in rough
                   extended element reference = ? as per § Extended element referencing ?;
 
 
-    ════════════════════════════════════════════════════════════════════════════════════════════════════
-    Note`
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// N o t e s
+/
     [EBN]  Extended Backus-Naur syntax notation, ISO/IEC 14977.
             ( http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html
             ( https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
             ( summary, https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form
 
     [ETO]  End tags omitted.  Here the XML end tags are omitted for sake of clarity.
+
 
 
                                      Copyright © 2017-2018 Michael Allan and contributors.  Licence MIT.
