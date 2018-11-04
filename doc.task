@@ -193,7 +193,7 @@ wayic.script/doc.task - Documentation in rough
             ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
             - formally intracast in compliance with design constraints
                 ( http://reluk.ca/project/wayic/cast/doc.task
-                    ( § Design constraints § relative referencing bound by the waycast
+                    ( § Design constraints § relative referencing bounded by the waycast
         - fragment form: in case of a wayscript referent: extended element reference
             ( § Extended element referencing
 
@@ -642,7 +642,7 @@ wayic.script/doc.task - Documentation in rough
         ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
         - formally intracast in compliance with design constraints
             ( http://reluk.ca/project/wayic/cast/doc.task
-                ( § Design constraints § relative referencing bound by the waycast
+                ( § Design constraints § relative referencing bounded by the waycast
     - fragment form: extended element reference
         ( § Extended element referencing
 
