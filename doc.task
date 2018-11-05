@@ -681,7 +681,7 @@ wayic.script/doc.task - Documentation in rough
                 waycast public identifier, dotless relative path, '#', extended element reference ;
 
                   waycast public identifier = ? as per
-                    http://reluk.ca/project/wayic/cast/doc.task § Public identification ?;
+                    http://reluk.ca/project/wayic/cast/doc.task § Publication of a waycast ?;
 
                   dotless relative path = ? a relative-path reference without a dot segment,
                     as per https://tools.ietf.org/html/rfc3986#section-4.2, -3.3 ?;
