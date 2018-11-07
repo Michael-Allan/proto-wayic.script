@@ -1,6 +1,6 @@
 wayic.script/doc.task - Documentation in rough
 
-    < ./wayscript#wayscript
+    < ./wayscript
 
     + formal summary
         - XML syntactic hypertext
@@ -492,9 +492,12 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointing`
-    ( ./referential_joint#referential_joint
-    - referential jointing is an alternative to direct junction by nested abutment
-        ( cf. §§ Nesting of elements & Nesting of waybit elements
+    < surtype: intercast linkage
+        ( [IR], http://reluk.ca/project/wayic/intercast/doc.task
+    - making referential joints
+        ( ./referential_joint
+        - an alternative to direct junction by nested abutment
+            ( cf. §§ Nesting of elements & Nesting of waybit elements
     [ purpose
         - two fold
         1 modeling a single way with separately declared waybits
@@ -572,7 +575,7 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointer`
-    ( ./referential_jointer#referential_jointer
+    ( ./referential_jointer
     - form, one of
         *§ Bitform referential jointer
         *§ Hyperform referential jointer
@@ -618,7 +621,7 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Subjoining waybit`
-    ( ./subjoin#subjoin
+    ( ./subjoin
     - constraints
         ( the conditions of a subjoining waybit, which determine it as such
         - it is a waybit
@@ -649,7 +652,7 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
-    ( ./waybit#waybit
+    ( ./waybit
     - typology
         ( with namespacing < ⋯ >
             ( cf. § Namespacing § hierarchy
@@ -693,12 +696,15 @@ wayic.script/doc.task - Documentation in rough
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // N o t e s
 /
-    [EBN]  Extended Backus-Naur syntax notation, ISO/IEC 14977.
+   [EBN]  Extended Backus-Naur syntax notation, ISO/IEC 14977.
             ( http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html
             ( https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
             ( summary, https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form
 
-    [ETO]  End tags omitted.  Here the XML end tags are omitted for sake of clarity.
+   [ETO]  End tags omitted.  Here the XML end tags are omitted for sake of clarity.
+
+   [IR] · Applies only for those instances which are based on an import reference.
+            ( http://reluk.ca/project/wayic/intercast/doc.task
 
 
 
