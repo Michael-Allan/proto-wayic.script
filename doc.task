@@ -89,11 +89,17 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
-    < see also: commitment patching
+    < see also: commitment stemmaplasty
         ( http://reluk.ca/project/wayic/intercast/doc.task
     - a bitform referential joint to a resolve waybit
         - comprising the jointer (commitment jointer) and its referent
         - the subjoining resolve waybit
+        -! clumsy form
+            - clutters the way declaration with unrelated elements
+            - requires initial copy of sibling elements in commitment stemmaplasty
+              and subsequent maintenance work to keep them unchanged
+            = mend by moving commitment declaration to waycaster configuration
+                - there relating each commitment to its waybit by reference
     purpose: to declare an intent to act on a way part
     [ commitment jointer
         - a bitform referential jointer that refers to /way.xht#resolve
@@ -151,6 +157,7 @@ wayic.script/doc.task - Documentation in rough
     Extended element referencing`
     - referring to a wayscript element regardless of whether it has an *id* attribute
     + form
+        ( [EBN]
 
           extended element reference = element identifier, [ ',', element-relative offset ] ;
 
@@ -169,6 +176,8 @@ wayic.script/doc.task - Documentation in rough
                   only as part of the *userinfo percent-encode set*
                     ( https://url.spec.whatwg.org/#percent-encoded-bytes
                 - only in the authority component, that is
+        * normal form
+            = define this
     = task to implement in wayic.emacs
         - fontifying the *element-relative offset* to distinguish it from the element identifier
             - for sake of clarity
@@ -642,13 +651,17 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Subjoining waybit reference`
-    - a fragmented, formally intracast reference
-        ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+    * form
+        ( [EBN]
+
+          subjoining waybit reference = formally intracast reference with fragment ;
+
+        ( formally intracast reference with fragment, http://reluk.ca/project/wayic/script/doc.task
         - formally intracast in compliance with design constraints
             ( http://reluk.ca/project/wayic/cast/doc.task
                 ( § Design constraints § relative referencing bounded by the waycast
-    - fragment form: extended element reference
-        ( § Extended element referencing
+    * resolution
+        - the fragment is resolved as an extended element reference
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
@@ -681,16 +694,18 @@ wayic.script/doc.task - Documentation in rough
         * waybit public identifier
             ( form [EBN]
 
-              waybit public identifier =
-                waycast public identifier, dotless relative path, '#', extended element reference ;
+              waybit public identifier = waycast public identifier, dotless relative path,
+                '#', extended element reference in normal form ;
 
                   waycast public identifier = ? as per
                     http://reluk.ca/project/wayic/cast/doc.task § Publication of a waycast ?;
 
-                  dotless relative path = ? a relative-path reference without a dot segment,
-                    as per https://tools.ietf.org/html/rfc3986#section-4.2, -3.3 ?;
+                  dotless relative path = ? a relative path reference without a dot segment, as
+                    per https://tools.ietf.org/html/rfc3986#section-3.3 (dot-segment)
+                    and https://tools.ietf.org/html/rfc3986#section-4.2 (relative-path) ?;
 
-                  extended element reference = ? as per § Extended element referencing ?;
+                  extended element reference in normal form = ?
+                    as per § Extended element referencing § form § normal form ?;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
