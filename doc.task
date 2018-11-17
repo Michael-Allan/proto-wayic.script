@@ -17,7 +17,6 @@ wayic.script/doc.task - Documentation in rough
 
     + operative context
         - a way declaration document
-            ( http://reluk.ca/project/wayic/cast/way_declaration_document
             ( § Design constraints § operation in the context of a way declaration document
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -150,7 +149,6 @@ wayic.script/doc.task - Documentation in rough
                         - writing the markup
                         - processing it at runtime
         + operation in the context of a way declaration document
-            ( http://reluk.ca/project/wayic/cast/way_declaration_document
             - wayscript is properly interpreted only in the context of a way declaration document
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -502,7 +500,7 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointing`
     < surtype: intercast linkage
-        ( [IR], http://reluk.ca/project/wayic/intercast/doc.task
+        ( [IR]
     - making referential joints
         ( ./referential_joint
         - an alternative to direct junction by nested abutment
