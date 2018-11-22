@@ -499,8 +499,6 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointing`
-    < surtype: intercast linkage
-        ( [IR]
     - making referential joints
         ( ./referential_joint
         - an alternative to direct junction by nested abutment
@@ -545,24 +543,28 @@ wayic.script/doc.task - Documentation in rough
                     - no underbit being able to contradict the definition
                     - which simplifies machine (and human) processing of the structure
     [ effect
-        - the effect of a referential joint is determined
-          by definite, but hypothetical wayscript changes (effective changes)
-        - its effect is what the effective changes would introduce
-        - effective changes of a referential joint:
-            * any referential joint
-                - the subjoining waybit gains a parent (effective parent)
-                  which is the parent of the jointer
-                    - in addition to its declared parent
-            * bitform referential joint
-                ( additional to the above
-                - where it infrabuts the effective parent, the subjoining waybit:
-                    - takes the local name of the bitform jointer
-                        - which thereby masks (at this location) its declared local name
-                    - takes all attributes of the bitform jointer
-                        - which thereby extend and/or mask (at this location) its declared attributes
-                - the bitform jointer is removed
-                - in other words, the subjoining waybit (at this location)
-                  pretty much merges with the jointer
+        < way modeling
+            - the effect of a referential joint on the way model is determined
+              by definite, but hypothetical wayscript changes (effective changes)
+            - its effect is what the effective changes would introduce
+            - effective changes of a referential joint:
+                * any referential joint
+                    - the subjoining waybit gains a parent (effective parent)
+                      which is the parent of the jointer
+                        - in addition to its declared parent
+                * bitform referential joint
+                    ( additional to the above
+                    - where it infrabuts the effective parent, the subjoining waybit:
+                        - takes the local name of the bitform jointer
+                            - which thereby masks (at this location) its declared local name
+                        - takes all attributes of the bitform jointer
+                            - which thereby extend and/or mask (at this location) its declared attributes
+                    - the bitform jointer is removed
+                    - in other words, the subjoining waybit (at this location)
+                      pretty much merges with the jointer
+        < intercasting
+            - intercast linkage
+                ( [IR]
     [ causality and dependence relations
         - owing to how the effect of a referential joint is determined
             ( § Referential joint § effect
@@ -716,7 +718,7 @@ wayic.script/doc.task - Documentation in rough
 
    [ETO]  End tags omitted.  Here the XML end tags are omitted for sake of clarity.
 
-   [IR] · Applies only for those instances which are based on an import reference.
+   [IR] · Applies only for those instances which are formed using an import reference.
             ( http://reluk.ca/project/wayic/intercast/doc.task
 
 
