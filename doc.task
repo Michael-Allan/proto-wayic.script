@@ -1,7 +1,5 @@
 wayic.script/doc.task - Documentation in rough
 
-    < ./wayscript
-
     + formal summary
         - XML syntactic hypertext
             ( § Design constraints § XML syntactic hypertext (XHTML)
@@ -116,7 +114,7 @@ wayic.script/doc.task - Documentation in rough
                 * set a way:ordinal attribute to assign an intended order to the act
                     ( tasked as wayic.read § way:ordinal
                     - so prioritizing it relative to other declared commitments
-        - implicitly the whole line of wayscript containing the jointer is uniquely personal
+        - implicitly the whole line of waysource containing the jointer is uniquely personal
             ( wayic.copy § uniquely personal lines of text § implicit
             - a convienience
             - whence the bitform constraint on commitment jointers
@@ -130,7 +128,7 @@ wayic.script/doc.task - Documentation in rough
     Design constraints`
     [ ⤓ minimal
         + XML syntactic hypertext
-            - the basic form of wayscript is XML syntactic hypertext (XHTML)
+            - the basic form of Wayscript is XML syntactic hypertext (XHTML)
                 ( http://w3c.github.io/html/introduction.html#html-vs-xhtml
                 ( http://w3c.github.io/html/infrastructure.html#xml
                 ( http://w3c.github.io/html/xhtml.html
@@ -140,7 +138,7 @@ wayic.script/doc.task - Documentation in rough
                 ∵ the premiere medium of *publication* today is the Web
                 ∵ the basic script of the *web* is hypertext
             ∴ XML syntax
-                ∵ XML facilitates coping with proper wayscript markup
+                ∵ XML facilitates coping with proper Wayscript markup
                     - these aspects of XML in particular:
                         - namespacing
                         - strict syntax and parsing
@@ -149,11 +147,11 @@ wayic.script/doc.task - Documentation in rough
                         - writing the markup
                         - processing it at runtime
         + operation in the context of a way declaration document
-            - wayscript is properly interpreted only in the context of a way declaration document
+            - Wayscript is properly interpreted only in the context of a way declaration document
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Extended element referencing`
-    - referring to a wayscript element regardless of whether it has an *id* attribute
+    - referring to a waysource element regardless of whether it has an *id* attribute
     + form
         ( [EBN]
 
@@ -184,7 +182,7 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     HTML attribution`
-    - the HTML attribution inherent in wayscript is standard except as noted here
+    - the HTML attribution inherent in Wayscript is standard except as noted here
     + *id* attribute
         < no namespace
         - its contraints are those of XML
@@ -202,7 +200,7 @@ wayic.script/doc.task - Documentation in rough
             - formally intracast in compliance with design constraints
                 ( http://reluk.ca/project/wayic/cast/doc.task
                     ( § Design constraints § relative referencing bounded by the waycast
-        - fragment form: in case of a wayscript referent: extended element reference
+        - fragment form: in case of a waysource referent: extended element reference
             ( § Extended element referencing
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -216,7 +214,7 @@ wayic.script/doc.task - Documentation in rough
     Level conjunction of elements`
     - one element in level conjunction with another
     + genealogical terms
-        - the convention for both HTML and XML, thus also for wayscript
+        - the convention for both HTML and XML, thus also for Wayscript
         - example [ETO]
 
               <A> Sibling
@@ -314,7 +312,7 @@ wayic.script/doc.task - Documentation in rough
                 - as for instance 'foo.' preposes 'foo.bar'
                 ( 'prepose' not 'prefix' which already has a different meaning in XML namespaces
             - an abstract category of namespaces
-                - itself not a namespace, not usable in wayscript
+                - itself not a namespace, not usable in waysource
             - examples
 
                   data:,wayscript.
@@ -331,14 +329,14 @@ wayic.script/doc.task - Documentation in rough
                   data:,wayscript.bit.step
 
     [ hierarchy
-        - here is the namespace hierarchy of wayscript proper
+        - here is the namespace hierarchy of Wayscript proper
         - each namespace is identified together with its traditional, simple prefix (in brackets)
 
             +(way) data:,wayscript
                 < top namespace
 
                 * data:,wayscript.
-                    < top para-namespace, to which all proper wayscript subnamespaces belong
+                    < top para-namespace, to which all proper Wayscript subnamespaces belong
 
                     +(bit) data:,wayscript.bit
                         < namespace of waybits proper, excluding namespaced subtypes such as steps
@@ -388,7 +386,7 @@ wayic.script/doc.task - Documentation in rough
     - one element nested in another
     - terms
         + genealogical
-            - the convention for both HTML and XML, thus also for wayscript
+            - the convention for both HTML and XML, thus also for Wayscript
             - examples [ETO]
 
                   <B> Parent
@@ -545,7 +543,7 @@ wayic.script/doc.task - Documentation in rough
     [ effect
         < way modeling
             - the effect of a referential joint on the way model is determined
-              by definite, but hypothetical wayscript changes (effective changes)
+              by definite, but hypothetical waysource changes (effective changes)
             - its effect is what the effective changes would introduce
             - effective changes of a referential joint:
                 * any referential joint

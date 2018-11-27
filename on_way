@@ -11,13 +11,9 @@
                   on way</a></h2>
     <ul>
         <li>
-            included in a <a href='http://reluk.ca/project/wayic/way'>
-            way</a> or <a href='way_model'>way model</a>
-            </li>
-        <li>
-            (of a <a href='wayscript'>
-            wayscript</a> element) being the <a href='way_root_element'>
-            way root element</a> or descending from the way root element
+            (of <a href='waysource'>
+            waysource</a>) being in the <a href='way_root_element'>
+            way root element</a>; or being in an element that descends from it,
             whether directly or by <a href='referential_joint'>
             referential jointing</a>
             </li>

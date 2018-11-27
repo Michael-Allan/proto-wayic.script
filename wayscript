@@ -11,33 +11,9 @@
                   wayscript</a></h2>
     <ul>
         <li>
-            (mass noun) written <a href='http://reluk.ca/project/wayic/way'>way</a> declarations
-            </li>
-        <li>
-            a system for writing way declarations based on <a href='http://w3c.github.io/html/xhtml.html'>
-            XML syntactic</a> hypertext (<a href='http://w3c.github.io/html/introduction.html#html-vs-xhtml'>
-            XHTML</a>) elements and attributes
-            </li>
-        <li>
-            (verb) write a way declaration
+            (verb) write <a href='waysource'>waysource</a>
             </li>
         </ul>
-    <section      id='proper_wayscript'>
-        <h3><a href='#proper_wayscript'>
-                      proper wayscript</a></h3>
-        <ul>
-            <li>
-                (mass noun) (also <b>wayscript proper</b>)
-                the parts of wayscript that are specific to wayscript, being unknown to XHTML in general
-                <ul>
-                    <li>
-                        wayscript elements and attributes whose XML namespace is “data:,wayscript”
-                        or a subnamespace of “data:,wayscript.”
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
     </section>
 
 

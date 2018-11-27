@@ -11,7 +11,7 @@
                   referential jointer</a></h2>
     <ul>
         <li>
-            a <a href='wayscript'>wayscript</a> element that declares
+            a <a href='Wayscript'>Wayscript</a> element that declares
             a <a href='referential_joint'>referential joint</a>
             between its parent element (<a href='surjoin'>surjoining</a>)
             and a waybit to which it refers (<a href='subjoin'>subjoining</a>)

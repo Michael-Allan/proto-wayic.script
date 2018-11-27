@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<html xml:lang='en-CA' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>‘Wayscript’</title>
+        </head>
+    <body>
+
+
+<section      id='Wayscript'>
+    <h2><a href='#Wayscript'>
+                  Wayscript</a></h2>
+    <ul>
+        <li>
+            a language for <a href='way_model'>
+            way modeling</a> based on <a href='http://w3c.github.io/html/xhtml.html'>
+            XML syntactic</a>
+            hypertext (<a href='http://w3c.github.io/html/introduction.html#html-vs-xhtml'>
+            XHTML</a>) markup
+            </li>
+        </ul>
+    <section      id='proper_Wayscript'>
+        <h3><a href='#proper_Wayscript'>
+                      proper Wayscript</a></h3>
+        <ul>
+            <li>
+                (also <b>Wayscript proper</b>)
+                the parts of Wayscript that are specific to Wayscript, being unknown to XHTML in general
+                <ul>
+                    <li>
+                        Wayscript elements and attributes whose XML namespace is “data:,wayscript”
+                        or a subnamespace of “data:,wayscript.”
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+
+        </body>
+    </html>
