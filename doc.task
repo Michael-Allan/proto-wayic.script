@@ -496,6 +496,19 @@ wayic.script/doc.task - Documentation in rough
                         - step 2 must succeed step 1
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Referential jointer`
+    ( ./referential_jointer
+    - form, one of
+        *§ Bitform referential jointer
+        *§ Hyperform referential jointer
+    - function
+        - (§) referential jointing
+        - it declares a referential joint
+    + *join* attribute
+        < way:join, namespace data:,wayscript
+        - a (§) subjoining waybit reference
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointing`
     - making referential joints
         ( ./referential_joint
@@ -579,19 +592,6 @@ wayic.script/doc.task - Documentation in rough
   /     - an edge case in which the subjoining waybit is an ancestor of the referrer
   /     - formally allowed though not guaranteed to make sense
   // till I have a need to document this, and hopefully a practical example, or counter example
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Referential jointer`
-    ( ./referential_jointer
-    - form, one of
-        *§ Bitform referential jointer
-        *§ Hyperform referential jointer
-    - function
-        - (§) referential jointing
-        - it declares a referential joint
-    + *join* attribute
-        < way:join, namespace data:,wayscript
-        - a (§) subjoining waybit reference
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Step`
