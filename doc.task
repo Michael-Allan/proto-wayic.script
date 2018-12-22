@@ -317,6 +317,29 @@ wayic.script/doc.task - Documentation in rough
                         - meaning: parts A and B are peers
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Name masking attribute`
+    < way:nameMask, namespace data:,wayscript
+    - placement
+        - proper Wayscript element
+            - except that a waybit must have a name that is either '_' (anonymous) or non-reserved
+    - form
+        ( [EBN], exclusive of allowed namespacing, quoting and whitespacing variations
+
+          name masking attribute = 'way:nameMask="', value, '"' ;
+
+              value = ? one or more characters ?;
+
+    - function
+        - taking the attribute declarations in document order
+            - for the attributed element and each descendant of the same qualified name
+                - if *value* is 'unset'
+                    - disables its name mask
+                - else
+                    - enables its name mask for *value*
+        - where the name mask is enabled on an element
+            - presents the element to document viewers as having a name of *value*
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Namespacing`
     ( https://www.w3.org/TR/xml-names/
     [ terms
