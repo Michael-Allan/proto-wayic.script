@@ -211,6 +211,19 @@ wayic.script/doc.task - Documentation in rough
     - constraint: the jointer has no *href* attribute
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    *join* attribute`
+    < way:join, namespace data:,wayscript
+    - placement
+        - waybit or HTML *a* element
+    - form
+        ( [EBN], exclusive of allowed namespacing, quoting and whitespacing variations
+
+          join attribute = 'way:join="', subjoining waybit reference, '"' ;
+
+    - function
+        - forms a referential jointer
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Level conjunction of elements`
     - one element in level conjunction with another
     + genealogical terms
@@ -501,12 +514,11 @@ wayic.script/doc.task - Documentation in rough
     - form, one of
         *§ Bitform referential jointer
         *§ Hyperform referential jointer
+    - formation
+        - *join* attribute
     - function
-        - (§) referential jointing
+        - referential jointing
         - it declares a referential joint
-    + *join* attribute
-        < way:join, namespace data:,wayscript
-        - a (§) subjoining waybit reference
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointing`
@@ -654,7 +666,7 @@ wayic.script/doc.task - Documentation in rough
 
           subjoining waybit reference = formally intracast reference with fragment ;
 
-        ( formally intracast reference with fragment, http://reluk.ca/project/wayic/script/doc.task
+        ( formally intracast reference with fragment, http://reluk.ca/project/wayic/cast/doc.task
         - formally intracast in compliance with design constraints
             ( http://reluk.ca/project/wayic/cast/doc.task
                 ( § Design constraints § relative referencing bounded by the waycast
