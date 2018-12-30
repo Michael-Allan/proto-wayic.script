@@ -82,7 +82,7 @@ wayic.script/doc.task - Documentation in rough
         - the jointer has no content
     - a jointer name of ‘_same’ means “same as the subjoining waybit”
         - a jointer local name declared as ‘_same’ is to be presented to document viewers
-          (e.g. in the web interface) instead as the local name of the referent subjoining waybit
+          (e.g. in the Web interface) instead as the local name of the referent subjoining waybit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
@@ -136,7 +136,7 @@ wayic.script/doc.task - Documentation in rough
                 ∵ the *waycast* is public
                     ( http://reluk.ca/project/waycast/constraints.xht#availability
                 ∵ the premiere medium of *publication* today is the Web
-                ∵ the basic script of the *web* is hypertext
+                ∵ the basic script of the *Web* is hypertext
             ∴ XML syntax
                 ∵ XML facilitates coping with proper Wayscript markup
                     - these aspects of XML in particular:
