@@ -9,67 +9,13 @@ wayic.script/doc.task - Documentation in rough
         § Waybit
             § Step
 
-        § Attributive grouping
+        § Grouping
         § Nesting of waybit elements
         § Referential jointing
 
     + operative context
         - a way declaration document
             ( § Design constraints § operation in the context of a way declaration document
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Attributive grouping`
-    - a waybit element nested in an attributive group element nested in a waybit element
-    - modelling a relation of inherence or subsistence of one way part in another
-        ( see § Modelled way relation
-    - example [ETO]
-
-          <A>
-              <way:group rel='in'>
-                  <P>
-
-        - meaning: part P inheres in whole A, or subsists in whole A
-    [ *group* element
-        < way:group, namespace data:,wayscript
-        - placement: child of waybit element
-        - content
-            + qualifying text
-                < optional
-                - to explain, describe or otherwise qualify the composition
-                - placement: leading child
-                - typically a short phrase terminated by a colon
-                - example
-
-                      <A>
-                          <way:group rel='in'> including:
-                              <P>
-                              <Q>
-                      <B>
-                          <way:group rel='in'> comprising:
-                              <P>
-                              <Q>
-
-                    - meaning
-                        - whole A has parts P and Q
-                        - whole B has parts P and Q only
-                        - and, by the way:
-                            - wholes A and B are peers, and in each
-                              parts P and Q are peers
-                                ( § Level conjunction of waybit elements
-            + one or more waybits
-                - each to model a part that inheres or subsists
-        + *rel* attribute
-            < mandatory, no namespace
-            - to define the way relation between the waybit parent of the *group* element
-              and each waybit child of the *group* element
-            ( fashioned after the HTML *rel* attribute
-                ( https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel
-            - value: ‘in’
-                - the ‘in’ value specifies a relation of inherence or subsistence
-                    - it declares that the way parts modelled by the children of the group element
-                      inhere or subsist *in* the whole modelled by its parent
-                ( later the format will be a set of space-separated tokens, rather than fixed at 'in'
-                    ( https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#set-of-space-separated-tokens
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Bitform referential jointer`
@@ -181,6 +127,41 @@ wayic.script/doc.task - Documentation in rough
         < cf. http://reluk.ca/project/wayic/read/project.task § Extended element referencing
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Grouping`
+    - waybit elements nested in a group element, itself nested in a waybit element
+    - example [ETO]
+
+          <A>
+              <way:group>
+                  <P>
+
+    [ *group* element
+        < way:group, namespace data:,wayscript
+        - placement: child of waybit element
+        - content
+            + qualifying text
+                < optional
+                - to informally explain, describe or otherwise qualify the grouping
+                - placement: leading child
+                - typically a short phrase terminated by a colon
+                - example
+
+                      <A>
+                          <way:group> including:
+                              <P>
+                              <Q>
+                      <B>
+                          <way:group> comprising:
+                              <P>
+                              <Q>
+
+                    - meaning
+                        - whole A has parts P and Q
+                        - whole B has parts P and Q only
+            + one or more waybits
+                - to form the members of the group
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     HTML attribution`
     - the HTML attribution inherent in Wayscript is standard except as noted here
     + *id* attribute
@@ -226,95 +207,13 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Level conjunction of elements`
     - one element in level conjunction with another
+    ( see also § Nesting of elements
     + genealogical terms
         - the convention for both HTML and XML, thus also for Wayscript
         - example [ETO]
 
               <A> Sibling
               <B> Sibling
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Level conjunction of waybit elements`
-    - modelling a relation of community between way parts
-        ( see § Modelled way relation
-    - one waybit element in level conjunction with another
-    - examples [ETO]
-        + general
-
-              <A>
-              <B>
-
-            - meaning: parts A and B are peers
-            + formal, genealogical terms
-                < as per § Level conjunction of elements, q.v.
-                - referring to the empty form, implying no meaning
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Modelled way relations`
-    - a modelled way relation is a way determinate relation between way parts
-      which is represented in the way model as a relation between waybits
-    ( cf. § Unmodelled way relations
-    [ form
-        - see § types of relation §§ modelled form, below
-        - combined example [ETO]
-
-              <C>
-                  <way:group rel='in'>
-                      <P>
-                      <Q>
-                  <B>
-                      <A>
-
-            - meaning
-                - parts P and Q inhere in part C, or subsist in part C
-                - parts P and Q are peers in part C
-                - part C depends on part B, or is caused by part B
-                - part B depends on part A, or is caused by part A
-    [ typology
-        - types of relation, here categorized in Kantian terms
-            ( Kant, Table of Categories, A80/B106
-            ( cf. A336/B393 where he applies these categories (below) to conditional relations
-        + inherence and subsistence
-            ( I take it subsistence here means subordinate existence
-            ' *substantia et accidens*
-                ( meaning essence and accidents
-                ( cf. Fred Brooks, 1987, No silver bullet: essence and accidents of software engineering
-            - one way part inhering in another, or subsisting in another
-            - modelled form
-                | a waybit element nested in an attributive group element nested in a waybit element
-                    ( § Attributive grouping
-                    - example [ETO]
-
-                          <B>
-                              <way:group rel='in'>
-                                  <A>
-
-                        - meaning: part A inheres in whole B, or subsists in whole B
-        + causality and dependence
-            - one way part causing another as an effect, or having another as a dependant
-            - modelled form
-                | one waybit element nested in another
-                    ( § Nesting of waybit elements
-                    - example [ETO]
-
-                          <B>
-                              <A>
-
-                        - meaning: part A causes part B, or part B depends on part A
-        + community
-            ' reciprocity between agent and patient
-            - the co-occurence of two way parts, neither subordinate to the other
-                ( B112-3
-                - relations of peerage
-            - modelled form
-                | one waybit element in level conjunction with another
-                    ( § Level conjunction of waybit elements
-                    - example [ETO]
-
-                          <A>
-                          <B>
-
-                        - meaning: parts A and B are peers
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Name masking attribute`
@@ -420,6 +319,7 @@ wayic.script/doc.task - Documentation in rough
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Nesting of elements`
     - one element nested in another
+    ( see also § Level conjunction of elements
     - terms
         + genealogical
             - the convention for both HTML and XML, thus also for Wayscript
@@ -458,69 +358,39 @@ wayic.script/doc.task - Documentation in rough
     Nesting of waybit elements`
     - one waybit element nested in another
     - modelling a relation of causality or dependence between way parts
-        ( see § Modelled way relation
     - examples [ETO]
-        + general
-            - causality or dependence
-
-              <B>
-                  <A>
-
-            - meaning: part A causes part B, or part B depends on part A
-            + formal terms
-                - referring to the empty form, implying no meaning
-                + genealogical
-                + arborescent
-                + coined
-                    < all as per § Nesting of elements, q.v.
-                + spatial
-
-                      <B> Overbit
-                            ⋱
-                            <A> Underbit
-        + causality
+        * causality
 
               <B> Effect
                   <A> Cause
 
-            - meaning
-                - cause A conditions effect B
-                - cause A is the reason for effect B
-        + dependence
-            - dependence is expected to predominate over causality in a typical waycast
+            - meaning: A causes B
+        * dependence
 
               <B> Dependant
                   <A>
 
-            - meaning: dependant B depends on part A
-                ( one might attach the name ‘Dependency’ to A, but that would be non-standard English
+            - meaning: B depends on A
+                ( one might attach the label ‘Dependency’ to A, but that would be non-standard English
             - taking ‘dependence’ in its original sense of down hanging
                 - note that the nested form turns it upside down
                 - visually B depends (hangs down) from A
-            + logical dependence
+            * logical dependence
                 - viz. in the logical parts of a way
 
                   <B> Conclusion
                       <A> Premise
 
-                - meaning: from premise A one infers conclusion B
-            + practical dependence
+                - meaning: from A one infers B
+            - practical dependence
                 - viz. in the practical parts of a way
-                + means-end relation
+                * means-end
 
                       <B> End
                           <A> Means
 
-                    - meaning
-                        - by means A one attains end B
-                        - to be sure, also implied is a reverse dependence:
-                            - end B warrants means A
-                            - in other words
-                                - end B conditions means A
-                                - end B is the reason for means A
-                                - the rationality of employing means A
-                                  depends on the will to attain end B
-                + order condition
+                    - meaning: B is attained by means of A
+                * order condition
                     ( from § Step
 
                       <step:s3> Step 3
@@ -530,6 +400,29 @@ wayic.script/doc.task - Documentation in rough
                     - meaning
                         - step 3 must succeed step 2
                         - step 2 must succeed step 1
+            - quasi-dependence
+                ( not an exhaustive listing
+                - though not exactly dependence relations, these too are modelled by nesting
+                * whole-part
+
+                      <B> Whole
+                          <A> Part
+
+                * subject-predicate
+
+                      <B> Subject
+                          <A> Predicate
+    - formal terms
+        - referring to the empty form, implying no meaning
+        * genealogical
+        * arborescent
+        * coined
+            < all as per § Nesting of elements, q.v.
+        * spatial
+
+              <B> Overbit
+                    ⋱
+                    <A> Underbit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointer`
@@ -555,18 +448,6 @@ wayic.script/doc.task - Documentation in rough
         2 enabling a waybit (in effect) to nest at multiple places in the same model
             - such that multiple elements are parents of this waybit
                 - their common child
-            - or
-                ( closer to the meaning of element nests
-                - such that multiple wholes share the part which is represented by this waybit in common
-                    < what nesting means in § Attributive grouping
-                - or that multiple derivatives (effects or dependants)
-                  derive from this common origin (cause, premise, means or what not)
-                    < what nesting means in § Nesting of waybit elements
-                - or some combination of these
-                    - in one place the waybit being a part
-                        ( § Modelled way relations § inherence and subsistence
-                    - in another a cause or means
-                        ( § Modelled way relations § causality and dependence
     [ form
         - a joint is formed of two elements
             - a referrer
@@ -756,4 +637,4 @@ wayic.script/doc.task - Documentation in rough
 
 
 
-                                     Copyright © 2017-2018 Michael Allan and contributors.  Licence MIT.
+                                     Copyright © 2017-2019 Michael Allan and contributors.  Licence MIT.
