@@ -68,7 +68,7 @@ wayic.script/doc.task - Documentation in rough
                 - the ‘in’ value specifies a relation of inherence or subsistence
                     - it declares that the way parts modelled by the children of the group element
                       inhere or subsist *in* the whole modelled by its parent
-                ( later the value format may be expanded to a set of space-separated tokens
+                ( later the format will be a set of space-separated tokens, rather than fixed at 'in'
                     ( https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#set-of-space-separated-tokens
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
