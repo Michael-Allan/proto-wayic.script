@@ -34,6 +34,13 @@ wayic.script/doc.task - Documentation in rough
     Commitment declaration`
     < see also: commitment stemmaplasty
         ( http://reluk.ca/project/wayic/intercast/doc.task
+    -! botched naming
+        -! two formal names
+            - 'commitment' and 'resolve'
+            - should be one
+        -! both names are misnomers
+            - the purpose is simply to declare what one is presently working on
+        = fix the naming
     - a bitform referential joint to a resolve waybit
         - comprising the jointer (commitment jointer) and its referent
         - the subjoining resolve waybit
