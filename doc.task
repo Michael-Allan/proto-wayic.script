@@ -133,6 +133,13 @@ wayic.script/doc.task - Documentation in rough
         < cf. http://reluk.ca/project/wayic/read/project.task § Extended element referencing
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Extrasource citation`
+    - referring from intrasource waytext to extrasource referents
+    + typology
+        * extrasource citation
+            * undersource annotation
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Grouping`
     - waybit elements nested in a group element, itself nested in a waybit element
     - example [ETO]
@@ -582,6 +589,17 @@ wayic.script/doc.task - Documentation in rough
                 ( § Design constraints § relative referencing bounded by the waycast
     * resolution
         - the fragment is resolved as an extended element reference
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Undersource annotation`
+    - citation of extrasource intracast notes
+        ( viz. notes that are outside the referring waysource, yet inside its waycast
+    + typology
+        ( extrasource citation
+            * undersource annotation
+    + form
+        - undersource annotation uses a shorter, more convenient form of reference
+          than other types of extrasource citation
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
