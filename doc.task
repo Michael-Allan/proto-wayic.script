@@ -31,6 +31,19 @@ wayic.script/doc.task - Documentation in rough
           (e.g. in the Web interface) instead as the local name of the referent subjoining waybit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
+    Bitnote`
+    - an intracast extrasource note attached to a waybit
+    + form
+        - a Breccian point
+            ( http://reluk.ca/project/breccia/
+            - its identifier equal to that of a waybit in a sibling file of equal base name
+    + function
+        - bitnote and waybit are part and parcel
+            - for certain purposes, including waybit variation
+                ( http://reluk.ca/project/wayic/origins/variant_waybit
+            - a bitnote is taken as part of its waybit, as though it were intrasource content
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
     < see also: commitment stemmaplasty
         ( http://reluk.ca/project/wayic/intercast/doc.task
@@ -131,13 +144,6 @@ wayic.script/doc.task - Documentation in rough
             - for sake of clarity
     = task to implement in wayic.read
         < cf. http://reluk.ca/project/wayic/read/project.task § Extended element referencing
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Extrasource citation`
-    - referring from intrasource waytext to extrasource referents
-    + typology
-        * extrasource citation
-            * undersource annotation
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Grouping`
@@ -589,17 +595,6 @@ wayic.script/doc.task - Documentation in rough
                 ( § Design constraints § relative referencing bounded by the waycast
     * resolution
         - the fragment is resolved as an extended element reference
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Undersource annotation`
-    - citation of extrasource intracast notes
-        ( viz. notes that are outside the referring waysource, yet inside its waycast
-    + typology
-        ( extrasource citation
-            * undersource annotation
-    + form
-        - undersource annotation uses a shorter, more convenient form of reference
-          than other types of extrasource citation
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Waybit`
