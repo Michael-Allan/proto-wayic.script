@@ -30,6 +30,23 @@ wayic.script/doc.task - Documentation in rough
         - a jointer local name declared as ‘_same’ is to be presented to document viewers
           (e.g. in the Web interface) instead as the local name of the referent subjoining waybit
 
+    * *previewTweak* attribute
+        < way:previewTweak, namespace data:,wayscript
+        - subjoint preview tweaker
+        - not yet implemented
+        - purpose
+            - tweak a subjoint preview to better fit its viewed context
+            - joints formed in different places often need minor adjustment
+              of their subject previews to fit their different contexts
+        - form
+
+              way:previewTweak='/pattern/replacement/flags'
+
+        - function
+            - alters the subjoint preview by calling String.replace
+                - with first parameter of pattern and flags
+                - with second parameter of replacement
+
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Bitnote`
     - an intracast extrasource note attached to a waybit
