@@ -42,6 +42,14 @@ wayic.script/doc.task - Documentation in rough
             - for certain purposes, including waybit variation
                 ( http://reluk.ca/project/wayic/origins/variant_waybit
             - a bitnote is taken as part of its waybit, as though it were intrasource content
+    - scattered tasks that ought to be pulled together in my waycast, rather than here
+        - coding the presentation of the bitnote reference
+            = editor presentation in wayic/emacs
+            = Web presentation in wayic/read
+        - *pre* notes
+            ( wayic.read
+            = manually transform the *pre* notes existing in waycast to bitnote form
+            = remove pre_note.css
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Commitment declaration`
