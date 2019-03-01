@@ -69,52 +69,6 @@ wayic.script/doc.task - Documentation in rough
             = remove pre_note.css
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
-    Commitment declaration`
-    < see also: commitment stemmaplasty
-        ( http://reluk.ca/project/wayic/intercast/doc.task
-    - flaws
-        -! two formal names
-            - 'commitment' and 'resolve'
-            - should be one
-        -! both names are misnomers
-            - the purpose is simply to declare what one is presently working on
-        -! clumsy placement
-            - clutters the way declaration with unrelated elements
-            - requires initial copy of sibling elements in commitment stemmaplasty
-              and subsequent maintenance work to keep them unchanged
-        = mend the lot
-            - moving commitment declaration to waycaster configuration
-                - there relating each commitment to its waybit by reference
-    - a bitform referential joint to a resolve waybit
-        - comprising the jointer (commitment jointer) and its referent
-        - the subjoining resolve waybit
-    purpose: to declare an intent to act on a way part
-    [ commitment jointer
-        - a bitform referential jointer that refers to /way.xht#resolve
-            - whereby the waycaster declares an active commitment
-        - currently documented in waycast
-            ( http://reluk.ca/project/waycast/way.xht#resolve
-        - the waycaster
-            - should
-                * place one in precisely each waybit of the larger way declaration
-                  where he intends to act directly
-                    - as a child of that waybit
-                * set the node name to reflect the commited action
-            - may
-                * set a way:ordinal attribute to assign an intended order to the act
-                    ( tasked as wayic.read § way:ordinal
-                    - so prioritizing it relative to other declared commitments
-        - implicitly the whole line of waysource containing the jointer is uniquely personal
-            ( wayic.cast § Uniquely personal content
-            - a convienience
-            - whence the bitform constraint on commitment jointers
-                - a hyperform node might (and most often would) occupy but a part of the line
-                    - making this convienience harder to implement
-    [ resolve waybit
-        - the waybit at waycast context location /way.xht#resolve
-            - which is the waybit of the root way document that has an *id* attribute of ‘resolve’
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────────
     Design constraints`
     [ ⤓ minimal
         + XML syntactic hypertext
