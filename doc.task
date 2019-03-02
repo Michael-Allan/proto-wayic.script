@@ -418,9 +418,15 @@ wayic.script/doc.task - Documentation in rough
             < all as per § Nesting of elements, q.v.
         * spatial
 
-              <B> Overbit
-                    ⋱
-                    <A> Underbit
+              <Z> Overbit
+
+                 ⋱
+
+                  <E> Element
+
+                     ⋱
+
+                      <A> Underbit
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Referential jointer`
@@ -461,7 +467,7 @@ wayic.script/doc.task - Documentation in rough
             - for sake of general simplicity and robustness
                 - subordinate building blocks (e.g. underbits) can be implemented
                   blind to the uses (overbits) they will be put in future
-                    - discourages unecessary overbit attachements/assumptions
+                    - discourages unecessary overbit entanglements/assumptions
                       that would tend to increase complexity
                       and decrease robustness of the overall structure
                 - a node (e.g. overbit) can fully define its own edges
