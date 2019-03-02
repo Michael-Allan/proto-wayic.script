@@ -21,7 +21,6 @@ wayic.script/doc.task - Documentation in rough
     Bitform referential jointer`
     < a form of (§) referential jointer
     - a bitform referential jointer is a waybit with a *join* attribute
-        ( § Referential jointer § *join* attribute
     - constraints
         - the jointer has the same namespace as its referent subjoining waybit
             ( e.g. only a step jointer can refer to a subjoining step
@@ -186,7 +185,6 @@ wayic.script/doc.task - Documentation in rough
     Hyperform referential jointer`
     < a form of (§) referential jointer
     - a hyperform referential jointer is an HTML *a* element with a *join* attribute
-        ( § Referential jointer § *join* attribute
     - constraint: the jointer has no *href* attribute
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
