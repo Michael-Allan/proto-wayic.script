@@ -175,9 +175,6 @@ wayic.script/doc.task - Documentation in rough
         < no namespace, on *a* element only
         - either a URI, or a formally intracast reference
             ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
-            - formally intracast in compliance with design constraints
-                ( http://reluk.ca/project/wayic/cast/doc.task
-                    ( § Design constraints § relative referencing bounded by the waycast
         - fragment form: in case of a waysource referent: extended element reference
             ( § Extended element referencing
 
