@@ -190,7 +190,7 @@ wayic.script/doc.task - Documentation in rough
     - placement
         - waybit or HTML *a* element
     - form
-        ( [EBN], exclusive of allowed namespacing, quoting and whitespacing variations
+        ( [EBN], exclusive of equivalent variants allowed by XHTML
 
           join attribute = 'way:join="', subjoining waybit reference, '"' ;
 
@@ -215,7 +215,7 @@ wayic.script/doc.task - Documentation in rough
         - proper Wayscript element
             - except that a waybit must have a name that is either '_' (anonymous) or non-reserved
     - form
-        ( [EBN], exclusive of allowed namespacing, quoting and whitespacing variations
+        ( [EBN], exclusive of equivalent variants allowed by XHTML
 
           name masking attribute = 'way:nameMask="', value, '"' ;
 
