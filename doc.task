@@ -1,4 +1,4 @@
-wayic.script/doc.task - Documentation in rough
+wayic/script/doc.task - Documentation in rough
 
     + formal summary
         - XML syntactic hypertext
@@ -69,6 +69,7 @@ wayic.script/doc.task - Documentation in rough
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Design constraints`
+    = remove these hence to topical §§
     [ ⤓ minimal
         + XML syntactic hypertext
             - the basic form of Wayscript is XML syntactic hypertext (XHTML)
@@ -443,7 +444,7 @@ wayic.script/doc.task - Documentation in rough
             ( cf. §§ Nesting of elements & Nesting of waybit elements
     [ purpose
         - two fold
-        1 modeling a single way with separately declared waybits
+        1 modelling a single way with separately declared waybits
         2 enabling a waybit (in effect) to nest at multiple places in the same model
             - such that multiple elements are parents of this waybit
                 - their common child
@@ -469,7 +470,7 @@ wayic.script/doc.task - Documentation in rough
                     - no underbit being able to contradict the definition
                     - which simplifies machine (and human) processing of the structure
     [ effect
-        < way modeling
+        < way modelling
             - the effect of a referential joint on the way model is determined
               by definite, but hypothetical waysource changes (effective changes)
             - its effect is what the effective changes would introduce
