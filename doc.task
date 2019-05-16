@@ -1,4 +1,4 @@
-wayic/script/doc.task - Documentation in rough
+proto-wayic/script/doc.task - Documentation in rough
 
     + formal summary
         - XML syntactic hypertext
@@ -51,19 +51,19 @@ wayic/script/doc.task - Documentation in rough
     - an intracast extrasource note attached to a waybit
     + form
         - a Breccian point
-            ( http://reluk.ca/project/breccia/
+            ( http://reluk.ca/project/proto-breccia/
             - its identifier equal to that of a waybit in a sibling file of equal base name
     + function
         - bitnote and waybit are part and parcel
             - for certain purposes, including waybit variation
-                ( http://reluk.ca/project/wayic/origins/variant_waybit
+                ( http://reluk.ca/project/proto-wayic/origins/variant_waybit
             - a bitnote is taken as part of its waybit, as though it were intrasource content
     - scattered tasks that ought to be pulled together in my waycast, rather than here
         - coding the presentation of the bitnote reference
-            = editor presentation in wayic/emacs
-            = Web presentation in wayic/read
+            = editor presentation in proto-wayic/emacs
+            = Web presentation in proto-wayic/read
         - *pre* notes
-            ( wayic.read
+            ( proto-wayic.read
             = manually transform the *pre* notes existing in waycast to bitnote form
             = remove pre_note.css
 
@@ -78,7 +78,7 @@ wayic/script/doc.task - Documentation in rough
                 ( http://w3c.github.io/html/xhtml.html
             ∴ hypertext
                 ∵ the *waycast* is public
-                    ( http://reluk.ca/project/waycast/constraints.xht#availability
+                    ( http://reluk.ca/project/proto-waycast/constraints.xht#availability
                 ∵ the premiere medium of *publication* today is the Web
                 ∵ the basic script of the *Web* is hypertext
             ∴ XML syntax
@@ -118,11 +118,11 @@ wayic/script/doc.task - Documentation in rough
                 - only in the authority component, that is
         * normal form
             = define this
-    = task to implement in wayic.emacs
+    = task to implement in proto-wayic.emacs
         - fontifying the *element-relative offset* to distinguish it from the element identifier
             - for sake of clarity
-    = task to implement in wayic.read
-        < cf. http://reluk.ca/project/wayic/read/project.task § Extended element referencing
+    = task to implement in proto-wayic.read
+        < cf. http://reluk.ca/project/proto-wayic/read/project.task § Extended element referencing
 
     ────────────────────────────────────────────────────────────────────────────────────────────────────
     Grouping`
@@ -175,7 +175,7 @@ wayic/script/doc.task - Documentation in rough
     + *href* attribute
         < no namespace, on *a* element only
         - either a URI, or a formally intracast reference
-            ( http://reluk.ca/project/wayic/cast/doc.task § Formally intracast reference
+            ( http://reluk.ca/project/proto-wayic/cast/doc.task § Formally intracast reference
         - fragment form: in case of a waysource referent: extended element reference
             ( § Extended element referencing
 
@@ -570,9 +570,9 @@ wayic/script/doc.task - Documentation in rough
 
           subjoining waybit reference = formally intracast reference with fragment ;
 
-        ( formally intracast reference with fragment, http://reluk.ca/project/wayic/cast/doc.task
+        ( formally intracast reference with fragment, http://reluk.ca/project/proto-wayic/cast/doc.task
         - formally intracast in compliance with design constraints
-            ( http://reluk.ca/project/wayic/cast/doc.task
+            ( http://reluk.ca/project/proto-wayic/cast/doc.task
                 ( § Design constraints § relative referencing bounded by the waycast
     * resolution
         - the fragment is resolved as an extended element reference
@@ -612,7 +612,7 @@ wayic/script/doc.task - Documentation in rough
                 '#', extended element reference in normal form ;
 
                   waycast public identifier = ? as per
-                    http://reluk.ca/project/wayic/cast/doc.task § Publication of a waycast ?;
+                    http://reluk.ca/project/proto-wayic/cast/doc.task § Publication of a waycast ?;
 
                   dotless relative path = ? a relative path reference without a dot segment, as
                     per https://tools.ietf.org/html/rfc3986#section-3.3 (dot-segment)
@@ -633,7 +633,7 @@ wayic/script/doc.task - Documentation in rough
    [ETO]  End tags omitted.  Here the XML end tags are omitted for sake of clarity.
 
    [IR] · Applies only for those instances which are formed using an import reference.
-            ( http://reluk.ca/project/wayic/intercast/doc.task
+            ( http://reluk.ca/project/proto-wayic/intercast/doc.task
 
 
 

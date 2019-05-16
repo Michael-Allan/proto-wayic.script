@@ -12,7 +12,7 @@
     <ul>
         <li>
             (noun) an effective junction
-            of two or more elements of <a href='http://reluk.ca/project/wayic/lex/waysource'>
+            of two or more elements of <a href='http://reluk.ca/project/proto-wayic/lex/waysource'>
             waysource</a> by means other than writing in place
             <!-- Elements that adjoin do not thereby form a joint.  The elaborate terminology
               of referential jointing rests on this distinction, which itself rests on 'joint'
@@ -29,6 +29,6 @@
     </section>
 
 
-        <script src='http://reluk.ca/project/wayic/lex/_/term_document.js'/>
+        <script src='http://reluk.ca/project/proto-wayic/lex/_/term_document.js'/>
         </body>
     </html>
