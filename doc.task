@@ -51,7 +51,7 @@ proto-wayic/script/doc.task - Documentation in rough
     - an intracast extrasource note attached to a waybit
     + form
         - a Breccian point
-            ( http://reluk.ca/project/proto-breccia/
+            ( http://reluk.ca/project/proto-Breccia/
             - its identifier equal to that of a waybit in a sibling file of equal base name
     + function
         - bitnote and waybit are part and parcel
